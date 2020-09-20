@@ -27,17 +27,15 @@ export default {
 </script>
 
 <style scoped>
+	#header {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
 
-#header {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-}
-
-
-#downButton {
-	width: 120px;
-	height: 120px;
-	margin-top: 25px;
-}
+	#downButton {
+		width: 120px;
+		height: 120px;
+		margin-top: 25px;
+	}
 </style>

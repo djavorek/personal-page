@@ -13,6 +13,7 @@
 import Header from './components/header/Header.vue'
 import Content from './components/content/Content.vue'
 
+
 export default {
   name: 'App',
   components: {
@@ -39,7 +40,7 @@ export default {
 }
 
 html, body {
-  height: 100%;
+  height: 100vh;
   margin: 0;
   padding: 0;
   background-color: black;
@@ -48,7 +49,7 @@ html, body {
 }
 
 #header {
-  height: 100%;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;

@@ -1,5 +1,6 @@
 <template>
-  <div id="menu" data-aos="fade-up-right">
+  <div 
+	id="menu">
 	<MenuItem 
 		v-for="item in menuList"
 		v-bind:item="item"
@@ -21,14 +22,19 @@ export default {
 		menuList: [
 			{
 				id: 0,
-				text: "",
+				text: "Bemutatkozás",
 				link: ""
 			},
 			{
 				id: 1,
-				text: "",
+				text: "Projektek",
 				link: ""
 			},
+			{
+				id: 2,
+				text: "Elérhetőségek",
+				link: ""
+			}
 		],
 		selected: 0
 	}
@@ -38,9 +44,7 @@ export default {
 
 <style scoped>
 	#menu {
-		margin: 500px;
-		font-size: 60px;
-		
+		margin-top: 50px;
 	}
 
 </style>

@@ -1,14 +1,19 @@
 <template>
   <div class="menuItem">
-	asd
+	<span>{{item.text}}</span>
   </div>
 </template>
 
+<script>
+export default {
+	props: ['item']
+}
+</script>
+
 <style scoped>
 	.menuItem {
-		margin: 500px;
-		font-size: 60px;
-		
+		font-size: 26px;
+		margin-bottom: 3vh;
 	}
 
 </style>
