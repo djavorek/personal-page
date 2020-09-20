@@ -1,28 +1,56 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div id="app" :style="{ backgroundImage: 'url(' + require('@/assets/bg.png') + ')' }" >
+    <div id="header">
+      <Header />
+    </div>
+    <div id="content">
+      <Content />
+    </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Header from './components/header/Header.vue'
+import Content from './components/content/Content.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    Header,
+    Content
   }
 }
 </script>
 
 <style>
+	@font-face {
+	font-family: "Merriweather";
+	src: local("Merriweather"),
+	url(~@/assets/fonts/Merriweather/Merriweather-Light.ttf) format("truetype");
+	}
+
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: "Merriweather", Helvetica, Arial;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: black;
+  color: #BDC3C7;
+  scroll-behavior: smooth;
+}
+
+#header {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 </style>
