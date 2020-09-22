@@ -16,8 +16,8 @@
 
 		font-style: normal;
 		font-weight: 300;
-		font-size: 72px;
-		line-height: 91px;
+		font-size: 7.2em;
+		line-height: 9.1rem;
 		text-align: center;
 
 		mix-blend-mode: lighten;
@@ -29,11 +29,11 @@
 	}
 
 	#hello {
-		font-size: 72px;
+		font-size: 7.2rem;
 	}
 
 	#name {
-		font-size: 48px;
+		font-size: 4.8rem;
 	}
 
 </style>

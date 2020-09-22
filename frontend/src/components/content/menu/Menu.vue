@@ -4,7 +4,8 @@
 	<MenuItem 
 		v-for="item in menuList"
 		v-bind:item="item"
-		v-bind:key="item.id"/>
+		v-bind:key="item.id"
+		v-on:select="selected = $event"/>
   </div> 
 </template>
 
@@ -45,6 +46,7 @@ export default {
 <style scoped>
 	#menu {
 		margin-top: 50px;
+		padding-left:  100px;
 	}
 
 </style>

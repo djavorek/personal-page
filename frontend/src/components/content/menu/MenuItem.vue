@@ -1,6 +1,9 @@
 <template>
   <div class="menuItem">
-	<span>{{item.text}}</span>
+	<a
+	v-on:click="$emit('select', item.id)">
+		{{item.text}}
+	</a>
   </div>
 </template>
 
@@ -14,6 +17,10 @@ export default {
 	.menuItem {
 		font-size: 26px;
 		margin-bottom: 3vh;
+	}
+
+	.menuItem :hover {
+		color: white;
 	}
 
 </style>

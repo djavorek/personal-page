@@ -31,7 +31,6 @@ export default {
 	}
 
 #app {
-  font-family: "Merriweather", Helvetica, Arial;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-repeat: no-repeat;
@@ -44,8 +43,20 @@ html, body {
   margin: 0;
   padding: 0;
   background-color: black;
-  color: #BDC3C7;
   scroll-behavior: smooth;
+
+  color: #BDC3C7;
+  font-family: "Merriweather", Helvetica, Arial;
+  font-size: 62.5%;
+}
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+a:hover {
+  text-decoration: inherit;
 }
 
 #header {

@@ -4,7 +4,7 @@
       <Menu />
     </div>
     <div>
-      <div id="marginHolder">
+      <div id="article">
         <span>asd</span>
       </div>
     </div>
@@ -30,8 +30,7 @@ export default {
 
 #content {
   display: flex;
-  align-items: center;
-  justify-content: center;
+
 }
 
 #marginHolder {
