@@ -9,7 +9,7 @@
   </div>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
 	#titleBox {
 		display: inline-block;
 		padding: 5px 50px;
@@ -25,7 +25,7 @@
 	}
 
 	.greenText {
-		color: #9BFF5D;
+		color: $secondary;
 	}
 
 	#hello {

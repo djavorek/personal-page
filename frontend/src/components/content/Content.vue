@@ -1,10 +1,10 @@
 <template>
   <div id="content" data-v-sticky-container>
-    <div v-sticky>
+    <div id="menuHolder" v-sticky>
       <Menu />
     </div>
     <div>
-      <div id="article">
+      <div id="articleHolder">
         <span>asd</span>
       </div>
     </div>
@@ -29,12 +29,12 @@ export default {
 <style scoped>
 
 #content {
-  display: flex;
-
-}
-
-#marginHolder {
-  min-height: 5000px;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	align-items: stretch;
+	align-content: stretch;
 }
 
 </style>

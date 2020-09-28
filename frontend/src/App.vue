@@ -23,7 +23,7 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
 	@font-face {
 	font-family: "Merriweather";
 	src: local("Merriweather"),
@@ -45,7 +45,7 @@ html, body {
   background-color: black;
   scroll-behavior: smooth;
 
-  color: #BDC3C7;
+  color: $primary;
   font-family: "Merriweather", Helvetica, Arial;
   font-size: 62.5%;
 }
