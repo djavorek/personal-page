@@ -1,19 +1,18 @@
 <template>
-  <div id="content" data-v-sticky-container>
-    <div id="menuHolder" v-sticky>
+  <div id="content" >
+    <div id="menuHolder">
       <Menu />
     </div>
     <div>
-      <div id="articleHolder">
-        <span>asd</span>
-      </div>
+      <ArticleBox />
     </div>
   </div>
 </template>
 
 <script>
 import VueStickyDirective from "@renatodeleao/vue-sticky-directive";
-import Menu from './menu/Menu.vue'
+import Menu from './menu/Menu.vue';
+import ArticleBox from './ArticleBox.vue';
 
 export default {
   name: 'Content',
@@ -21,7 +20,8 @@ export default {
     "sticky": VueStickyDirective
   },
   components: {
-    Menu
+    Menu,
+    ArticleBox
   }
 }
 </script>
@@ -33,7 +33,7 @@ export default {
 	flex-direction: row;
 	flex-wrap: wrap;
 	justify-content: flex-start;
-	align-items: stretch;
+	align-items: flex-start;
 	align-content: stretch;
 }
 
