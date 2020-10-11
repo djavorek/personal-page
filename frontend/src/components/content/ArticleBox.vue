@@ -24,7 +24,7 @@ export default {
 
 #articleHolder {
   height: 1200px;
-  width: 500px;
+  width: 90%;
   background-color: $primary;
   height: 90vh;
   margin: 5vh 0;

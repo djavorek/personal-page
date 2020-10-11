@@ -1,10 +1,13 @@
 <template>
-  <div id="content" >
-    <div id="menuHolder">
+  <div id="content" sticky-container>
+    <div id="menuHolder" v-sticky>
       <Menu />
     </div>
-    <div>
+    <div id="contentHolder" v-sticky>
       <ArticleBox />
+    </div>
+    <div id="demoheight">
+      asd
     </div>
   </div>
 </template>
@@ -28,13 +31,16 @@ export default {
 
 <style scoped>
 
-#content {
-	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	justify-content: flex-start;
-	align-items: flex-start;
-	align-content: stretch;
+#menuHolder {
+  width:90vw;
+}
+
+#contentHolder {
+  margin-left: 40vw;
+}
+
+#demoheight {
+  height: 1000vh;
 }
 
 </style>
