@@ -29,8 +29,8 @@ export default {
 	}
 
 	.indicator {
-		width: 10rem;
-		height: 0.1rem;
+		width: 10vw;
+		height: 0.3vh;
 		background-color: $secondary;
 		margin-left: auto;
 		margin-right: 0;

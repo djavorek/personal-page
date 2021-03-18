@@ -1,40 +1,35 @@
 <template>
   <div id="articleHolder">
-
+    <Intro />
+    <Contact />
+    <Blog />
   </div>
 </template>
 
 <script>
+import Intro from './articles/Intro.vue'
+import Contact from './articles/Contact.vue'
+import Blog from './articles/Blog.vue'
 
 export default {
-  name: 'ArticleBox'
+  name: 'ArticleBox',
+  components: {
+    Intro,
+    Contact,
+    Blog
+  }
 }
 </script>
 
 <style scoped lang="scss">
-
-#content {
-	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	justify-content: flex-start;
-	align-items: flex-start;
-	align-content: stretch;
-}
-
 #articleHolder {
   height: 1200px;
   width: 90%;
-  background-color: $primary;
+  background-color: $lifted;
   height: 90vh;
-  margin: 5vh 0;
-  border-radius: 2rem;
-
-  filter: alpha(opacity=05);
-  /* IE */
-  -moz-opacity: 0.05;
-  /* Mozilla */
-  opacity: 0.05;
+  margin: 0vh 0;
+  border-radius: 2rem 12rem;
+  border: 0.5rem dotted $secondary;
 }
 
 </style>

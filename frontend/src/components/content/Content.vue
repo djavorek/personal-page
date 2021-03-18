@@ -1,14 +1,12 @@
 <template>
-  <div id="content" sticky-container>
+  <div id="content">
     <div id="menuHolder" v-sticky>
       <Menu />
     </div>
-    <div id="contentHolder" v-sticky>
+    <div id="contentHolder">
       <ArticleBox />
     </div>
-    <div id="demoheight">
-      asd
-    </div>
+    <div id="demoheight"/>
   </div>
 </template>
 
@@ -32,11 +30,11 @@ export default {
 <style scoped>
 
 #menuHolder {
-  width:90vw;
+  width:5vw;
 }
 
 #contentHolder {
-  margin-left: 40vw;
+  margin-left: 35vw;
 }
 
 #demoheight {

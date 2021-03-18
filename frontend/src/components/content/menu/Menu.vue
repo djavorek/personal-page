@@ -8,37 +8,34 @@
 		:selected="selected == item.id"
 		v-on:select="selected = $event"/>
 	</div>
-	<Title text='Title' />
   </div>
 </template>
 
 <script>
 import MenuItem from './MenuItem.vue'
-import Title from './Title.vue'
 
 export default {
 
   name: 'Menu',
   components: {
-	MenuItem,
-	Title
+	MenuItem
   },
   data: function () {
 	return {
 		menuList: [
 			{
 				id: 0,
-				text: "Bemutatkozás",
+				text: "Mit?",
 				link: ""
 			},
 			{
 				id: 1,
-				text: "Projektek",
+				text: "Hol?",
 				link: ""
 			},
 			{
 				id: 2,
-				text: "Elérhetőségek",
+				text: "Miért?",
 				link: ""
 			}
 		],
