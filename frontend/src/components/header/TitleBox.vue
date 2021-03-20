@@ -12,15 +12,15 @@
 <style lang="scss" scoped>
 	#titleBox {
 		display: inline-block;
-		padding: 5px 50px;
+		padding: 2vh 3vw;
 
 		font-style: normal;
 		font-weight: 300;
-		line-height: 11rem;
+		line-height: 100px;
 		text-align: center;
 
 		mix-blend-mode: lighten;
-		border: 10px solid #FFFFFF;
+		border: 5px solid #FFFFFF;
 	}
 
 	.greenText {

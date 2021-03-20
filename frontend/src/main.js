@@ -1,5 +1,8 @@
 import Vue from 'vue'
-import './plugins/bootstrap-vue'
+
+import './plugins/buefy'
+import './plugins/scrollactive'
+
 import App from './App.vue'
 import AOS from 'aos'
 import 'aos/dist/aos.css'

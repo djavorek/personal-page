@@ -1,44 +1,36 @@
 <template>
-  <div id="content">
-    <div id="menuHolder" v-sticky>
+  <div id="content" class="columns">
+    <div id="menuHolder" class="column">
       <Menu />
     </div>
-    <div id="contentHolder">
+    <div id="contentHolder" class="column is-two-thirds">
       <ArticleBox />
     </div>
-    <div id="demoheight"/>
   </div>
 </template>
 
 <script>
-import VueStickyDirective from "@renatodeleao/vue-sticky-directive";
 import Menu from './menu/Menu.vue';
 import ArticleBox from './ArticleBox.vue';
 
 export default {
   name: 'Content',
-  directives: {
-    "sticky": VueStickyDirective
-  },
   components: {
     Menu,
-    ArticleBox
+    ArticleBox,
   }
 }
 </script>
 
 <style scoped>
 
+#content {
+  min-height: 95vh;
+}
+
 #menuHolder {
-  width:5vw;
+  width:2vw;
 }
 
-#contentHolder {
-  margin-left: 35vw;
-}
-
-#demoheight {
-  height: 1000vh;
-}
 
 </style>

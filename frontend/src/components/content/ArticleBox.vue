@@ -23,13 +23,13 @@ export default {
 
 <style scoped lang="scss">
 #articleHolder {
-  height: 1200px;
-  width: 90%;
+  width: 98%;
   background-color: $lifted;
+  min-height: 90vh; 
   height: 90vh;
-  margin: 0vh 0;
-  border-radius: 2rem 12rem;
-  border: 0.5rem dotted $secondary;
+  padding: 2vw;
+  border-radius: 1vw 6vw;
+  border: 0.5rem solid $secondary;
 }
 
 </style>

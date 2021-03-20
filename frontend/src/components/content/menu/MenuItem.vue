@@ -17,7 +17,7 @@ export default {
 
 <style lang="scss" scoped>
 	.itemHolder {
-		margin: 5vh;
+		margin: 3vh 1vh 3vh 0vh;
 		display: flex;
 		align-items: center;
 		width: 40vh;
@@ -25,7 +25,9 @@ export default {
 
 	.menuItem {
 		font-size: 2.6rem;
-		text-align: center;
+		text-align: right;
+		min-width: 200px;
+		padding: 1rem;
 	}
 
 	.indicator {

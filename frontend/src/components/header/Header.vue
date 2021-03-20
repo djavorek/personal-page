@@ -5,23 +5,21 @@
 			<TitleBox/>
 		</tr>
 		<tr align="center">
-			<b-link href="#menu">
-				<b-icon-arrow-down id="downButton" variant="white" animation="cylon-vertical"></b-icon-arrow-down>
-			</b-link>
+			<a href="#menu">
+				<b-icon id="downButton" pack="fas" icon="angle-double-down" size="is-large"></b-icon>
+			</a>
 		</tr>
 	</table>
   </div>
 </template>
 
 <script>
-import { BIconArrowDown } from 'bootstrap-vue'
 import TitleBox from './TitleBox.vue'
 
 export default {
   name: 'Header',
   components: {
 	TitleBox,
-	BIconArrowDown
   }
 }
 </script>
@@ -34,8 +32,8 @@ export default {
 	}
 
 	#downButton {
-		width: 120px;
-		height: 120px;
+		width: 180px;
+		height: 180px;
 		margin-top: 25px;
 	}
 </style>

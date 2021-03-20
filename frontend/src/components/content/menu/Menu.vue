@@ -1,14 +1,12 @@
 <template>
-  <div id="menu">
-	<div id="menuItemHolder">
-	<MenuItem 
-		v-for="item in menuList"
-		:item="item"
-		:key="item.id"
-		:selected="selected == item.id"
-		v-on:select="selected = $event"/>
+	<div id="menu">
+		<MenuItem 
+			v-for="item in menuList"
+			:item="item"
+			:key="item.id"
+			:selected="selected == item.id"
+			v-on:select="selected = $event"/>
 	</div>
-  </div>
 </template>
 
 <script>
@@ -25,17 +23,17 @@ export default {
 		menuList: [
 			{
 				id: 0,
-				text: "Mit?",
+				text: "Mit",
 				link: ""
 			},
 			{
 				id: 1,
-				text: "Hol?",
+				text: "Hol",
 				link: ""
 			},
 			{
 				id: 2,
-				text: "Miért?",
+				text: "Miért",
 				link: ""
 			}
 		],
@@ -46,16 +44,10 @@ export default {
 </script>
 
 <style scoped>
-	#menuItemHolder {
+	#menu {
 		padding-left: 5vw;
 		min-width: 60vh;
 	}
 
-	#menu {
-		margin-top: 50px;
-		width: 90vh;
-		display: flex;
-		flex-direction: row;
-	}
 
 </style>
