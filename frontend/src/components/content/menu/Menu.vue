@@ -10,33 +10,17 @@
 </template>
 
 <script>
-import MenuItem from './MenuItem.vue'
+import MenuItem from './MenuItem.vue';
+import MenuList from './MenuList';
 
 export default {
-
   name: 'Menu',
   components: {
 	MenuItem
   },
   data: function () {
 	return {
-		menuList: [
-			{
-				id: 0,
-				text: "Mit",
-				link: ""
-			},
-			{
-				id: 1,
-				text: "Hol",
-				link: ""
-			},
-			{
-				id: 2,
-				text: "Miért",
-				link: ""
-			}
-		],
+		menuList: MenuList,
 		selected: 0
 	}
   }

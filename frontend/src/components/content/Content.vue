@@ -3,7 +3,7 @@
     <div id="menuHolder" class="column">
       <Menu />
     </div>
-    <div id="contentHolder" class="column is-two-thirds">
+    <div class="column is-two-thirds">
       <ArticleBox />
     </div>
   </div>
@@ -23,11 +23,6 @@ export default {
 </script>
 
 <style scoped>
-
-#content {
-  min-height: 95vh;
-}
-
 #menuHolder {
   width:2vw;
 }

@@ -1,5 +1,5 @@
 <template>
-    <div id="blog">
+    <div id="blog" class="card">
       <span>Blog</span>
     </div>
 </template>

@@ -1,22 +1,38 @@
 <template>
   <div id="articleHolder">
-    <Intro />
-    <Contact />
-    <Blog />
+    <Intro v-if="this.showIntro" />
+    <Contact v-if="this.showContact" />
+    <Blog v-if="this.showBlog" />
   </div>
 </template>
 
 <script>
-import Intro from './articles/Intro.vue'
+import MenuList from './menu/MenuList';
+
+import Intro from './articles/About.vue'
 import Contact from './articles/Contact.vue'
 import Blog from './articles/Blog.vue'
 
+const isMenuSelected = (menuPurpose) => {
+	return MenuList[this.menu].purpose === menuPurpose;
+};
+
 export default {
   name: 'ArticleBox',
+  props: {
+	menu: Number,
+  },
   components: {
     Intro,
     Contact,
-    Blog
+    Blog,
+  },
+  data: () => {
+	return {
+		showIntro:  isMenuSelected('About'),
+		showContact: isMenuSelected('Contact'),
+		showBlog: isMenuSelected('Blog'),
+	}
   }
 }
 </script>
@@ -29,7 +45,7 @@ export default {
   height: 90vh;
   padding: 2vw;
   border-radius: 1vw 6vw;
-  border: 0.5rem solid $secondary;
+  border: 0.2rem solid $secondary;
 }
 
 </style>

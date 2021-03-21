@@ -30,39 +30,39 @@ export default {
 	url(~@/assets/fonts/Merriweather/Merriweather-Light.ttf) format("truetype");
 	}
 
-#app {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 100%;
-}
+	#app {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 100%;
+	}
 
-html, body {
-  height: 100vh;
-  margin: 0;
-  padding: 0;
-  background-color: black;
-  scroll-behavior: smooth;
+	html, body {
+	height: 100vh;
+	margin: 0;
+	padding: 0;
+	background-color: black;
+	scroll-behavior: smooth;
 
-  color: $primary;
-  font-family: "Merriweather", Helvetica, Arial;
-  font-size: 62.5%;
-}
+	color: $primary;
+	font-family: "Merriweather", Helvetica, Arial;
+	font-size: 62.5%;
+	}
 
-a {
-  color: inherit;
-  text-decoration: inherit;
-}
+	a {
+	color: inherit;
+	text-decoration: inherit;
+	}
 
-a:hover {
-  text-decoration: inherit;
-}
+	a:hover {
+	text-decoration: inherit;
+	}
 
-#header {
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+	#header {
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	}
 </style>
