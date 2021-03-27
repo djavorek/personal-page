@@ -1,6 +1,6 @@
 <template>
   <div id="content" class="columns">
-    <div id="menuHolder" class="column">
+    <div class="column">
       <Menu v-on:changed="selectMenu" />
     </div>
     <div class="column is-two-thirds">
@@ -33,9 +33,6 @@ export default {
 </script>
 
 <style scoped>
-#menuHolder {
-  width:2vw;
-}
 
 
 </style>

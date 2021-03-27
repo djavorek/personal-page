@@ -1,5 +1,5 @@
 <template>
-  <div class="itemHolder">
+  <div class="menuHoler">
 	<a class="menuItem"
 	v-on:click="$emit('select', item.id)">
 		{{item.text}}
@@ -16,7 +16,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-	.itemHolder {
+	.menuHolder {
 		margin: 3vh 1vh 3vh 0vh;
 		display: flex;
 		align-items: center;
@@ -25,16 +25,15 @@ export default {
 
 	.menuItem {
 		font-size: 2.6rem;
-		text-align: right;
+		text-align: left;
 		min-width: 200px;
 		padding: 1rem;
 	}
 
 	.indicator {
-		width: 5vw;
+		width: 2vw;
 		height: 0.3vh;
-		background-color: $secondary;
-		margin-left: auto;
+		background-color: $primary;
 		margin-right: 0;
 	}
 

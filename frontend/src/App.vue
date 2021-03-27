@@ -45,7 +45,7 @@ export default {
 	background-color: black;
 	scroll-behavior: smooth;
 
-	color: $primary;
+	color: $text;
 	font-family: "Merriweather", Helvetica, Arial;
 	font-size: 62.5%;
 	}

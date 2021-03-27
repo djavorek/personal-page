@@ -24,7 +24,7 @@
 	}
 
 	.greenText {
-		color: $secondary;
+		color: $primary;
 	}
 
 	#hello {
