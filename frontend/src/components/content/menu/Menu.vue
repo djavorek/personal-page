@@ -23,7 +23,15 @@ export default {
 		menuList: MenuList,
 		selected: 0
 	}
-  }
+  },
+  
+  watch: {
+    selected(newValue, oldValue) {
+		if (newValue !== oldValue) {
+			this.$emit('changed', newValue);
+		} 
+    },
+  },
 }
 </script>
 

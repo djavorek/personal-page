@@ -4,7 +4,7 @@
 	v-on:click="$emit('select', item.id)">
 		{{item.text}}
 	</a>
-	<hr class="indicator" v-show="selected"/>
+	<span class="indicator" v-show="selected"/>
 
   </div>
 </template>
@@ -31,7 +31,7 @@ export default {
 	}
 
 	.indicator {
-		width: 10vw;
+		width: 5vw;
 		height: 0.3vh;
 		background-color: $secondary;
 		margin-left: auto;

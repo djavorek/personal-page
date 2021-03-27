@@ -1,10 +1,10 @@
 <template>
   <div id="content" class="columns">
     <div id="menuHolder" class="column">
-      <Menu />
+      <Menu v-on:changed="selectMenu" />
     </div>
     <div class="column is-two-thirds">
-      <ArticleBox />
+       <ArticleBox v-bind:menu="menu" /> <!-- v-bind to pass as Number  -->
     </div>
   </div>
 </template>
@@ -18,6 +18,16 @@ export default {
   components: {
     Menu,
     ArticleBox,
+  },
+  data: function () {
+    return {
+      menu: 0,
+    };
+  },
+  methods: {
+    selectMenu(selected) {
+      this.menu = selected;
+    }
   }
 }
 </script>

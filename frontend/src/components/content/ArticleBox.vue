@@ -1,8 +1,8 @@
 <template>
   <div id="articleHolder">
-    <Intro v-if="this.showIntro" />
-    <Contact v-if="this.showContact" />
-    <Blog v-if="this.showBlog" />
+    <Intro v-if="this.isSelected('About')" />
+    <Contact v-if="this.isSelected('Contact')" />
+    <Blog v-if="this.isSelected('Blog')" />
   </div>
 </template>
 
@@ -13,27 +13,22 @@ import Intro from './articles/About.vue'
 import Contact from './articles/Contact.vue'
 import Blog from './articles/Blog.vue'
 
-const isMenuSelected = (menuPurpose) => {
-	return MenuList[this.menu].purpose === menuPurpose;
-};
-
 export default {
   name: 'ArticleBox',
   props: {
-	menu: Number,
+    menu: Number,
   },
   components: {
     Intro,
     Contact,
     Blog,
   },
-  data: () => {
-	return {
-		showIntro:  isMenuSelected('About'),
-		showContact: isMenuSelected('Contact'),
-		showBlog: isMenuSelected('Blog'),
-	}
-  }
+
+  methods: {
+    isSelected(purpose) {
+      return MenuList[this.menu].purpose === purpose;
+    }
+  },
 }
 </script>
 
