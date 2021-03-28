@@ -17,10 +17,10 @@ export default {
 
 <style lang="scss" scoped>
 	.menuHolder {
-		margin: 3vh 1vh 3vh 0vh;
+		margin: 3vh 1vw 3vh 0vh;
 		display: flex;
 		align-items: center;
-		width: 40vh;
+		width: 40vw;
 	}
 
 	.menuItem {

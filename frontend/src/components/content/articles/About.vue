@@ -1,24 +1,16 @@
 <template>
   <div class="intro tile is-ancestor">
-    <div class="tile is-vertical is-parent"> <!-- 1st column -->
+    <div class="tile is-vertical is-parent">
       <div class="tile">
-        <div class="tile is-4 cobox notification is-warning">
-          Szegeden lakok.
+        <div class="tile is-2 cobox notification is-warning">
+          <p class="mainText">Személyes</p>
         </div>
-        <div class="tile is-8 cobox notification is-success">
-          Mérnökinformatikus vagyok.
+        <div class="tile is-3 cobox notification is-success">
+          <p class="mainText">Tanulmányok</p>
         </div>
-      </div>
-      <div class="tile cobox notification is-4 is-info">
-        
-      </div>
-      <div class="tile cobox notification is-8 is-danger">
-        Az EPAM-nál dolgozok, mint Szoftvermérnök
-      </div>
-		</div>
-    <div class="tile is-vertical is-parent"> <!-- 2nd column -->
-      <div class="tile is-12 cobox notification is-info">
-        A Miskolci Egyetemen végeztem.
+        <div class="tile is-2 cobox notification is-info">
+          <p class="mainText">Munka</p>
+        </div>
       </div>
 		</div>
 	</div>
@@ -33,17 +25,19 @@ export default {
 
 <style scoped lang="scss">
   .cobox {
-    padding: 2vw;
+    padding: 1vw;
     margin: 0.5vw;
 
-    font-size: 250%;
+    font-size: 150%;
     text-align: center;
-
+    
     -webkit-box-shadow: 5px 5px 10px 0px rgba(0,0,0,0.7);
     -moz-box-shadow: 5px 5px 10px 0px rgba(0,0,0,0.7);
     box-shadow: 5px 5px 10px 0px rgba(0,0,0,0.7);
+  }
 
-    border-radius: 0.5vw 3vw;
+  .mainText {
+    margin: 0 auto;
   }
 
 </style>

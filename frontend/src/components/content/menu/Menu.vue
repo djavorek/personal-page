@@ -38,7 +38,6 @@ export default {
 <style scoped>
 	#menu {
 		padding-left: 5vw;
-		min-width: 60vh;
 	}
 
 

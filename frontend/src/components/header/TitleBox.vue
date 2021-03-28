@@ -14,6 +14,7 @@
 		display: inline-block;
 		padding: 2vh 3vw;
 
+		font-size: 62.5%;
 		font-style: normal;
 		font-weight: 300;
 		line-height: 100px;
@@ -28,11 +29,11 @@
 	}
 
 	#hello {
-		font-size: 9.2rem;
+		font-size: 5.75rem;
 	}
 
 	#name {
-		font-size: 5.2rem;
+		font-size: 3.25rem;
 	}
 
 </style>

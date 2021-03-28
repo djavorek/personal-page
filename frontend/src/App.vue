@@ -25,44 +25,44 @@ export default {
 
 <style lang="scss">
 	@font-face {
-	font-family: "Merriweather";
-	src: local("Merriweather"),
-	url(~@/assets/fonts/Merriweather/Merriweather-Light.ttf) format("truetype");
+		font-family: "Merriweather";
+		src: local("Merriweather"),
+		url(~@/assets/fonts/Merriweather/Merriweather-Light.ttf) format("truetype");
 	}
 
 	#app {
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	background-repeat: no-repeat;
-	background-size: cover;
-	height: 100%;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+		background-repeat: no-repeat;
+		background-size: cover;
+		height: 100%;
 	}
 
 	html, body {
-	height: 100vh;
-	margin: 0;
-	padding: 0;
-	background-color: black;
-	scroll-behavior: smooth;
+		height: 100vh;
+		margin: 0;
+		padding: 0;
+		background-color: black;
+		scroll-behavior: smooth;
 
-	color: $text;
-	font-family: "Merriweather", Helvetica, Arial;
-	font-size: 62.5%;
+		color: $text;
+		font-family: "Merriweather", Helvetica, Arial;
 	}
 
 	a {
-	color: inherit;
-	text-decoration: inherit;
+		color: inherit;
+		text-decoration: inherit;
 	}
 
 	a:hover {
-	text-decoration: inherit;
+		text-decoration: inherit;
 	}
 
 	#header {
-	height: 100vh;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+		height: 100vh;
+		display: flex;
+		justify-content: center;
+		align-items: center;
 	}
+
 </style>

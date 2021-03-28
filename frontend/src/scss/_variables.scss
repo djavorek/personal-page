@@ -11,7 +11,7 @@ $info: #3ddfd7;
 $success: #87e187;
 $warning: #e7ff34;
 $danger: #2dac2d;
-$dark: #1f1f1f4d;
+$dark: #1a1a1a81;
 
 // Lists and maps
 $custom-colors: null !default;
@@ -83,4 +83,4 @@ $link-focus-border: $primary;
 
 // Import Bulma and Buefy styles
 @import "~bulma";
-@import "~buefy/src/scss/buefy";
+//@import "~buefy/src/scss/buefy"; // Slows down build significantly, might affect look

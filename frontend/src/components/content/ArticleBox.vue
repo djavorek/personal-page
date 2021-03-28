@@ -40,20 +40,20 @@ export default {
   background-color: $dark;
   min-height: 90vh; 
   height: 90vh;
-  padding: 2vw;
-  border-radius: 1vw 6vw;
+  padding: 3vw;
+  border-radius: 0.5vw 3vw;
   border: 0.2rem solid $primary;
 }
 
 .slide-leave-active,
 .slide-enter-active {
-  transition: 1s;
+  transition: 0.25s;
 }
 .slide-enter {
-  transform: translate(100%, 0);
+  transform: translate(2.5vw, 2.5vw);
 }
 .slide-leave-to {
-  transform: translate(-100%, 0);
+  transform: translate(-2.5vw, -2.5vw);
 }
 
 </style>
