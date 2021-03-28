@@ -1,17 +1,15 @@
 <template>
   <div class="intro tile is-ancestor">
     <div class="tile is-vertical is-parent">
-      <div class="tile">
-        <div class="tile is-2 cobox notification is-warning">
+        <div class="tile is-3 cobox notification is-warning">
           <p class="mainText">Személyes</p>
         </div>
         <div class="tile is-3 cobox notification is-success">
           <p class="mainText">Tanulmányok</p>
         </div>
-        <div class="tile is-2 cobox notification is-info">
+        <div class="tile is-3 cobox notification is-info">
           <p class="mainText">Munka</p>
         </div>
-      </div>
 		</div>
 	</div>
 </template>
