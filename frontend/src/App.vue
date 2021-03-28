@@ -13,7 +13,6 @@
 import Header from './components/header/Header.vue'
 import Content from './components/content/Content.vue'
 
-
 export default {
   name: 'App',
   components: {
@@ -35,14 +34,19 @@ export default {
 		-moz-osx-font-smoothing: grayscale;
 		background-repeat: no-repeat;
 		background-size: cover;
-		height: 100%;
+
+		-webkit-touch-callout: none; /* iOS Safari */
+		-webkit-user-select: none; /* Safari */
+		-khtml-user-select: none; /* Konqueror HTML */
+		-moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+        user-select: none; /* Non-prefixed version, currently
+							supported by Chrome, Edge, Opera and Firefox */
 	}
 
 	html, body {
-		height: 100vh;
 		margin: 0;
 		padding: 0;
-		background-color: black;
 		scroll-behavior: smooth;
 
 		color: $text;
@@ -57,5 +61,4 @@ export default {
 	a:hover {
 		text-decoration: inherit;
 	}
-
 </style>

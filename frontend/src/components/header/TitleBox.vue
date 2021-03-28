@@ -22,6 +22,7 @@
 
 		mix-blend-mode: lighten;
 		border: 5px solid #FFFFFF;
+		z-index: 30;
 	}
 
 	.greenText {

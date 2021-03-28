@@ -1,11 +1,11 @@
 <template>
-    <b-carousel-item>
-        <section :class="`hero is-medium is-bold`">
-            <div class="hero-body has-text-centered">
-                <h1 class="title">Github</h1>
-            </div>
-        </section>
-    </b-carousel-item>
+    <div id="github">
+	<section :class="`hero is-medium is-bold is-warning`">
+      <div class="hero-body has-text-centered">
+        <h1 class="title">Github</h1>
+      </div>
+    </section>
+	</div>
 </template>
 
 <script>

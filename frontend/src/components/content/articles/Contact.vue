@@ -14,22 +14,24 @@
     :indicator-mode="indicatorMode"
     :indicator-position="indicatorPosition"
     :indicator-style="indicatorStyle"
+    :icon-pack="iconPack"
   >
-    <b-carousel-item v-for="(carousel, i) in carousels" :key="i">
-        <section :class="`hero is-medium is-bold`">
-            <div class="hero-body has-text-centered">
-                <h1 class="title">{{carousel.title}}</h1>
-                <p><a href="#arrow"></a></p>
-            </div>
-        </section>
-    </b-carousel-item>
+    <b-carousel-item ><Email/></b-carousel-item>
+	<b-carousel-item ><Github/></b-carousel-item>
   </b-carousel>
 </template>
 
 <script>
+import Email from './contact/Email';
+import Github from './contact/Github';
+
 
 export default {
   name: 'Contact',
+  components: {
+	Email,
+    Github,
+  },
   data() {
         return {
             animated: 'slide',
@@ -40,6 +42,7 @@ export default {
             repeat: true,
             pauseType: 'is-white',
             interval: 2000,
+            iconPack: 'fas',
             carousels: [
                 { title: 'Facebook', color: 'dark' },
                 { title: 'Email', color: 'primary' },

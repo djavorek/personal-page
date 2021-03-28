@@ -1,16 +1,14 @@
 <template>
   <div id="header" >
-	<table>
-		<tr class="above">
-			<TitleBox/>
-		</tr>
-		<div class="parallax" :style="{ backgroundImage: 'url(' + require('@/assets/fg.svg') + ')' }"></div>
-		<tr align="center" class="above">
-			<a href="#menu">
-				<b-icon id="downButton" pack="fas" icon="angle-double-down" size="is-large"></b-icon>
-			</a>
-		</tr>
-	</table>
+    <div>
+      <TitleBox/>
+    </div>
+    <div>
+      <a href="#menu">
+        <b-icon id="downButton" pack="fas" icon="angle-double-down" size="is-large"></b-icon>
+      </a>
+    </div>
+    <!-- <div class="parallax" :style="{ backgroundImage: 'url(' + require('@/assets/fg.svg') + ')' }"></div> -->
   </div>
 </template>
 
@@ -25,18 +23,14 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 	#header {
     height: 100vh;
 		display: flex;
-		align-items: center;
-		justify-content: center;
+    align-items: center;
+    justify-content: center;
+		flex-direction: column;
 	}
-
-  #above {
-    position: relative;
-    z-index: 30;
-  }
 
 	.parallax {
 		/* Create the parallax scrolling effect */
@@ -45,17 +39,12 @@ export default {
 		background-repeat: no-repeat;
 		background-size: cover;
 
-		content: " ";
 		position: absolute;
 		top: 0;
 		right: 0;
 		bottom: 0;
 		left: 0;
 
-		display: block;
-		overflow: auto;
-
-		background-size: 100%;
     z-index: 0;
 	}
 
@@ -63,5 +52,7 @@ export default {
 		width: 180px;
 		height: 180px;
 		margin-top: 25px;
+		color: $warning;
+    z-index: 30;
 	}
 </style>
