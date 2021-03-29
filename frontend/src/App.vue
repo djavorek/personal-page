@@ -51,6 +51,7 @@ export default {
 
 		color: $text;
 		font-family: "Merriweather", Helvetica, Arial;
+		font-size: 62.5%; // Use REM for font-size everywhere, 1.0 rem = 10 px
 	}
 
 	a {

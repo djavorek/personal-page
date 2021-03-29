@@ -17,24 +17,24 @@ export default {
 
 <style lang="scss" scoped>
 	.menuHolder {
-		margin: 3vh 1vw 3vh 0vh;
+		margin: 3em 1em 3em 0;
 		display: flex;
 		align-items: center;
-		width: 40vw;
+		width: 40%;
 	}
 
 	.menuItem {
-		font-size: 2.6rem;
+		font-size: 2.5rem;
 		text-align: left;
-		min-width: 200px;
-		padding: 1rem;
+		width: 35%;
+		padding: 1em;
 	}
 
 	.indicator {
-		width: 2vw;
+		width: 5%;
 		height: 0.3vh;
 		background-color: $primary;
-		margin-right: 0;
+		margin-right: 0 auto;
 	}
 
 	.menuItem:hover {

@@ -1,13 +1,13 @@
 <template>
   <div class="intro tile is-ancestor">
     <div class="tile is-vertical is-parent">
-        <div class="tile is-3 cobox notification is-warning">
+        <div class="tile is-6 cobox notification is-warning">
           <p class="mainText">Személyes</p>
         </div>
-        <div class="tile is-3 cobox notification is-success">
+        <div class="tile is-6 cobox notification is-success">
           <p class="mainText">Tanulmányok</p>
         </div>
-        <div class="tile is-3 cobox notification is-info">
+        <div class="tile is-6 cobox notification is-info">
           <p class="mainText">Munka</p>
         </div>
 		</div>
@@ -23,10 +23,10 @@ export default {
 
 <style scoped lang="scss">
   .cobox {
-    padding: 1vw;
-    margin: 0.5vw;
+    padding: 0.5em;
+    margin: 0.5em;
 
-    font-size: 150%;
+    font-size: 2.5rem;
     text-align: center;
     
     -webkit-box-shadow: 5px 5px 10px 0px rgba(0,0,0,0.7);

@@ -36,13 +36,12 @@ export default {
 
 <style scoped lang="scss">
 #articleHolder {
-  width: 98%;
+  max-width: 98%;
   background-color: $dark;
-  min-height: 90vh; 
-  height: 90vh;
-  padding: 3vw;
-  border-radius: 0.5vw 3vw;
-  border: 0.2rem solid $primary;
+  min-height: 95vh; 
+  padding: 2em;
+  border-radius: 0.5em 3em;
+  border: 0.2em solid $primary;
 }
 
 .slide-leave-active,
@@ -50,10 +49,10 @@ export default {
   transition: 0.25s;
 }
 .slide-enter {
-  transform: translate(2.5vw, 2.5vw);
+  transform: translate(1.8em, 1.8em); // Padding - border
 }
 .slide-leave-to {
-  transform: translate(-2.5vw, -2.5vw);
+  transform: translate(-1.8em, -1.8em);
 }
 
 </style>

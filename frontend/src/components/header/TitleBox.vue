@@ -30,11 +30,11 @@
 	}
 
 	#hello {
-		font-size: 5.75rem;
+		font-size: 9.2rem;
 	}
 
 	#name {
-		font-size: 3.25rem;
+		font-size: 5.2rem;
 	}
 
 </style>

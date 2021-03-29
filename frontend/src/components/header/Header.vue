@@ -49,9 +49,8 @@ export default {
 	}
 
 	#downButton {
-		width: 180px;
-		height: 180px;
-		margin-top: 25px;
+		width: 150%;
+		margin-top: 10em;
 		color: $warning;
     z-index: 30;
 	}
