@@ -1,5 +1,5 @@
 <template>
-  <b-carousel
+  <b-carousel id='contact'
     :animated="animated"
     :has-drag="drag"
     :autoplay="autoPlay"
@@ -17,7 +17,7 @@
     :icon-pack="iconPack"
   >
     <b-carousel-item ><Email/></b-carousel-item>
-	<b-carousel-item ><Github/></b-carousel-item>
+    <b-carousel-item ><Github/></b-carousel-item>
   </b-carousel>
 </template>
 
@@ -56,8 +56,9 @@ export default {
 
 <style scoped lang="scss">
 
+
 #contact {
-  color: white;
+  border-radius: 0.5em 3em;
 }
 
 </style>

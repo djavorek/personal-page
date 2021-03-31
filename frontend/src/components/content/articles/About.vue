@@ -22,6 +22,10 @@ export default {
 </script>
 
 <style scoped lang="scss">
+  #intro {
+    margin: 2em;
+  }
+
   .cobox {
     padding: 0.5em;
     margin: 0.5em;

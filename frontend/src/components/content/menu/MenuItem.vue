@@ -31,10 +31,9 @@ export default {
 	}
 
 	.indicator {
-		width: 5%;
+		width: 10%;
 		height: 0.3vh;
 		background-color: $primary;
-		margin-right: 0 auto;
 	}
 
 	.menuItem:hover {

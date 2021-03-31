@@ -39,7 +39,6 @@ export default {
   max-width: 98%;
   background-color: $dark;
   min-height: 95vh; 
-  padding: 2em;
   border-radius: 0.5em 3em;
   border: 0.2em solid $primary;
 }
