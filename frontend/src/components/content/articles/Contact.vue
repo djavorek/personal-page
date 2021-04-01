@@ -15,21 +15,20 @@
     :indicator-position="indicatorPosition"
     :indicator-style="indicatorStyle"
     :icon-pack="iconPack"
+    :icon-size="iconSize"
   >
-    <b-carousel-item ><Email/></b-carousel-item>
+    <!--<b-carousel-item ><Email/></b-carousel-item>-->
     <b-carousel-item ><Github/></b-carousel-item>
   </b-carousel>
 </template>
 
 <script>
-import Email from './contact/Email';
 import Github from './contact/Github';
 
 
 export default {
   name: 'Contact',
   components: {
-	Email,
     Github,
   },
   data() {
@@ -42,19 +41,14 @@ export default {
             repeat: true,
             pauseType: 'is-white',
             interval: 2000,
-            iconPack: 'fas',
             indicator: true,
             indicatorBackground: true,
             indicatorInside: true,
             indicatorMode: 'hover',
             indicatorPosition: 'is-top',
             indicatorStyle: 'is-lines',
-            carousels: [
-                { title: 'Facebook', color: 'dark' },
-                { title: 'Email', color: 'primary' },
-                { title: 'LinkedIn', color: 'info' },
-                { title: 'Github', color: 'success' },
-            ]
+            iconPack: 'fas',
+            iconSize: 'is-large',
         }
     },
 }

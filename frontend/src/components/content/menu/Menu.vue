@@ -1,5 +1,5 @@
 <template>
-	<div id="menu">
+	<div id="menu" class="glassmorphism">
 		<MenuItem 
 			v-for="item in menuList"
 			:item="item"
@@ -35,9 +35,13 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
+	@import '@/scss/common.scss';
+
 	#menu {
-		padding-left: 5vw;
+		margin: 0 auto;
+		padding: 5vh;
+		width: fit-content;
 	}
 
 

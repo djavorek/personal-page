@@ -1,11 +1,10 @@
 <template>
-  <div class="menuHoler">
+  <div class="menuHolder">
 	<a class="menuItem"
+	v-bind:class="{ selected: selected }"
 	v-on:click="$emit('select', item.id)">
 		{{item.text}}
 	</a>
-	<span class="indicator" v-show="selected"/>
-
   </div>
 </template>
 
@@ -20,14 +19,16 @@ export default {
 		margin: 3em 1em 3em 0;
 		display: flex;
 		align-items: center;
-		width: 40%;
 	}
 
 	.menuItem {
 		font-size: 2.5rem;
-		text-align: left;
-		width: 35%;
-		padding: 1em;
+		text-align: center;
+		width: 100%;
+	}
+
+	.selected {
+		border: .1em solid $warning;
 	}
 
 	.indicator {
@@ -37,7 +38,7 @@ export default {
 	}
 
 	.menuItem:hover {
-		color: white;
+		color: $primary;
 	}
 
 </style>
