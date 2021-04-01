@@ -21,7 +21,7 @@
 		text-align: center;
 
 		mix-blend-mode: lighten;
-		border: 5px solid #FFFFFF;
+		border: 1.5em solid #FFFFFF;
 		z-index: 30;
 	}
 

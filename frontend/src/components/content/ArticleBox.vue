@@ -38,9 +38,10 @@ export default {
 #articleHolder {
   max-width: 98%;
   background-color: $dark;
-  min-height: 95vh; 
+  min-height: 95vh;
+  padding: 2em;
   border-radius: 0.5em 3em;
-  border: 0.2em solid $primary;
+  border: 1em solid $primary;
 }
 
 .slide-leave-active,
@@ -48,10 +49,10 @@ export default {
   transition: 0.25s;
 }
 .slide-enter {
-  transform: translate(1.8em, 1.8em); // Padding - border
+  transform: translate(1em, 1em); // Padding - border
 }
 .slide-leave-to {
-  transform: translate(-1.8em, -1.8em);
+  transform: translate(-1em, -1em);
 }
 
 </style>

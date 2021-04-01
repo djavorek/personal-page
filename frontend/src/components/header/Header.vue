@@ -25,10 +25,10 @@ export default {
 
 <style lang="scss" scoped>
 	#header {
-    height: 100vh;
+		height: 100vh;
 		display: flex;
-    align-items: center;
-    justify-content: center;
+		align-items: center;
+		justify-content: center;
 		flex-direction: column;
 	}
 
@@ -44,14 +44,13 @@ export default {
 		right: 0;
 		bottom: 0;
 		left: 0;
-
-    z-index: 0;
+		z-index: 0;
 	}
 
 	#downButton {
 		width: 150%;
 		margin-top: 10em;
-		color: $warning;
-    z-index: 30;
+		color: $primary;
+		z-index: 30;
 	}
 </style>

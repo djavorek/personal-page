@@ -1,5 +1,5 @@
 <template>
-      <section id="email" :class="`hero is-medium is-bold`">
+      <section id="email" :class="`hero is-medium is-bold is-info`">
         <div class="hero-body has-text-centered">
           <h1 class="title">Email</h1>
         </div>

@@ -43,6 +43,12 @@ export default {
             pauseType: 'is-white',
             interval: 2000,
             iconPack: 'fas',
+            indicator: true,
+            indicatorBackground: true,
+            indicatorInside: true,
+            indicatorMode: 'hover',
+            indicatorPosition: 'is-top',
+            indicatorStyle: 'is-lines',
             carousels: [
                 { title: 'Facebook', color: 'dark' },
                 { title: 'Email', color: 'primary' },

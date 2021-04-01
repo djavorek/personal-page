@@ -9,14 +9,28 @@
 <script>
 
 export default {
-  name: 'Github'
-}
+  name: 'Github',
+  created() {
+    fetch("https://api.github.com/users/djavorek")
+      .then(async response => {
+        const data = await response.json();
+        console.log(data);
+
+        if (!response.ok) {
+          const error = (data && data.message) || response.statusText;
+          return Promise.reject(error);
+        }
+      })
+      .catch(error => {
+        console.error('Github User API failed: ' + error);
+      })
+  }
+ }
 </script>
 
 <style scoped lang="scss">
   #github {
     min-height: 95vh;
-    border-radius: 0.5em 3em;
   }
 
 </style>
