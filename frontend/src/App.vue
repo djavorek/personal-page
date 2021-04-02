@@ -30,8 +30,6 @@ export default {
 	}
 
 	#app {
-		-webkit-font-smoothing: antialiased;
-		-moz-osx-font-smoothing: grayscale;
 		background-repeat: no-repeat;
 		background-size: cover;
 
@@ -39,15 +37,14 @@ export default {
 		-webkit-user-select: none; /* Safari */
 		-khtml-user-select: none; /* Konqueror HTML */
 		-moz-user-select: none; /* Old versions of Firefox */
-        -ms-user-select: none; /* Internet Explorer/Edge */
-        user-select: none; /* Non-prefixed version, currently
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently
 							supported by Chrome, Edge, Opera and Firefox */
 	}
 
 	html, body {
 		margin: 0;
 		padding: 0;
-		scroll-behavior: smooth;
 
 		color: $text;
 		font-family: "Merriweather", Helvetica, Arial;

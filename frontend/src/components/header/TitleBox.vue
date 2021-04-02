@@ -1,11 +1,11 @@
 <template>
   <div id="titleBox">
-	<div id="hello">
-		<span>HELLO</span><span class="greenText">.</span>
-	</div>
-	<div id="name">
-		<span class="greenText">Dénes</span><span> vagyok</span>
-	</div>
+		<div id="hello">
+			<span>HELLO</span><span class="greenText">.</span>
+		</div>
+		<div id="name">
+			<span class="greenText">Dénes</span><span> vagyok</span>
+		</div>
   </div>
 </template>
 
@@ -19,8 +19,8 @@
 		font-weight: 300;
 		line-height: 100px;
 		text-align: center;
+		background: rgba(black, 0.8);
 
-		mix-blend-mode: lighten;
 		border: 1.5em solid #FFFFFF;
 		z-index: 30;
 	}

@@ -1,64 +1,43 @@
 <template>
-  <b-carousel id='contact'
-    :animated="animated"
-    :has-drag="drag"
-    :autoplay="autoPlay"
-    :pause-hover="pauseHover"
-    :pause-info="pauseInfo"
-    :pause-info-type="pauseType"
-    :interval="interval"
-    :repeat="repeat"
-    :indicator="indicator"
-    :indicator-background="indicatorBackground"
-    :indicator-inside="indicatorInside"
-    :indicator-mode="indicatorMode"
-    :indicator-position="indicatorPosition"
-    :indicator-style="indicatorStyle"
-    :icon-pack="iconPack"
-    :icon-size="iconSize"
-  >
-    <!--<b-carousel-item ><Email/></b-carousel-item>-->
-    <b-carousel-item ><Github/></b-carousel-item>
-  </b-carousel>
+  <div id="contact-container">
+    <div id="direct-email">
+      <Email/>
+    </div>
+    <div id="contact-texts">
+      <p>Email: javorek.denes@gmail.com</p>
+      <p>LinkedIn: /in/denes-javorek/</p>
+      <p>Facebook: facebook.com/javidenes/</p>
+    </div>
+  </div>
 </template>
 
 <script>
-import Github from './contact/Github';
+import Email from './contact/Email';
 
 
 export default {
   name: 'Contact',
   components: {
-    Github,
+    Email,
   },
   data() {
-        return {
-            animated: 'slide',
-            drag: false,
-            autoPlay: true,
-            pauseHover: true,
-            pauseInfo: true,
-            repeat: true,
-            pauseType: 'is-white',
-            interval: 2000,
-            indicator: true,
-            indicatorBackground: true,
-            indicatorInside: true,
-            indicatorMode: 'hover',
-            indicatorPosition: 'is-top',
-            indicatorStyle: 'is-lines',
-            iconPack: 'fas',
-            iconSize: 'is-large',
-        }
-    },
+    return {
+        
+    }
+  },
 }
 </script>
 
 <style scoped lang="scss">
 
 
-#contact {
-  border-radius: 0.5em 3em;
+#contact-container {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+#contact-texts {
+  font-size: calc(1rem + 0.25vw);
 }
 
 </style>

@@ -1,8 +1,7 @@
 /* slightly transparent fallback */
 .glassmorphism {
-	background-color: $dark;
-	border-radius: 10px;
-	border: 1px solid white;
+	background-color: rgba($dark, 0.9);
+	border: 0.2px solid white;
   }
   
 /* if backdrop support: very transparent and blurred */
@@ -11,7 +10,5 @@
 	background-color: $dark;
 	-webkit-backdrop-filter: blur(5em);
 	backdrop-filter: blur(5em);
-	border-radius: 10px;
-	border: 1px solid white;
 }
 }

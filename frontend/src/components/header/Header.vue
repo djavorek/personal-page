@@ -24,6 +24,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+	@import '@/scss/animation.scss';
+
 	#header {
 		height: 100vh;
 		display: flex;
@@ -52,5 +54,21 @@ export default {
 		margin-top: 10em;
 		color: $primary;
 		z-index: 30;
+		
+		-webkit-animation-duration: 1s;
+		animation-duration: 1s;
+		-webkit-animation-fill-mode: both;
+		animation-fill-mode: both;
+		-webkit-animation-timing-function: ease-in-out;
+		animation-timing-function: ease-in-out;
+		animation-iteration-count: infinite;
+		-webkit-animation-iteration-count: infinite;
 	}
+	
+	#downButton:hover {
+		cursor: default;
+		animation-name: bounce;
+		-moz-animation-name: bounce;
+	}
+
 </style>

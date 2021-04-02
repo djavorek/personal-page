@@ -41,8 +41,14 @@ export default {
 	#menu {
 		margin: 0 auto;
 		padding: 5vh;
-		width: fit-content;
+		min-height: 95vh;
 	}
+
+	@media screen and (max-width: 768px) {
+  #menu {
+    min-height: auto;
+  }
+}
 
 
 </style>

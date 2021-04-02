@@ -1,19 +1,19 @@
 const menuList = [
 	{
 		id: 0,
-		text: "Rólam",
+		text: "RÓLAM",
 		purpose: 'About',
 		link: "",
 	},
 	{
 		id: 1,
-		text: "Elérhetőségeim",
+		text: "ELÉRHETŐSÉGEIM",
 		purpose: 'Contact',
 		link: "",
 	},
 	{
 		id: 2,
-		text: "Blog",
+		text: "BŐVEBBEN",
 		purpose: 'Blog',
 		link: "",
 	}

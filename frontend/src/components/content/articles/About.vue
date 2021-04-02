@@ -26,7 +26,7 @@ export default {
     padding: 0.5em;
     margin: 0.5em;
 
-    font-size: 2.5rem;
+    font-size: calc(1.0rem + 0.25vw);
     text-align: center;
     
     -webkit-box-shadow: 5px 5px 10px 0px rgba(0,0,0,0.7);

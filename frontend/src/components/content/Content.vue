@@ -1,9 +1,9 @@
 <template>
   <div id="content" class="columns">
-    <div class="column">
+    <div class="column is-one-quarters no-bottom">
       <Menu v-on:changed="selectMenu" />
     </div>
-    <div class="column is-two-thirds">
+    <div class="column is-three-quarters no-bottom">
        <ArticleBox v-bind:menu="menu" /> <!-- v-bind to pass as Number  -->
     </div>
   </div>
@@ -33,6 +33,11 @@ export default {
 </script>
 
 <style scoped>
+
+.no-bottom {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
 
 
 </style>

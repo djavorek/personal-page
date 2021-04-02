@@ -1,5 +1,5 @@
 <template>
-  <div id="articleHolder">
+  <div id="articleHolder" class="glassmorphism">
 	<transition name="slide" mode="out-in">
 		<About v-if="this.isSelected('About')" />
 		<Contact v-if="this.isSelected('Contact')" />
@@ -35,24 +35,22 @@ export default {
 </script>
 
 <style scoped lang="scss">
-#articleHolder {
-  max-width: 98%;
-  background-color: $dark;
-  min-height: 95vh;
-  padding: 2em;
-  border-radius: 0.5em 3em;
-  border: 1em solid $primary;
-}
+  @import '@/scss/common.scss';
 
-.slide-leave-active,
-.slide-enter-active {
-  transition: 0.25s;
-}
-.slide-enter {
-  transform: translate(1em, 1em); // Padding - border
-}
-.slide-leave-to {
-  transform: translate(-1em, -1em);
-}
+  #articleHolder {
+    min-height: 95vh;
+    padding: 2em;
+    border-color: $primary;
+  }
 
+  .slide-leave-active,
+  .slide-enter-active {
+    transition: 0.25s;
+  }
+  .slide-enter {
+    transform: translate(1.8em, 1.8em); // Padding - border
+  }
+  .slide-leave-to {
+    transform: translate(-1.8em, -1.8em);
+  }
 </style>

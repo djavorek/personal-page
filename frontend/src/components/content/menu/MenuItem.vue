@@ -1,6 +1,6 @@
 <template>
   <div class="menuHolder">
-	<a class="menuItem"
+	<a class="menuItem" href="#articleHolder"
 	v-bind:class="{ selected: selected }"
 	v-on:click="$emit('select', item.id)">
 		{{item.text}}
@@ -22,13 +22,18 @@ export default {
 	}
 
 	.menuItem {
-		font-size: 2.5rem;
+		//font-size: 2.5rem;
+		font-size: calc(1.5rem + 0.25vw);
 		text-align: center;
 		width: 100%;
+		text-decoration: none;
+		background: linear-gradient($primary, $warning) bottom / 0 .1em no-repeat;
+		background-position: right bottom;
+		transition: 1s background-size;
 	}
 
 	.selected {
-		border: .1em solid $warning;
+		background-size: 100% .1em;
 	}
 
 	.indicator {
