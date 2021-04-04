@@ -22,7 +22,6 @@ export default {
 	}
 
 	.menuItem {
-		//font-size: 2.5rem;
 		font-size: calc(1.5rem + 0.25vw);
 		text-align: center;
 		width: 100%;

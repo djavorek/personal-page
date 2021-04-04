@@ -63,9 +63,7 @@ export default {
 		animation-timing-function: ease-in-out;
 		animation-iteration-count: infinite;
 		-webkit-animation-iteration-count: infinite;
-	}
-	
-	#downButton:hover {
+
 		cursor: default;
 		animation-name: bounce;
 		-moz-animation-name: bounce;

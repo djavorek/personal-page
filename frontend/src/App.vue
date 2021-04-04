@@ -1,5 +1,5 @@
 <template>
-  <div id="app" :style="{ backgroundImage: 'url(' + require('@/assets/bg.png') + ')' }" >
+  <div id="app" :style="{ backgroundImage: 'url(' + require('@/assets/bg_grey.png') + ')' }" >
     <div id="header">
       <Header />
     </div>
@@ -27,6 +27,13 @@ export default {
 		font-family: "Merriweather";
 		src: local("Merriweather"),
 		url(~@/assets/fonts/Merriweather/Merriweather-Light.ttf) format("truetype");
+	}
+
+	@font-face {
+		font-family: "Oswald";
+		font-weight: normal;
+		src: local("Oswald"),
+		url(~@/assets/fonts/Oswald/Oswald-Regular.ttf) format("truetype");
 	}
 
 	#app {

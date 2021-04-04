@@ -39,6 +39,7 @@ export default {
 
   #articleHolder {
     min-height: 95vh;
+    max-width: 98vw;
     padding: 2em;
     border-color: $primary;
   }
@@ -52,5 +53,12 @@ export default {
   }
   .slide-leave-to {
     transform: translate(-1.8em, -1.8em);
+  }
+
+  @media screen and (min-width: 768px) {
+    #articleHolder {
+      border-radius: 0;
+      border-left: 0;
+    }
   }
 </style>

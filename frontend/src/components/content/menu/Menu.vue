@@ -39,16 +39,22 @@ export default {
 	@import '@/scss/common.scss';
 
 	#menu {
-		margin: 0 auto;
 		padding: 5vh;
-		min-height: 95vh;
+		max-width: 98vw;
 	}
 
-	@media screen and (max-width: 768px) {
-  #menu {
-    min-height: auto;
-  }
-}
+	@media screen and (min-width: 768px) {
+		#menu {
+			min-height: 95vh;
+			border-radius: 0;
+			border-right: 0;
 
+			background-color: lighten($dark, 0.2);
+
+			-webkit-box-shadow: .5rem 0px 10rem 0px rgba(0,0,0);
+			-moz-box-shadow: .5rem 0px 10rem 0px rgba(0,0,0);
+			box-shadow: .5rem 0px 10rem 0px rgba(0,0,0)
+		}
+	}
 
 </style>

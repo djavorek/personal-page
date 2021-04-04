@@ -1,8 +1,8 @@
 // Import Bulma's core
 @import "~bulma/sass/utilities/_all";
 
-$text: #ffffff;
-$asd: #797979;
+$text: #dedede; // 87% opacity white
+$background: #121212;
 $primary: #9BFF5D;
 $primary-light: findLightColor($primary);
 $primary-dark: findDarkColor($primary);
@@ -12,7 +12,7 @@ $info: #3ddfd7;
 $success: #87e187;
 $warning: #e7ff34;
 $danger: #2dac2d;
-$dark: #0a0a0a;
+$dark: #1b1b1b;
 
 // Lists and maps
 $custom-colors: null !default;
