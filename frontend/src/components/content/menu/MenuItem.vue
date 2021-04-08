@@ -28,7 +28,7 @@ export default {
 		text-decoration: none;
 		background: linear-gradient($primary, $warning) bottom / 0 .1em no-repeat;
 		background-position: right bottom;
-		transition: 1s background-size;
+		transition: .5s background-size;
 	}
 
 	.selected {
@@ -42,7 +42,7 @@ export default {
 	}
 
 	.menuItem:hover {
-		color: $primary;
+		color: $warning;
 	}
 
 </style>

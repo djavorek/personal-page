@@ -6,7 +6,7 @@
       </div>
       <div id="head-text" class="about-text">
         <p>
-          Szia. Örülök, hogy megtaláltad a weboldalamat.
+          <span class="greenText">Szia.</span> Örülök, hogy megtaláltad a weboldalamat.
           Itt igyekszek összefoglalni mindent, amit amúgy is megtalálnál rólam az interneten.
           Így egyszerűbb és biztosabb dolgod lesz.
         </p>
@@ -16,9 +16,9 @@
     <div class="about-row wrap-reverse">
       <div id="work-text" class="about-text">
         <p>
-          2020 decembere óta az EPAM Systems-nél építem a karrieremet, mint Software Engineer.
+          2020 decembere óta az <span class="greenText">EPAM Systems-nél építem a karrieremet,</span> <span class="greenText">mint Software Engineer.</span>
           Előtte több helyen is dolgoztam, többször hasonló pozícióban, biteket tologatva. 
-          zek közül a legjobban a Finastra Hungary-nél töltött éveimet értékelem. 
+          Ezek közül a legjobban a Finastra Hungary-nél töltött éveimet értékelem.
           Itt tanulhattam meg a szakma alapjait és alakíthattam ki a saját utamat.
         </p>
       </div>
@@ -53,6 +53,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
+  @import '@/scss/common.scss';
 
   #about-container {
     font-size: calc(1.5rem + 0.25vw);
@@ -91,10 +92,15 @@ export default {
     flex-basis: 60%;
   }
 
+  p > span {
+    white-space: pre;
+  }
+
   .container hr {
     flex-basis: 100%;
     height: 0;
     margin: 0;
     border: 0;
   }
+
 </style>
