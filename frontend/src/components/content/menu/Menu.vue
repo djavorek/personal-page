@@ -50,10 +50,6 @@ export default {
 			border-right: 0;
 
 			background-color: lighten($dark, 0.2);
-
-			-webkit-box-shadow: .5rem 0px 10rem 0px rgba(0,0,0);
-			-moz-box-shadow: .5rem 0px 10rem 0px rgba(0,0,0);
-			box-shadow: .5rem 0px 10rem 0px rgba(0,0,0)
 		}
 	}
 

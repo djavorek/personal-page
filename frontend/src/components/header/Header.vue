@@ -5,7 +5,7 @@
     </div>
     <div>
       <a href="#menu">
-        <b-icon id="downButton" pack="fas" icon="angle-double-down" size="is-large"></b-icon>
+		<font-awesome-icon id="downButton" icon="angle-double-down" size="10x" />
       </a>
     </div>
     <!-- <div class="parallax" :style="{ backgroundImage: 'url(' + require('@/assets/fg.svg') + ')' }"></div> -->
@@ -50,8 +50,7 @@ export default {
 	}
 
 	#downButton {
-		width: 150%;
-		margin-top: 10em;
+		margin-top: 20vh;
 		color: $primary;
 		z-index: 30;
 		

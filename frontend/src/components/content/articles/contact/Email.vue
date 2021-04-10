@@ -1,11 +1,19 @@
 <template>
   <div id="email">
-    <h1 id="email-title">ÍRJ KÖZVETLENÜL</h1>
+    <h1 id="email-title">ITT ÍRHATSZ AZONNAL</h1>
     <div id="email-writer">
-      <form id="form" class="topBefore">
-        <input id="name" type="text" placeholder="NEVED">
-        <input id="contact" type="text" placeholder="ELÉRHETŐSÉGED">
-        <textarea id="message" type="text" placeholder="ÜZENETED"></textarea>
+      <form 
+        id="form"
+        name="instant-contact"
+        class="topBefore"
+        method="post "
+        data-netlify="true"
+        data-netlify-honeypot="bot-field"
+      >
+        <input type="hidden" name="form-name" value="instant-contact" />
+        <input id="name" type="text" v-model="form.name" placeholder="NEVED">
+        <input id="contact" type="text" v-model="form.contact" placeholder="ELÉRHETŐSÉGED">
+        <textarea id="message" type="text" v-model="form.message" placeholder="ÜZENETED"></textarea>
         <input id="submit" type="submit" value="KÜLDÉS">
       </form>
     </div>
@@ -18,9 +26,11 @@ export default {
   name: 'Email',
   data() {
     return {
-      sendername: '',
-      sendercontact: '',
-
+      form : {
+        name: '',
+        contact: '',
+        message: '',
+      },
     }
   }
 }
@@ -73,19 +83,23 @@ export default {
   }
 
   textarea {
-    height: 110px;
-    max-height: 110px;
-    padding: 15px;
-  
+    resize: none;
+  }
+
+  textarea::-webkit-input-placeholder { padding-top: 2em; }
+  textarea:-moz-placeholder { /* Firefox 18- */ padding-top: 2em; }
+  textarea::-moz-placeholder {  /* Firefox 19+ */ padding-top: 2em; }
+  textarea:-ms-input-placeholder { padding-top: 2em; }
+
+  #submit, #message, #contact {
+    border-top: none;
   }
 
   #submit {
-    
     padding: 0;
     margin: -5px 0px 0px 0px;
     
-    font-family: 'Lato', sans-serif;
-    font-size: 0.875em;
+    font-size: 2.875em;
     color: #b3aca7;
     
     outline:none;

@@ -43,7 +43,7 @@
 
 export default {
   name: 'About',
-  data(){
+  data() {
     return {
       headImg: require('@/assets/img/about_head.svg'),
       workImg: require('@/assets/img/about_work.svg')
@@ -68,7 +68,7 @@ export default {
     padding: 2em;
   }
 
-    .about-row.wrap-reverse {
+  .about-row.wrap-reverse {
     flex-wrap: wrap-reverse;
   }
 
@@ -83,9 +83,12 @@ export default {
 	}
 
   .about-image {
+    flex-basis: 40%; 
+  }
+
+  img {
     min-width: 300px;
-    flex-basis: 40%;
-    
+    max-width: 100%;
   }
    
   .about-text {
