@@ -1,6 +1,6 @@
 <template>
   <div id="email">
-    <h1 id="email-title">ITT ÍRHATSZ AZONNAL</h1>
+    <h1 id="email-title">ITT AZONNAL ÍRHATSZ</h1>
     <div id="email-writer">
       <form 
         id="form"
@@ -45,12 +45,8 @@ export default {
     text-align: center;
   }
 
-  header {
-    position: relative;
-    margin: 100px 0 25px 0;
-    font-size: 2.3em;
-    text-align: center;
-    letter-spacing: 7px;
+  #email-title {
+    font-size: 3rem;
   }
 
   #form {
@@ -59,6 +55,8 @@ export default {
   }
 
   input, textarea, #submit {
+    box-sizing: border-box;
+
     font-size: 1.5rem;
     padding: 0px 2em 0px 2em;
     width: 100%;
@@ -96,9 +94,6 @@ export default {
   }
 
   #submit {
-    padding: 0;
-    margin: -5px 0px 0px 0px;
-    
     font-size: 2.875em;
     color: #b3aca7;
     

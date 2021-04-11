@@ -7,7 +7,8 @@
       <div id="head-text" class="about-text">
         <p>
           <span class="greenText">Szia.</span> Örülök, hogy megtaláltad a weboldalamat.
-          Itt igyekszek összefoglalni mindent, amit amúgy is megtalálnál rólam az interneten.
+          Itt igyekszek összefoglalni mindent, amit amúgy is megtalálnál rólam az interneten
+          és néhány olyan részletet is aminek máshol nem volt helye.
           Így egyszerűbb és biztosabb dolgod lesz.
         </p>
       </div>
@@ -28,13 +29,37 @@
     </div>
 
     <div class="about-row">
-      <div id="exp" class="about-image">5</div>
-      <div id="exp-text" class="about-text">6</div>
+      <div id="exp" class="about-image">
+        <img :src="expImg"/>
+      </div>
+      <div id="exp-text" class="about-text">
+        <p>
+          Eddigi tapasztalataim leginkább a alkalmazások szerveroldali - <span class="greenText">Backend - feladatainak megoldása</span> köré szerveződnek.
+          Legközelebb hozzám talán a <span class="greenText">Java</span> és a <span class="greenText">Spring</span> világa áll, de dolgoztam már NodeJS és PHP kódon is.
+          Ezen felül mindig szeretek új dolgokat megismerni, legyen az cloud, frontend vagy beágyazott rendszer.
+        </p>
+      </div>
     </div>
 
     <div class="about-row wrap-reverse">
-      <div id="personal-text" class="about-text">7</div>
-      <div id="personal" class="about-image">8</div>
+      <div id="personal-text" class="about-text">
+        <p>
+          Amikor én valakinek a hobbijára vagyok kíváncsi, leginkább az érdekel hogy mi az ami köré ő szereti rendezni a szabadidejét, 
+          emellett persze hasznos lehet tudni, hogy a kötelezően választható témákból (sport, tartalomfogyasztás, hírek) 
+          milyen eszközökkel tölti ki a napjait, de ez már csak a gondolkodásmód eredménye.
+        </p>
+        <p>
+          Én legszívesebben mindig valamilyen számomra <span class="greenText">aktuális téma kérdéseinek alapos megértésére</span>, 
+          <span class="greenText">dolgok tökéletesítésére</span>
+          vagy ezek kombinációjára fordítanám a szabadidőmet. Szeretem érteni hogyan működik a világ, legyen szó technológiáról, 
+          gazdaságról vagy akár természetről. Az pedig mindig örömmel tölt el, amikor még néhány órát rászánhatok valaminek befejezésére, 
+          amit mások már késznek láttak. Általában nem lehet és nem is érdemes a tökéletességet keresni, 
+          de az én szabadidőmben szeretem a minőséget a mennyiség és az idő elé állítani.
+        </p>
+      </div>
+      <div id="personal" class="about-image">
+        <img :src="hobbyImg"/>
+      </div>
     </div>
   </div>
 </template>
@@ -46,7 +71,9 @@ export default {
   data() {
     return {
       headImg: require('@/assets/img/about_head.svg'),
-      workImg: require('@/assets/img/about_work.svg')
+      workImg: require('@/assets/img/about_work.svg'),
+      expImg: require('@/assets/img/about_exp.svg'),
+      hobbyImg: require('@/assets/img/about_hobby.svg')
     }
   }
 }
@@ -83,7 +110,9 @@ export default {
 	}
 
   .about-image {
-    flex-basis: 40%; 
+    box-sizing: border-box;
+    flex-basis: 40%;
+    padding: 0 20px 0 20px;
   }
 
   img {

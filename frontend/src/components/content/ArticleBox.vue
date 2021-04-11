@@ -38,10 +38,12 @@ export default {
   @import '@/scss/common.scss';
 
   #articleHolder {
-    min-height: 95vh;
+    box-sizing: border-box;
+    min-height: 98vh;
     max-width: 98vw;
     padding: 2em;
     border-color: $primary;
+    box-shadow: -3vw 3vw 3vw -3vw lighten($dark, 0.2);
   }
 
   .slide-leave-active,

@@ -45,7 +45,8 @@ export default {
 
 	@media screen and (min-width: 768px) {
 		#menu {
-			min-height: 95vh;
+			box-sizing: border-box;
+			min-height: 98vh;
 			border-radius: 0;
 			border-right: 0;
 
