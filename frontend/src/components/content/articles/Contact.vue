@@ -44,8 +44,9 @@ export default {
 
 #contact-img {
   height: 30vh;
-  width: 85%;
+  width: 100%;
   display: block;
+  padding-top: 2vw;
 }
 
 #contact-container {
