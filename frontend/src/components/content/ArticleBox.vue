@@ -39,6 +39,7 @@ export default {
 
   #articleHolder {
     box-sizing: border-box;
+    overflow: hidden;
     min-height: 98vh;
     max-width: 98vw;
     padding: 2em;
@@ -46,15 +47,17 @@ export default {
     box-shadow: -3vw 3vw 3vw -3vw lighten($dark, 0.2);
   }
 
-  .slide-leave-active,
+  .slide-leave-active {
+    transition: 0.3s;
+  }
   .slide-enter-active {
-    transition: 0.25s;
+    transition: 0.6s;
   }
   .slide-enter {
-    transform: translate(1.8em, 1.8em); // Padding - border
+    transform: translate(-100%, 0);
   }
   .slide-leave-to {
-    transform: translate(-1.8em, -1.8em);
+    transform: translate(100%, 0);
   }
 
   @media screen and (min-width: 768px) {

@@ -44,12 +44,7 @@
     <div class="about-row wrap-reverse">
       <div id="personal-text" class="about-text">
         <p>
-          Amikor én valakinek a hobbijára vagyok kíváncsi, leginkább az érdekel hogy mi az ami köré ő szereti rendezni a szabadidejét, 
-          emellett persze hasznos lehet tudni, hogy a kötelezően választható témákból (sport, tartalomfogyasztás, hírek) 
-          milyen eszközökkel tölti ki a napjait, de ez már csak a gondolkodásmód eredménye.
-        </p>
-        <p>
-          Én legszívesebben mindig valamilyen számomra <span class="greenText">aktuális téma kérdéseinek alapos megértésére</span>, 
+          Legszívesebben mindig valamilyen számomra <span class="greenText">aktuális téma kérdéseinek alapos megértésére</span>, 
           <span class="greenText">dolgok tökéletesítésére</span>
           vagy ezek kombinációjára fordítanám a szabadidőmet. Szeretem érteni hogyan működik a világ, legyen szó technológiáról, 
           gazdaságról vagy akár természetről. Az pedig mindig örömmel tölt el, amikor még néhány órát rászánhatok valaminek befejezésére, 
@@ -126,13 +121,6 @@ export default {
 
   p > span {
     white-space: pre;
-  }
-
-  .container hr {
-    flex-basis: 100%;
-    height: 0;
-    margin: 0;
-    border: 0;
   }
 
 </style>

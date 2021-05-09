@@ -3,15 +3,12 @@
     <div id="img-center">
       <img id="contact-img" :src="contactImg"/>
     </div>
-    
     <div id="contact-container">
       <div id="direct-email">
         <Email/>
       </div>
       <div id="contact-texts">
-        <p>Email: javorek.denes@gmail.com</p>
-        <p>LinkedIn: /in/denes-javorek/</p>
-        <p>Facebook: facebook.com/javidenes/</p>
+        <Social/>
       </div>
     </div>
   </div>
@@ -19,12 +16,14 @@
 
 <script>
 import Email from './contact/Email';
+import Social from './contact/Social';
 
 
 export default {
   name: 'Contact',
   components: {
     Email,
+    Social
   },
   data() {
     return {
@@ -43,7 +42,7 @@ export default {
 }
 
 #contact-img {
-  height: 30vh;
+  height: 40vh;
   width: 100%;
   display: block;
   padding-top: 2vw;
@@ -51,11 +50,30 @@ export default {
 
 #contact-container {
   display: flex;
+  flex-wrap: wrap;
+  align-items: center;
   justify-content: space-evenly;
+  padding: 2em;
+}
+
+#direct-email {
+  flex-basis: 40%;
+  margin: 1em
 }
 
 #contact-texts {
+  flex-basis: 40%;
   font-size: calc(1rem + 0.25vw);
 }
+
+@media screen and (max-width: 1000px) {
+    #direct-email {
+      flex-basis: auto;
+    }
+   
+    #contact-texts {
+      flex-basis: auto;
+    }
+	}
 
 </style>
