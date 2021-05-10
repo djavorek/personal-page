@@ -1,20 +1,79 @@
 <template>
-  <div id="contact">
-    Instagram, LinkedIn, Facebook, Github
+  <div>
+    <div id="img-center">
+      <img id="contact-img" :src="contactImg"/>
+    </div>
+    <div id="contact-container">
+      <div id="direct-email">
+        <Email/>
+      </div>
+      <div id="contact-texts">
+        <Social/>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
+import Email from './contact/Email';
+import Social from './contact/Social';
+
 
 export default {
-  name: 'Contact'
+  name: 'Contact',
+  components: {
+    Email,
+    Social
+  },
+  data() {
+    return {
+        contactImg: require('@/assets/img/contact_instant.svg'),
+    }
+  },
 }
 </script>
 
 <style scoped lang="scss">
 
-#contact {
-  color: white;
+#img-center {
+  margin: 0 auto;
+  width: 100%;
+  display: block;
 }
+
+#contact-img {
+  height: 25vw;
+  width: 100%;
+  display: block;
+  padding-top: 2vw;
+}
+
+#contact-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 2em;
+}
+
+#direct-email {
+  flex-basis: 40%;
+  margin: 1em
+}
+
+#contact-texts {
+  flex-basis: 40%;
+  font-size: calc(1rem + 0.25vw);
+}
+
+@media screen and (max-width: 1000px) {
+    #direct-email {
+      flex-basis: auto;
+    }
+   
+    #contact-texts {
+      flex-basis: auto;
+    }
+	}
 
 </style>

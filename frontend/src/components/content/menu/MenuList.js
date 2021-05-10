@@ -1,22 +1,22 @@
 const menuList = [
 	{
 		id: 0,
-		text: "Rólam",
+		text: "RÓLAM",
 		purpose: 'About',
 		link: "",
 	},
 	{
 		id: 1,
-		text: "Elérhetőségeim",
+		text: "ELÉRHETŐSÉGEIM",
 		purpose: 'Contact',
 		link: "",
 	},
-	{
-		id: 2,
-		text: "Blog",
-		purpose: 'Blog',
-		link: "",
-	}
+	// {
+	// 	id: 2,
+	// 	text: "BŐVEBBEN",
+	// 	purpose: 'Blog',
+	// 	link: "",
+	// }
 ];
 
 export default menuList;

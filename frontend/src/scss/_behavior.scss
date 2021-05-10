@@ -1,0 +1,9 @@
+html, body {
+	scroll-behavior: smooth !important;
+	-webkit-tap-highlight-color: transparent; /* for removing tap highlight */
+}
+
+#app {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}

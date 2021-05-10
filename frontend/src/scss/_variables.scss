@@ -1,3 +1,13 @@
-$primary: #BDC3C7;
-$lifted: #1f1f1f4d;
-$secondary: #9BFF5D;
+$text: #dedede; // 87% opacity white
+$background: #121212;
+$primary: #9BFF5D;
+$primary-light: findLightColor($primary);
+$primary-dark: findDarkColor($primary);
+$primary-invert: findColorInvert($primary);
+
+$info: #3ddfd7;
+$success: #87e187;
+$warning: #e7ff34;
+$danger: #2dac2d;
+$dark: #1b1b1b;
+

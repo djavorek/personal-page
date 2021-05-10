@@ -1,0 +1,7 @@
+<svg  version="1.1" xmlns="http://www.w3.org/2000/svg">
+   <style type="text/css">
+		.greenC{fill:#bdc3c72d;}
+		.greyC{fill:#BDC3C7;}
+	</style>
+	<circle  class="greyC" cx="700" cy="400" r="60"/>
+</svg>

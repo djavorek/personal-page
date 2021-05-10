@@ -1,5 +1,5 @@
 <template>
-	<div id="menu">
+	<div id="menu" class="glassmorphism">
 		<MenuItem 
 			v-for="item in menuList"
 			:item="item"
@@ -23,15 +23,35 @@ export default {
 		menuList: MenuList,
 		selected: 0
 	}
-  }
+  },
+  
+  watch: {
+    selected(newValue, oldValue) {
+		if (newValue !== oldValue) {
+			this.$emit('changed', newValue);
+		} 
+    },
+  },
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
+	@import '@/scss/common.scss';
+
 	#menu {
-		padding-left: 5vw;
-		min-width: 60vh;
+		padding: 5vh;
+		max-width: 98vw;
 	}
 
+	@media screen and (min-width: 768px) {
+		#menu {
+			box-sizing: border-box;
+			min-height: 98vh;
+			border-radius: 0;
+			border-right: 0;
+
+			background-color: lighten($dark, 0.2);
+		}
+	}
 
 </style>

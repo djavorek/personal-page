@@ -1,11 +1,10 @@
 <template>
-  <div class="itemHolder">
-	<a class="menuItem"
+  <div class="menuHolder">
+	<a class="menuItem" href="#articleHolder"
+	v-bind:class="{ selected: selected }"
 	v-on:click="$emit('select', item.id)">
 		{{item.text}}
 	</a>
-	<hr class="indicator" v-show="selected"/>
-
   </div>
 </template>
 
@@ -16,30 +15,34 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-	.itemHolder {
-		margin: 3vh 1vh 3vh 0vh;
+	.menuHolder {
+		margin: 3em 1em 3em 0;
 		display: flex;
 		align-items: center;
-		width: 40vh;
 	}
 
 	.menuItem {
-		font-size: 2.6rem;
-		text-align: right;
-		min-width: 200px;
-		padding: 1rem;
+		font-size: calc(1.5rem + 0.25vw);
+		text-align: center;
+		width: 100%;
+		text-decoration: none;
+		background: linear-gradient($primary, $warning) bottom / 0 .1em no-repeat;
+		background-position: right bottom;
+		transition: .5s background-size;
+	}
+
+	.selected {
+		background-size: 100% .1em;
 	}
 
 	.indicator {
-		width: 10vw;
+		width: 10%;
 		height: 0.3vh;
-		background-color: $secondary;
-		margin-left: auto;
-		margin-right: 0;
+		background-color: $primary;
 	}
 
 	.menuItem:hover {
-		color: white;
+		color: $warning;
 	}
 
 </style>
