@@ -52,6 +52,8 @@ export default {
     },
 
     handleFormSubmit() {
+      console.log(location.protocol + '//' + location.hostname + '/.netlify/functions/send-email');
+
         const config = {
             method: 'POST',
             header: { "Content-Type": "application/x-www-form-urlencoded" },
@@ -62,11 +64,11 @@ export default {
         };
 
         fetch(
-            location.href, 
+            location.protocol + '//' + location.hostname + '/.netlify/functions/send-email', 
             config
         )
         .then(document.getElementById("instant-contact").innerHTML = `
-          <div>
+          <div style='font-size: 2.5rem;'>
             Megkaptam az üzeneted.
           </div>
         `)
@@ -146,5 +148,4 @@ export default {
       color: $background;
     }
   }
-
 </style>

@@ -42,7 +42,7 @@ export default {
 }
 
 #contact-img {
-  height: 40vh;
+  height: 25vw;
   width: 100%;
   display: block;
   padding-top: 2vw;
