@@ -112,6 +112,10 @@ export default {
     border: solid 1px $text;
   }
 
+  input, textarea {
+    color: $text;
+  }
+
   textarea {
     resize: none;
   }

@@ -16,9 +16,11 @@ function escapeOutput(toOutput){
 }
 
 exports.handler = function(event, context, callback) {
-  const msg = escapeOutput(event.data.message);
-  const from = escapeOutput(event.data.name);
-  const contact = escapeOutput(event.data.contact);
+  const body = JSON.parse(event.body).payload;
+
+  const msg = escapeOutput(body.data.message);
+  const from = escapeOutput(body.data.name);
+  const contact = escapeOutput(body.data.contact);
 
   client.transmissions.send({
     content: {
