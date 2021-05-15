@@ -27,16 +27,16 @@ export default {
   
   watch: {
     selected(newValue, oldValue) {
-		if (newValue !== oldValue) {
-			this.$emit('changed', newValue);
-		} 
+      if (newValue !== oldValue) {
+        this.$emit('changed', newValue);
+      } 
     },
   },
 }
 </script>
 
 <style scoped lang="scss">
-	@import '@/scss/common.scss';
+	@use '@/scss/common';
 
 	#menu {
 		padding: 5vh;
@@ -50,7 +50,7 @@ export default {
 			border-radius: 0;
 			border-right: 0;
 
-			background-color: lighten($dark, 0.2);
+			background-color: lighten(common.$dark, 0.2);
 		}
 	}
 

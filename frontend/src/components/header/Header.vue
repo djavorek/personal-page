@@ -4,7 +4,7 @@
       <TitleBox/>
     </div>
     <div>
-      <a href="#menu">
+      <a href="#content">
 		<font-awesome-icon id="downButton" icon="angle-double-down" size="10x" />
       </a>
     </div>
@@ -24,7 +24,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-	@import '@/scss/animation.scss';
+	@use '@/scss/animation';
 
 	#header {
 		height: 100vh;
@@ -51,7 +51,7 @@ export default {
 
 	#downButton {
 		margin-top: 20vh;
-		color: $primary;
+		color: black;
 		z-index: 30;
 		
 		-webkit-animation-duration: 1s;

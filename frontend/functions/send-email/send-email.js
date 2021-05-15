@@ -1,3 +1,5 @@
+import getEmailTemplate from './emailTemplate';
+
 const SparkPost = require('sparkpost');
 
 const options = {
@@ -15,25 +17,27 @@ function escapeOutput(toOutput){
       .replace(/\//g, '&#x2F');
 }
 
-exports.handler = function(event, context, callback) {
+exports.handler = async function(event, context) {
   const body = JSON.parse(event.body).payload;
 
   const msg = escapeOutput(body.data.message);
   const from = escapeOutput(body.data.name);
   const contact = escapeOutput(body.data.contact);
 
-  client.transmissions.send({
-    content: {
-      from: 'kapcsolat@javorekdenes.hu',
-      subject: `Instant üzenet - ${from} - ${contact}`,
-      html:
-        `<html><body><p>${msg}</p></body></html>`
-    },
-    recipients: [{ address: 'javorek.denes@gmail.com' }]
-  }).then(() => {
-    console.log('Email sent')
-  }).catch((e) => {
+  try {
+    await client.transmissions.send({
+      content: {
+        from: 'kapcsolat@javorekdenes.hu',
+        subject: `Közvetlen üzenet - ${from}`,
+        html: getEmailTemplate(from, contact, msg),
+      },
+      recipients: [{ address: 'javorek.denes@gmail.com' }]
+    });
+
+    return true;
+  } catch (e) {
     console.warn('Email could not be sent: ', e)
-  });
+    return false;
+  }
 }
 

@@ -2,16 +2,6 @@ const path = require('path')
 const PrerenderSPAPlugin = require('prerender-spa-plugin')
 
 module.exports = {
-	css: {
-		loaderOptions: {
-			sass: {
-				prependData: `
-				@import "@/scss/_variables.scss";
-				@import "@/scss/_behavior.scss";
-		  		`
-			}
-		}
-	},
 	chainWebpack: config => {
         config
         .plugin('html')

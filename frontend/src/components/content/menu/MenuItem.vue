@@ -1,6 +1,6 @@
 <template>
   <div class="menuHolder">
-	<a class="menuItem" href="#articleHolder"
+	<a class="menuItem notouchy" href="#content"
 	v-bind:class="{ selected: selected }"
 	v-on:click="$emit('select', item.id)">
 		{{item.text}}
@@ -15,6 +15,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+	@use '@/scss/common';
+
 	.menuHolder {
 		margin: 3em 1em 3em 0;
 		display: flex;
@@ -26,9 +28,9 @@ export default {
 		text-align: center;
 		width: 100%;
 		text-decoration: none;
-		background: linear-gradient($primary, $warning) bottom / 0 .1em no-repeat;
+		background: linear-gradient(common.$primary, common.$info) bottom / 0 .1em no-repeat;
 		background-position: right bottom;
-		transition: .5s background-size;
+		transition: .6s background-size;
 	}
 
 	.selected {
@@ -38,11 +40,11 @@ export default {
 	.indicator {
 		width: 10%;
 		height: 0.3vh;
-		background-color: $primary;
+		background-color: common.$primary;
 	}
 
 	.menuItem:hover {
-		color: $warning;
+		color: common.$info;
 	}
 
 </style>

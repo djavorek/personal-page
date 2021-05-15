@@ -1,9 +1,9 @@
 <template>
   <div id="app" :style="{ backgroundImage: 'url(' + require('@/assets/bg_grey.png') + ')' }" >
-    <div id="header">
+    <div id="header" class="notouchy">
       <Header />
     </div>
-    <div id="content">
+    <div>
       <Content />
     </div>
   </div>
@@ -18,11 +18,45 @@ export default {
   components: {
     Header,
     Content
+  },
+
+  data: function() {
+    return {
+      goatCounter: {
+        id: 'goatCounterScript',
+        source: '//gc.zgo.at/count.js',
+        data: 'https://javorekdenes.goatcounter.com/count',
+      },
+    }
+  },
+  mounted() {
+    // Loading GoatCounter script, https://github.com/zgoat/goatcounter
+      if (document.getElementById(this.goatCounter.id)) { 
+      return;
+    }
+
+    let script = document.createElement('script');
+
+    script.setAttribute('src', this.goatCounter.source);
+    script.setAttribute('data-goatcounter', this.goatCounter.data);
+    script.setAttribute('id', this.goatCounter.id);
+    script.setAttribute('type', 'text/javascript');
+    script.setAttribute('async', 'async');
+    
+    document.head.appendChild(script);
+  },
+  beforeDestroy() {
+    let script = document.getElementById(this.goatCounter.id)
+    if (script) {
+      script.remove();
+    }
   }
 }
 </script>
 
 <style lang="scss">
+  @use '@/scss/common';
+
 	@font-face {
 		font-family: "Merriweather";
 		src: local("Merriweather"),
@@ -40,22 +74,20 @@ export default {
 		background-repeat: no-repeat;
 		background-size: cover;
 
-		-webkit-touch-callout: none; /* iOS Safari */
-		-webkit-user-select: none; /* Safari */
-		-khtml-user-select: none; /* Konqueror HTML */
-		-moz-user-select: none; /* Old versions of Firefox */
-    -ms-user-select: none; /* Internet Explorer/Edge */
-    user-select: none; /* Non-prefixed version, currently
-							supported by Chrome, Edge, Opera and Firefox */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 	}
 
 	html, body {
 		margin: 0;
 		padding: 0;
 
-		color: $text;
+		color: common.$text;
 		font-family: "Merriweather", Helvetica, Arial;
 		font-size: 62.5%; // Use REM for font-size everywhere, 1.0 rem = 10 px
+
+    scroll-behavior: smooth !important;
+    -webkit-tap-highlight-color: transparent; /* for removing tap highlight */
 	}
 
 	a {

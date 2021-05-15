@@ -15,3 +15,39 @@
 		transform:         translateY(-7px)
 	}
 }
+
+
+@mixin border-load-anim($primary-color) {
+	@keyframes pencil {
+		0% {
+		  transition: border-color 0.5s ease-in-out 0.25s;
+		  border-color: $primary-color transparent transparent transparent;
+		  top:0%;
+		  left: 0%;
+		}
+		25% {
+		  transition: border-color 0.5s ease-in-out 0.25s;
+		  border-color: transparent $primary-color transparent transparent;
+		  top:0%;
+		  right: 100%;
+		}
+		50% {
+		  transition: border-color 0.5s ease-in-out 0.25s;
+		  border-color: transparent transparent $primary-color transparent;
+		  top:100%;
+		  right: 100%;
+		}
+		75% {
+		  transition: border-color 0.5s ease-in-out 0.25s;
+		  border-color: transparent transparent transparent $primary-color;
+		  top:100%;
+		  right: 0%;
+		}
+		100% {
+		  transition: border-color 0.5s ease-in-out 0.25s;
+		  border-color: $primary-color transparent transparent transparent;
+		  top:0%;
+		  right: 0%;
+		}
+	}
+}

@@ -10,8 +10,6 @@
 </template>
 
 <style lang="scss" scoped>
-	@import '@/scss/common.scss';
-
 	#titleBox {
 		display: inline-block;
 		padding: 2vh 3vw;
@@ -19,7 +17,7 @@
 		font-size: 62.5%;
 		font-style: normal;
 		font-weight: 300;
-		line-height: calc(.5rem + 8vh + 1vw);
+		line-height: calc(7rem + 2vw);
 		text-align: center;
 		background: rgba(black, 0.8);
 
@@ -36,5 +34,4 @@
 		font-size: calc(3.9rem + 1vw);
 		// font-size: 5.2rem;
 	}
-
 </style>

@@ -18,7 +18,6 @@
 import Email from './contact/Email';
 import Social from './contact/Social';
 
-
 export default {
   name: 'Contact',
   components: {
@@ -42,7 +41,7 @@ export default {
 }
 
 #contact-img {
-  height: 25vw;
+  height: 35vh;
   width: 100%;
   display: block;
   padding-top: 2vw;

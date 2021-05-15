@@ -70,12 +70,12 @@ export default {
       expImg: require('@/assets/img/about_exp.svg'),
       hobbyImg: require('@/assets/img/about_hobby.svg')
     }
-  }
+  },
 }
 </script>
 
 <style scoped lang="scss">
-  @import '@/scss/common.scss';
+  @use '@/scss/common';
 
   #about-container {
     font-size: calc(1.5rem + 0.25vw);

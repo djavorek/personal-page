@@ -1,7 +1,7 @@
 <template>
   <div id="email">
     <h1 id="email-title">ITT AZONNAL ÍRHATSZ</h1>
-    <div id="email-writer">
+    <div id="email-writer" v-if="!this.sent">
       <form 
         id="instant-contact"
         name="instant-contact"
@@ -10,6 +10,7 @@
         data-netlify="true"
         data-netlify-honeypot="bot-field"
         @submit.prevent="handleFormSubmit"
+        v-bind:class="{ load: this.loading, error: this.hasError }"
       >
         <div hidden aria-hidden="true">
           <label>
@@ -24,6 +25,9 @@
         <input id="submit" type="submit" v-on:submit.prevent="handleFormSubmit" value="KÜLDÉS">
       </form>
     </div>
+    <div v-else>
+      Megkaptam az üzeneted.
+    </div>
   </div>
 </template>
 
@@ -33,54 +37,58 @@ export default {
   name: 'Email',
   data() {
     return {
-      form : {
+      form: {
         name: '',
         contact: '',
         message: '',
       },
+      loading: false,
+      sent: false,
+      hasError: false, 
     }
   },
   methods: {
     encode(data) {  
-        const formData = new FormData();
-        
-        for (const key of Object.keys(data)) {
-            formData.append(key, data[key]);
-        }
-        
-        return formData;
+      const formData = new FormData();
+      
+      for (const key of Object.keys(data)) {
+          formData.append(key, data[key]);
+      }
+      
+      return formData;
     },
 
     handleFormSubmit() {
-      console.log(location.protocol + '//' + location.hostname + '/.netlify/functions/send-email');
+      const config = {
+          method: 'POST',
+          header: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: this.encode({
+            "form-name": "instant-contact",
+            ...this.form,
+          }),
+      };
 
-        const config = {
-            method: 'POST',
-            header: { "Content-Type": "application/x-www-form-urlencoded" },
-            body: this.encode({
-              "form-name": "instant-contact",
-              ...this.form,
-            }),
-        };
-
-        fetch(
-            location.protocol + '//' + location.hostname + '/.netlify/functions/send-email', 
-            config
-        )
-        .then(document.getElementById("instant-contact").innerHTML = `
-          <div style='font-size: 2.5rem;'>
-            Megkaptam az üzeneted.
-          </div>
-        `)
-        .catch(error => console.log(error))
-
+      this.loading = true;
+      fetch(location.protocol + '//' + location.hostname + '/.netlify/functions/send-email', config)
+        .then(() => {
+          this.loading = false;
+          this.sent = true;
+        })
+        .catch(e => {
+          console.warn(`Error while sending email: ${e}`);
+          this.loading = false;
+          this.hasError = true;
+        })
     }
   }
 }
 </script>
 
 <style scoped lang="scss">
-  @import '@/scss/_variables.scss';
+  @use '@/scss/common';
+  @use '@/scss/animation';
+
+  @include animation.border-load-anim(common.$primary);
   
   #email {
     min-height: 40vh;
@@ -90,6 +98,11 @@ export default {
 
   #email-title {
     font-size: 3rem;
+  }
+
+  .error {
+    border: 2px solid common.$warning;
+    box-sizing: border-box;
   }
 
   #form {
@@ -109,11 +122,11 @@ export default {
     background: transparent;
     outline: none;
     
-    border: solid 1px $text;
+    border-top: solid 1px common.$text;
   }
 
   input, textarea {
-    color: $text;
+    color: common.$text;
   }
 
   textarea {
@@ -132,7 +145,7 @@ export default {
   #submit {
     font-size: 2.875em;
 
-    color: $primary;
+    color: common.$primary;
 
     outline:none;
     cursor: pointer;
@@ -141,15 +154,22 @@ export default {
     border-top: none;
 
     background: {
-      image: linear-gradient(45deg, $primary 50%, transparent 50%);
+      image: linear-gradient(45deg, common.$primary 50%, transparent 50%);
       position: 100%;
       size: 400%;
     }
     transition: 1s ease-out;
     
-    &:hover {
-      background-position: 0;
-      color: $background;
+    @media(hover: hover) and (pointer: fine) {
+      &:hover {
+        background-position: 0;
+        color: common.$background;
+      }
     }
+  }
+
+  .load {
+    border: 3px solid transparent;
+    animation: pencil 3s infinite linear;
   }
 </style>

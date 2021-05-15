@@ -35,7 +35,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-  @import '@/scss/common.scss';
+  @use '@/scss/common';
 
   #articleHolder {
     box-sizing: border-box;
@@ -43,15 +43,15 @@ export default {
     min-height: 98vh;
     max-width: 98vw;
     padding: 2em;
-    border-color: $primary;
-    box-shadow: -3vw 3vw 3vw -3vw lighten($dark, 0.2);
+    border-color: common.$primary;
+    box-shadow: -3vw 3vw 3vw -3vw lighten(common.$dark, 0.2);
   }
 
   .slide-leave-active {
-    transition: 0.3s;
+    transition: 0.2s;
   }
   .slide-enter-active {
-    transition: 0.6s;
+    transition: 0.4s;
   }
   .slide-enter {
     transform: translate(-100%, 0);
