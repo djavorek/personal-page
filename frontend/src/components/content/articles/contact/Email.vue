@@ -80,10 +80,9 @@ export default {
       const config = {
         method: "POST",
         header: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: this.encode({
-          "form-name": "instant-contact",
+        body: new URLSearchParams(this.encode({
           ...this.form,
-        }),
+        })).toString(),
       };
 
       this.loading = true;

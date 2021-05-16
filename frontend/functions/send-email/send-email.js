@@ -1,6 +1,7 @@
-import getEmailTemplate from './emailTemplate';
-
 const SparkPost = require('sparkpost');
+const queryString = require('query-string');
+
+const emailTemplate = require('./emailTemplate');
 
 const options = {
   endpoint: 'https://api.eu.sparkpost.com:443',
@@ -18,26 +19,31 @@ function escapeOutput(toOutput){
 }
 
 exports.handler = async function(event, context) {
-  const body = JSON.parse(event.body).payload;
+  const parsed = queryString.parse(event.body);
 
-  const msg = escapeOutput(body.data.message);
-  const from = escapeOutput(body.data.name);
-  const contact = escapeOutput(body.data.contact);
+  const msg = escapeOutput(parsed.message);
+  const from = escapeOutput(parsed.name);
+  const contact = escapeOutput(parsed.contact);
 
   try {
     await client.transmissions.send({
       content: {
         from: 'kapcsolat@javorekdenes.hu',
         subject: `Közvetlen üzenet - ${from}`,
-        html: getEmailTemplate(from, contact, msg),
+        html: emailTemplate.getEmailTemplate(from, contact, msg),
       },
       recipients: [{ address: 'javorek.denes@gmail.com' }]
     });
 
-    return Promise.resolve();
+    return {
+      statusCode: 200,
+      body: JSON.stringify({message: "Sent"})
+    }
   } catch (e) {
-    console.warn('Email could not be sent: ', e)
-    throw e
+    return {
+      statusCode: 500,
+      body: JSON.stringify({message: "Failed to send."})
+    }
   }
 }
 

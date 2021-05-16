@@ -264,7 +264,9 @@ const getEmailTemplate = (from, contact, msg) => {
                                           <tbody>
                                             <tr>
                                               <td style='width:30px;'>
-                                                <img alt='Facebook' height='auto' src='https://assets.opensourceemails.com/imgs/lifestyle/Fct0c2xMRUKPHBdMCcnf_icon-facebook.png' style='border:none;display:block;font-size:13px;height:auto;outline:none;text-decoration:none;width:100%;' width='30' />
+                                                <a href="https://www.facebook.com/javidenes/">
+                                                  <img alt='Facebook' height='auto' src='https://assets.opensourceemails.com/imgs/lifestyle/Fct0c2xMRUKPHBdMCcnf_icon-facebook.png' style='border:none;display:block;font-size:13px;height:auto;outline:none;text-decoration:none;width:100%;' width='30' />
+                                                </a>
                                               </td>
                                             </tr>
                                           </tbody>
@@ -275,7 +277,9 @@ const getEmailTemplate = (from, contact, msg) => {
                                           <tbody>
                                             <tr>
                                               <td style='width:30px;'>
+                                                <a href="https://www.linkedin.com/in/denes-javorek/">
                                                 <img alt='Linked In' height='auto' src='https://assets.opensourceemails.com/imgs/lifestyle/BHraIlyShi7koHdeMEbD_icon-linkedin.png' style='border:none;display:block;font-size:13px;height:auto;outline:none;text-decoration:none;width:100%;' width='30' />
+                                                </a>
                                               </td>
                                             </tr>
                                           </tbody>
@@ -316,6 +320,4 @@ const getEmailTemplate = (from, contact, msg) => {
   `;
 }
 
-export default {
-  getEmailTemplate,
-}
+exports.getEmailTemplate = getEmailTemplate;
