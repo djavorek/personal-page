@@ -1,7 +1,7 @@
 <template>
   <div id="email">
     <h1 id="email-title">ITT AZONNAL ÍRHATSZ</h1>
-    <div id="email-writer" v-if="!this.sent">
+    <div v-if="!this.sent">
       <form 
         id="instant-contact"
         name="instant-contact"
@@ -24,6 +24,9 @@
         <textarea id="message" type="text" v-model="form.message" placeholder="ÜZENETED"></textarea>
         <input id="submit" type="submit" v-on:submit.prevent="handleFormSubmit" value="KÜLDÉS">
       </form>
+      <div class="errorMsg" v-if="this.hasError">
+        <span>Ez most nem sikerült. Ha nem vagy nagyon csalódott, akkor keress meg e-mailben vagy nézz vissza később.</span>
+      </div>
     </div>
     <div v-else>
       Megkaptam az üzeneted.
@@ -69,6 +72,7 @@ export default {
       };
 
       this.loading = true;
+      this.hasError = false;
       fetch(location.protocol + '//' + location.hostname + '/.netlify/functions/send-email', config)
         .then(() => {
           this.loading = false;
@@ -87,8 +91,6 @@ export default {
 <style scoped lang="scss">
   @use '@/scss/common';
   @use '@/scss/animation';
-
-  @include animation.border-load-anim(common.$primary);
   
   #email {
     min-height: 40vh;
@@ -98,11 +100,6 @@ export default {
 
   #email-title {
     font-size: 3rem;
-  }
-
-  .error {
-    border: 2px solid common.$warning;
-    box-sizing: border-box;
   }
 
   #form {
@@ -122,7 +119,8 @@ export default {
     background: transparent;
     outline: none;
     
-    border-top: solid 1px common.$text;
+    border: 0px;
+    border-bottom: solid 1px common.$text;
   }
 
   input, textarea {
@@ -138,10 +136,6 @@ export default {
   textarea::-moz-placeholder {  /* Firefox 19+ */ padding-top: 2em; }
   textarea:-ms-input-placeholder { padding-top: 2em; }
 
-  #submit, #message, #contact {
-    border-top: none;
-  }
-
   #submit {
     font-size: 2.875em;
 
@@ -149,9 +143,7 @@ export default {
 
     outline:none;
     cursor: pointer;
-    
-    border: solid 1px #b3aca7;
-    border-top: none;
+    border-bottom: 0px;
 
     background: {
       image: linear-gradient(45deg, common.$primary 50%, transparent 50%);
@@ -169,7 +161,20 @@ export default {
   }
 
   .load {
-    border: 3px solid transparent;
-    animation: pencil 3s infinite linear;
+    @include animation.border-load-anim(common.$primary);
+
+    border: 2px solid transparent;
+    animation: pencil 2s infinite linear;
+  }
+
+  .error {
+    border: 2px solid common.$warning;
+  }
+
+  .errorMsg {
+    padding: .6em;
+    font-family: "Oswald", Helvetica, Arial;
+    font-size: 1.9rem;
+    background-color: common.$warning;
   }
 </style>

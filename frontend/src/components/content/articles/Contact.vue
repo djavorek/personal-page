@@ -52,12 +52,10 @@ export default {
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-evenly;
-  padding: 2em;
 }
 
 #direct-email {
   flex-basis: 40%;
-  margin: 1em
 }
 
 #contact-texts {

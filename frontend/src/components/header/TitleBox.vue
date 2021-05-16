@@ -14,9 +14,6 @@
 		display: inline-block;
 		padding: 2vh 3vw;
 
-		font-size: 62.5%;
-		font-style: normal;
-		font-weight: 300;
 		line-height: calc(7rem + 2vw);
 		text-align: center;
 		background: rgba(black, 0.8);

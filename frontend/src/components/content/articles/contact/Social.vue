@@ -1,15 +1,15 @@
 <template>
   <div id="social">
-	<h1 id="social-title">TOVÁBBI ELÉRHETŐSÉGEK</h1>
-	<div class="contact">
-		<img :src="mailImg"/><p> javorek.denes@gmail.com</p>
-	</div>
-	<div class="contact">
-		<img :src="inImg"/><p> /in/denes-javorek/</p>
-	</div>
-	<div class="contact">
-		<img :src="fbImg"/><p> facebook.com/javidenes/</p>
-	</div>
+    <h1>TOVÁBBI ELÉRHETŐSÉGEK</h1>
+    <div class="contact">
+      <img :src="mailImg"/><span>javorek.denes@gmail.com</span>
+    </div>
+    <div class="contact">
+      <img :src="inImg"/><span>/in/denes-javorek/</span>
+    </div>
+    <div class="contact">
+      <img :src="fbImg"/><span>facebook.com/javidenes/</span>
+    </div>
   </div>
 </template>
 
@@ -28,14 +28,28 @@ export default {
 </script>
 
 <style scoped lang="scss">
+  @use '@/scss/common';
+
+  #social {
+    border: solid 2px common.$primary;
+    padding: 3em;
+  }
+
 	.contact {
-		display: inline;
+		padding-top: 2em;
 	}
 
 	img {
 		width: 5rem;
 		vertical-align: middle;
 	}
+
+  span {
+    font-family: "Oswald", Helvetica, Arial;
+    letter-spacing: .2ch;
+    margin-left: 1em;
+    font-size: 1.8rem;
+  }
 
 
 </style>

@@ -51,7 +51,7 @@ export default {
 
 	#downButton {
 		margin-top: 20vh;
-		color: black;
+		color: white;
 		z-index: 30;
 		
 		-webkit-animation-duration: 1s;

@@ -34,10 +34,10 @@ exports.handler = async function(event, context) {
       recipients: [{ address: 'javorek.denes@gmail.com' }]
     });
 
-    return true;
+    return Promise.resolve();
   } catch (e) {
     console.warn('Email could not be sent: ', e)
-    return false;
+    throw e
   }
 }
 
