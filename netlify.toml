@@ -16,4 +16,4 @@
   command = "npm run build"
   
 [functions]
-  directory = "lambdas"
+  directory = "functions"

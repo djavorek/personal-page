@@ -1,48 +1,53 @@
 <template>
   <div class="menuHolder">
-	<a class="menuItem" href="#articleHolder"
-	v-bind:class="{ selected: selected }"
-	v-on:click="$emit('select', item.id)">
-		{{item.text}}
-	</a>
+    <a
+      class="menuItem notouchy"
+      href="#content"
+      v-bind:class="{ selected: selected }"
+      v-on:click="$emit('select', item.id)"
+    >
+      {{ item.text }}
+    </a>
   </div>
 </template>
 
 <script>
 export default {
-	props: ['item', 'selected']
-}
+  props: ["item", "selected"],
+};
 </script>
 
 <style lang="scss" scoped>
-	.menuHolder {
-		margin: 3em 1em 3em 0;
-		display: flex;
-		align-items: center;
-	}
+@use '@/scss/common';
 
-	.menuItem {
-		font-size: calc(1.5rem + 0.25vw);
-		text-align: center;
-		width: 100%;
-		text-decoration: none;
-		background: linear-gradient($primary, $warning) bottom / 0 .1em no-repeat;
-		background-position: right bottom;
-		transition: .5s background-size;
-	}
+.menuHolder {
+  margin: 3em 1em 3em 0;
+  display: flex;
+  align-items: center;
+}
 
-	.selected {
-		background-size: 100% .1em;
-	}
+.menuItem {
+  font-size: calc(1.5rem + 0.25vw);
+  text-align: center;
+  width: 100%;
+  text-decoration: none;
+  background: linear-gradient(common.$primary, common.$info) bottom / 0 0.1em
+    no-repeat;
+  background-position: right bottom;
+  transition: 0.6s background-size;
+}
 
-	.indicator {
-		width: 10%;
-		height: 0.3vh;
-		background-color: $primary;
-	}
+.selected {
+  background-size: 100% 0.1em;
+}
 
-	.menuItem:hover {
-		color: $warning;
-	}
+.indicator {
+  width: 10%;
+  height: 0.3vh;
+  background-color: common.$primary;
+}
 
+.menuItem:hover {
+  color: common.$info;
+}
 </style>

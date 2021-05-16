@@ -1,6 +1,10 @@
+@use 'variables';
+@forward 'variables';
+@forward 'behavior';
+
 /* slightly transparent fallback */
 .glassmorphism {
-	background-color: rgba($dark, 0.9);
+	background-color: rgba(variables.$dark, 0.9);
 	border: 0.2px solid white;
 	border-radius: 0.5rem;
   }
@@ -8,12 +12,12 @@
 /* if backdrop support: very transparent and blurred */
 @supports ((-webkit-backdrop-filter: blur(2em)) or (backdrop-filter: blur(2em))) {
 	.glassmorphism-blur {
-		background-color: $dark;
+		background-color: variables.$dark;
 		-webkit-backdrop-filter: blur(5em);
 		backdrop-filter: blur(5em);
 	}
 }
 
 .greenText {
-	color: $primary;
+	color: variables.$primary;
 }

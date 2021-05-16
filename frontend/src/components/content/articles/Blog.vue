@@ -1,17 +1,13 @@
 <template>
-    <div id="blog" class="card">
-      <span>Blog</span>
-    </div>
+  <div id="blog" class="card">
+    <span>Blog</span>
+  </div>
 </template>
 
 <script>
-
 export default {
-  name: 'Blog'
-}
+  name: "Blog",
+};
 </script>
 
-<style scoped lang="scss">
-
-
-</style>
+<style scoped lang="scss"></style>

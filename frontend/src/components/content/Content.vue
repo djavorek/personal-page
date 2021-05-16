@@ -4,17 +4,18 @@
       <Menu v-on:changed="selectMenu" />
     </div>
     <div id="rightCont" class="no-bottom">
-       <ArticleBox v-bind:menu="menu" /> <!-- v-bind to pass as Number  -->
+      <ArticleBox v-bind:menu="menu" />
+      <!-- v-bind to pass as Number  -->
     </div>
   </div>
 </template>
 
 <script>
-import Menu from './menu/Menu.vue';
-import ArticleBox from './ArticleBox.vue';
+import Menu from "./menu/Menu.vue";
+import ArticleBox from "./ArticleBox.vue";
 
 export default {
-  name: 'Content',
+  name: "Content",
   components: {
     Menu,
     ArticleBox,
@@ -27,20 +28,19 @@ export default {
   methods: {
     selectMenu(selected) {
       this.menu = selected;
-    }
-  }
-}
+    },
+  },
+};
 </script>
 
 <style scoped lang="scss">
-
 #content {
   display: block;
 
-     @media only screen and (min-width: 768px) {
-        display: flex;
-        width: 98vw;
-     }
+  @media only screen and (min-width: 768px) {
+    display: flex;
+    width: 98vw;
+  }
 }
 
 .no-bottom {
@@ -55,6 +55,4 @@ export default {
 #rightCont {
   flex: 80%;
 }
-
-
 </style>
