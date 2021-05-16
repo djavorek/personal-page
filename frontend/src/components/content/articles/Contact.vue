@@ -1,39 +1,38 @@
 <template>
   <div>
     <div id="img-center">
-      <img id="contact-img" :src="contactImg"/>
+      <img id="contact-img" :src="contactImg" />
     </div>
     <div id="contact-container">
       <div id="direct-email">
-        <Email/>
+        <Email />
       </div>
       <div id="contact-texts">
-        <Social/>
+        <Social />
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import Email from './contact/Email';
-import Social from './contact/Social';
+import Email from "./contact/Email";
+import Social from "./contact/Social";
 
 export default {
-  name: 'Contact',
+  name: "Contact",
   components: {
     Email,
-    Social
+    Social,
   },
   data() {
     return {
-        contactImg: require('@/assets/img/contact_instant.svg'),
-    }
+      contactImg: require("@/assets/img/contact_instant.svg"),
+    };
   },
-}
+};
 </script>
 
 <style scoped lang="scss">
-
 #img-center {
   margin: 0 auto;
   width: 100%;
@@ -64,13 +63,12 @@ export default {
 }
 
 @media screen and (max-width: 1000px) {
-    #direct-email {
-      flex-basis: auto;
-    }
-   
-    #contact-texts {
-      flex-basis: auto;
-    }
-	}
+  #direct-email {
+    flex-basis: auto;
+  }
 
+  #contact-texts {
+    flex-basis: auto;
+  }
+}
 </style>

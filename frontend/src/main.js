@@ -1,12 +1,12 @@
-import Vue from 'vue'
+import Vue from "vue";
 
-import './plugins/fontawesome'
+import "./plugins/fontawesome";
 
-import App from './App.vue'
+import App from "./App.vue";
 
-Vue.config.productionTip = false
+Vue.config.productionTip = false;
 
 /* eslint-disable no-new */
 new Vue({
-  render: h => h(App),
-}).$mount('#app');
+  render: (h) => h(App),
+}).$mount("#app");
