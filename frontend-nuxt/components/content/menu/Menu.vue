@@ -2,17 +2,19 @@
   <div id="menu" class="glassmorphism">
     <MenuItem
       v-for="item in menuList"
-      :item="item"
       :key="item.id"
+      :item="item"
       :selected="selected == item.id"
-      v-on:select="selected = $event"
+      @select="selected = $event"
     />
   </div>
 </template>
 
 <script>
+import MenuList from './MenuList';
+
 export default {
-  data: function () {
+  data() {
     return {
       menuList: MenuList,
       selected: 0,
@@ -22,7 +24,7 @@ export default {
   watch: {
     selected(newValue, oldValue) {
       if (newValue !== oldValue) {
-        this.$emit("changed", newValue);
+        this.$emit('changed', newValue);
       }
     },
   },

@@ -1,7 +1,8 @@
+/* eslint-disable object-shorthand */
 <template>
   <div
     id="app"
-    :style="{ backgroundImage: `url(${backgroundPath})` }"
+    :style="{ backgroundImage: 'url(' + require('@/assets/bg_grey.png') + ')' }"
   >
     <div id="header" class="notouchy">
       <Header />
@@ -13,11 +14,9 @@
 </template>
 
 <script>
-
 export default {
   data() {
     return {
-      backgroundPath: '~assets/bg_grey.png',
       goatCounter: {
         id: 'goatCounterScript',
         source: '//gc.zgo.at/count.js',
