@@ -17,9 +17,9 @@
 export default {
   data() {
     return {
-      mailImg: require("@/assets/img/contact_mail.svg"),
-      inImg: require("@/assets/img/contact_in.svg"),
-      fbImg: require("@/assets/img/contact_fb.svg"),
+      mailImg: require('@/assets/img/contact_mail.svg'),
+      inImg: require('@/assets/img/contact_in.svg'),
+      fbImg: require('@/assets/img/contact_fb.svg'),
     };
   },
 };
@@ -43,7 +43,7 @@ img {
 }
 
 span {
-  font-family: "Oswald", Helvetica, Arial;
+  font-family: 'Oswald', Helvetica, Arial;
   letter-spacing: 0.2ch;
   margin-left: 1em;
   font-size: 1.8rem;

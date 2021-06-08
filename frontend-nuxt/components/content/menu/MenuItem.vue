@@ -3,8 +3,8 @@
     <a
       class="menuItem notouchy"
       href="#content"
-      v-bind:class="{ selected: selected }"
-      v-on:click="$emit('select', item.id)"
+      :class="{ selected: selected }"
+      @click="$emit('select', item.id)"
     >
       {{ item.text }}
     </a>
@@ -13,7 +13,21 @@
 
 <script>
 export default {
-  props: ["item", "selected"],
+  props: {
+    item: {
+      type: Object,
+      default() {
+        return {
+          id: -1,
+          text: 'Menu is out of service',
+        };
+      },
+    },
+    selected: {
+      type: Boolean,
+      default: false,
+    },
+  },
 };
 </script>
 

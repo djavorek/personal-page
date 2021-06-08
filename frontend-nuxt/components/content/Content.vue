@@ -1,10 +1,10 @@
 <template>
   <div id="content">
     <div id="leftCont" class="no-bottom">
-      <Menu v-on:changed="selectMenu" />
+      <Menu @changed="selectMenu" />
     </div>
     <div id="rightCont" class="no-bottom">
-      <ArticleBox v-bind:menu="menu" />
+      <ArticleBox :menu="menu" />
       <!-- v-bind to pass as Number  -->
     </div>
   </div>
@@ -12,7 +12,7 @@
 
 <script>
 export default {
-  data: function () {
+  data() {
     return {
       menu: 0,
     };

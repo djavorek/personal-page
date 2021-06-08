@@ -9,8 +9,9 @@
     "generate": "nuxt generate",
     "lint:js": "eslint --ext \".js,.vue\" --ignore-path .gitignore .",
     "lint": "npm run lint:js",
-    "clean": "rm -rf /node_modules /.nuxt",
-    "clean:install": "npm run clean && pnpm i"
+    "clean": "rm -rf /node_modules",
+    "clean:install": "npm run clean && pnpm i",
+    "clean:build": "npm run clean:install && rm -rf /dist ./nuxt && npm run generate" 
   },
   "lint-staged": {
     "*.{js,vue}": "eslint"

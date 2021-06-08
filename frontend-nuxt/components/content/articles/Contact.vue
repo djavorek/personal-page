@@ -18,7 +18,7 @@
 export default {
   data() {
     return {
-      contactImg: require("@/assets/img/contact_instant.svg"),
+      contactImg: require('@/assets/img/contact_instant.svg'),
     };
   },
 };
