@@ -46,7 +46,7 @@
         >
       </div>
     </div>
-    <div v-else>Megkaptam az üzeneted.</div>
+    <div v-else><h1>Megkaptam az üzeneted.</h1></div>
   </div>
 </template>
 
@@ -99,8 +99,7 @@ export default {
           this.loading = false;
           this.sent = true;
         })
-        .catch((e) => {
-          console.warn(`Error while sending email: ${e}`);
+        .catch(() => {
           this.loading = false;
           this.hasError = true;
         });

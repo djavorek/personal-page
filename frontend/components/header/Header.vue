@@ -4,13 +4,13 @@
       <TitleBox />
     </div>
     <div>
-      <a href="#content">
+      <nuxt-link :to="{ path: '/', hash: '#menu' }">
         <font-awesome-icon
           id="downButton"
           icon="angle-double-down"
           size="10x"
         />
-      </a>
+      </nuxt-link>
     </div>
     <!-- <div class="parallax" :style="{ backgroundImage: 'url(' + require('@/assets/fg.svg') + ')' }"></div> -->
   </div>

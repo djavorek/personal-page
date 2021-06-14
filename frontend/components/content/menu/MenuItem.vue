@@ -1,13 +1,14 @@
 <template>
   <div class="menuHolder">
-    <a
+    <nuxt-link
       class="menuItem notouchy"
-      href="#content"
       :class="{ selected: selected }"
-      @click="$emit('select', item.id)"
+      :to="{ path: '/', hash: '#articleHolder' }"
     >
-      {{ item.text }}
-    </a>
+      <span @click="$emit('select', item.id)">
+        {{ item.text }}
+      </span>
+    </nuxt-link>
   </div>
 </template>
 
