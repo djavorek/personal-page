@@ -1,31 +1,23 @@
 <template>
   <div id="articleHolder" class="glassmorphism">
     <transition name="slide" mode="out-in">
-      <About v-if="this.isSelected('About')" />
-      <Contact v-if="this.isSelected('Contact')" />
-      <Blog v-if="this.isSelected('Blog')" />
+      <About v-if="isSelected('About')" />
+      <Contact v-if="isSelected('Contact')" />
+      <Blog v-if="isSelected('Blog')" />
     </transition>
   </div>
 </template>
 
 <script>
-import MenuList from "./menu/MenuList";
-
-import About from "./articles/About.vue";
-import Contact from "./articles/Contact.vue";
-import Blog from "./articles/Blog.vue";
+import MenuList from './menu/MenuList';
 
 export default {
-  name: "ArticleBox",
   props: {
-    menu: Number,
+    menu: {
+      type: Number,
+      default: 0,
+    },
   },
-  components: {
-    About,
-    Contact,
-    Blog,
-  },
-
   methods: {
     isSelected(purpose) {
       return MenuList[this.menu].purpose === purpose;
@@ -35,7 +27,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@use '@/scss/common';
+@use '~/assets/style/common';
 
 #articleHolder {
   box-sizing: border-box;

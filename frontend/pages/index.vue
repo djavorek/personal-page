@@ -1,3 +1,4 @@
+/* eslint-disable object-shorthand */
 <template>
   <div
     id="app"
@@ -13,22 +14,13 @@
 </template>
 
 <script>
-import Header from "./components/header/Header.vue";
-import Content from "./components/content/Content.vue";
-
 export default {
-  name: "App",
-  components: {
-    Header,
-    Content,
-  },
-
-  data: function () {
+  data() {
     return {
       goatCounter: {
-        id: "goatCounterScript",
-        source: "//gc.zgo.at/count.js",
-        data: "https://javorekdenes.goatcounter.com/count",
+        id: 'goatCounterScript',
+        source: '//gc.zgo.at/count.js',
+        data: 'https://javorekdenes.goatcounter.com/count',
       },
     };
   },
@@ -38,18 +30,18 @@ export default {
       return;
     }
 
-    let script = document.createElement("script");
+    const script = document.createElement('script');
 
-    script.setAttribute("src", this.goatCounter.source);
-    script.setAttribute("data-goatcounter", this.goatCounter.data);
-    script.setAttribute("id", this.goatCounter.id);
-    script.setAttribute("type", "text/javascript");
-    script.setAttribute("async", "async");
+    script.setAttribute('src', this.goatCounter.source);
+    script.setAttribute('data-goatcounter', this.goatCounter.data);
+    script.setAttribute('id', this.goatCounter.id);
+    script.setAttribute('type', 'text/javascript');
+    script.setAttribute('async', 'async');
 
     document.head.appendChild(script);
   },
   beforeDestroy() {
-    let script = document.getElementById(this.goatCounter.id);
+    const script = document.getElementById(this.goatCounter.id);
     if (script) {
       script.remove();
     }
@@ -58,19 +50,19 @@ export default {
 </script>
 
 <style lang="scss">
-@use '@/scss/common';
+@use '~/assets/style/common';
 
 @font-face {
-  font-family: "Merriweather";
-  src: local("Merriweather"),
-    url(~@/assets/fonts/Merriweather/Merriweather-Light.ttf) format("truetype");
+  font-family: 'Merriweather';
+  src: local('Merriweather'),
+    url(~@/assets/fonts/Merriweather/Merriweather-Light.ttf) format('truetype');
 }
 
 @font-face {
-  font-family: "Oswald";
+  font-family: 'Oswald';
   font-weight: normal;
-  src: local("Oswald"),
-    url(~@/assets/fonts/Oswald/Oswald-Regular.ttf) format("truetype");
+  src: local('Oswald'),
+    url(~@/assets/fonts/Oswald/Oswald-Regular.ttf) format('truetype');
 }
 
 #app {
@@ -87,7 +79,7 @@ body {
   padding: 0;
 
   color: common.$text;
-  font-family: "Merriweather", Helvetica, Arial;
+  font-family: 'Merriweather', Helvetica, Arial;
   font-size: 62.5%; // Use REM for font-size everywhere, 1.0 rem = 10 px
 
   scroll-behavior: smooth !important;

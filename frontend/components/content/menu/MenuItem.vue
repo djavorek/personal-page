@@ -1,24 +1,39 @@
 <template>
   <div class="menuHolder">
-    <a
+    <nuxt-link
       class="menuItem notouchy"
-      href="#content"
-      v-bind:class="{ selected: selected }"
-      v-on:click="$emit('select', item.id)"
+      :class="{ selected: selected }"
+      :to="{ path: '/', hash: '#articleHolder' }"
     >
-      {{ item.text }}
-    </a>
+      <span @click="$emit('select', item.id)">
+        {{ item.text }}
+      </span>
+    </nuxt-link>
   </div>
 </template>
 
 <script>
 export default {
-  props: ["item", "selected"],
+  props: {
+    item: {
+      type: Object,
+      default() {
+        return {
+          id: -1,
+          text: 'Menu is out of service',
+        };
+      },
+    },
+    selected: {
+      type: Boolean,
+      default: false,
+    },
+  },
 };
 </script>
 
 <style lang="scss" scoped>
-@use '@/scss/common';
+@use '~/assets/style/common';
 
 .menuHolder {
   margin: 3em 1em 3em 0;

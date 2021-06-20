@@ -74,24 +74,23 @@
 
 <script>
 export default {
-  name: "About",
   data() {
     return {
-      headImg: require("@/assets/img/about_head.svg"),
-      workImg: require("@/assets/img/about_work.svg"),
-      expImg: require("@/assets/img/about_exp.svg"),
-      hobbyImg: require("@/assets/img/about_hobby.svg"),
+      headImg: require('@/assets/img/about_head.svg'),
+      workImg: require('@/assets/img/about_work.svg'),
+      expImg: require('@/assets/img/about_exp.svg'),
+      hobbyImg: require('@/assets/img/about_hobby.svg'),
     };
   },
 };
 </script>
 
 <style scoped lang="scss">
-@use '@/scss/common';
+@use '~/assets/style/common';
 
 #about-container {
   font-size: calc(1.5rem + 0.25vw);
-  font-family: "Oswald", Helvetica, Arial;
+  font-family: 'Oswald', Helvetica, Arial;
 }
 
 .about-row {

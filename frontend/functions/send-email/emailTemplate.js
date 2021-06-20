@@ -318,6 +318,6 @@ const getEmailTemplate = (from, contact, msg) => {
     </body>
   </html>
   `;
-}
+};
 
 exports.getEmailTemplate = getEmailTemplate;
