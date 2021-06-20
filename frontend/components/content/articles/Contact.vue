@@ -15,18 +15,10 @@
 </template>
 
 <script>
-import Email from "./contact/Email";
-import Social from "./contact/Social";
-
 export default {
-  name: "Contact",
-  components: {
-    Email,
-    Social,
-  },
   data() {
     return {
-      contactImg: require("@/assets/img/contact_instant.svg"),
+      contactImg: require('@/assets/img/contact_instant.svg'),
     };
   },
 };

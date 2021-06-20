@@ -15,19 +15,18 @@
 
 <script>
 export default {
-  name: "Social",
   data() {
     return {
-      mailImg: require("@/assets/img/contact_mail.svg"),
-      inImg: require("@/assets/img/contact_in.svg"),
-      fbImg: require("@/assets/img/contact_fb.svg"),
+      mailImg: require('@/assets/img/contact_mail.svg'),
+      inImg: require('@/assets/img/contact_in.svg'),
+      fbImg: require('@/assets/img/contact_fb.svg'),
     };
   },
 };
 </script>
 
 <style scoped lang="scss">
-@use '@/scss/common';
+@use '~/assets/style/common';
 
 #social {
   border: solid 2px common.$primary;
@@ -44,7 +43,7 @@ img {
 }
 
 span {
-  font-family: "Oswald", Helvetica, Arial;
+  font-family: 'Oswald', Helvetica, Arial;
   letter-spacing: 0.2ch;
   margin-left: 1em;
   font-size: 1.8rem;

@@ -1,35 +1,50 @@
 {
-  "name": "frontend",
-  "version": "0.2.0",
+  "name": "personal-page",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate",
+    "lint:js": "eslint --ext \".js,.vue\" --ignore-path .gitignore .",
+    "lint": "npm run lint:js",
+    "clean": "rm -rf /node_modules",
+    "clean:install": "npm run clean && pnpm i",
+    "clean:build": "npm run clean:install && rm -rf /dist ./nuxt && npm run generate" 
   },
+  "lint-staged": {
+    "*.{js,vue}": "eslint"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "babel": {},
   "dependencies": {
+    "@babel/runtime-corejs3": "^7.14.0",
     "@fortawesome/fontawesome-svg-core": "^1.2.35",
     "@fortawesome/free-solid-svg-icons": "^5.15.3",
-    "@fortawesome/vue-fontawesome": "^2.0.2",
-    "core-js": "^3.6.5",
-    "prerender-spa-plugin": "^3.4.0",
-    "query-string": "^7.0.0",
-    "sparkpost": "^2.1.4",
-    "vue": "^2.6.11"
+    "@nuxt/babel-preset-app": "^2.15.6",
+    "@nuxtjs/fontawesome": "^1.1.2",
+    "core-js": "^3.14.0",
+    "nuxt": "^2.15.3"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "~4.5.0",
-    "@vue/cli-plugin-eslint": "^4.5.13",
-    "@vue/cli-service": "~4.5.0",
-    "@vue/eslint-config-prettier": "^6.0.0",
-    "babel-eslint": "^10.1.0",
-    "eslint": "^6.7.2",
+    "@babel/eslint-parser": "^7.14.4",
+    "@nuxtjs/eslint-config": "^6.0.0",
+    "@nuxtjs/eslint-module": "^3.0.2",
+    "eslint": "^7.22.0",
+    "eslint-config-prettier": "^8.1.0",
+    "eslint-plugin-nuxt": "^2.0.0",
     "eslint-plugin-prettier": "^3.3.1",
-    "eslint-plugin-vue": "^6.2.2",
-    "portal-vue": "^2.1.6",
+    "eslint-plugin-vue": "^7.7.0",
+    "fibers": "^5.0.0",
+    "husky": "^4.3.8",
+    "lint-staged": "^10.5.4",
     "prettier": "^2.2.1",
-    "sass": "^1.19.0",
-    "sass-loader": "^8.0.2",
-    "vue-template-compiler": "^2.6.11"
+    "sass": "^1.34.1",
+    "sass-loader": "^10.2.0"
   }
 }

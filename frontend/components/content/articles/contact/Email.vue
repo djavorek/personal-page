@@ -1,7 +1,7 @@
 <template>
   <div id="email">
     <h1 id="email-title">ITT AZONNAL ÍRHATSZ</h1>
-    <div v-if="!this.sent">
+    <div v-if="!sent">
       <form
         id="instant-contact"
         name="instant-contact"
@@ -9,8 +9,8 @@
         method="post "
         data-netlify="true"
         data-netlify-honeypot="bot-field"
+        :class="{ load: loading, error: hasError }"
         @submit.prevent="handleFormSubmit"
-        v-bind:class="{ load: this.loading, error: this.hasError }"
       >
         <div hidden aria-hidden="true">
           <label>
@@ -19,46 +19,45 @@
           </label>
         </div>
         <input type="hidden" name="form-name" value="instant-contact" />
-        <input id="name" type="text" v-model="form.name" placeholder="NEVED" />
+        <input id="name" v-model="form.name" type="text" placeholder="NEVED" />
         <input
           id="contact"
-          type="text"
           v-model="form.contact"
+          type="text"
           placeholder="ELÉRHETŐSÉGED"
         />
         <textarea
           id="message"
-          type="text"
           v-model="form.message"
+          type="text"
           placeholder="ÜZENETED"
         ></textarea>
         <input
           id="submit"
           type="submit"
-          v-on:submit.prevent="handleFormSubmit"
           value="KÜLDÉS"
+          @submit.prevent="handleFormSubmit"
         />
       </form>
-      <div class="errorMsg" v-if="this.hasError">
+      <div v-if="hasError" class="errorMsg">
         <span
           >Ez most nem sikerült. Ha nem vagy nagyon csalódott, akkor keress meg
           e-mailben vagy nézz vissza később.</span
         >
       </div>
     </div>
-    <div v-else>Megkaptam az üzeneted.</div>
+    <div v-else><h1>Megkaptam az üzeneted.</h1></div>
   </div>
 </template>
 
 <script>
 export default {
-  name: "Email",
   data() {
     return {
       form: {
-        name: "",
-        contact: "",
-        message: "",
+        name: '',
+        contact: '',
+        message: '',
       },
       loading: false,
       sent: false,
@@ -78,28 +77,29 @@ export default {
 
     handleFormSubmit() {
       const config = {
-        method: "POST",
-        header: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: new URLSearchParams(this.encode({
-          ...this.form,
-        })).toString(),
+        method: 'POST',
+        header: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(
+          this.encode({
+            ...this.form,
+          })
+        ).toString(),
       };
 
       this.loading = true;
       this.hasError = false;
       fetch(
         location.protocol +
-          "//" +
+          '//' +
           location.hostname +
-          "/.netlify/functions/send-email",
+          '/.netlify/functions/send-email',
         config
       )
         .then(() => {
           this.loading = false;
           this.sent = true;
         })
-        .catch((e) => {
-          console.warn(`Error while sending email: ${e}`);
+        .catch(() => {
           this.loading = false;
           this.hasError = true;
         });
@@ -109,8 +109,8 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@use '@/scss/common';
-@use '@/scss/animation';
+@use '~/assets/style/common';
+@use '~/assets/style/animation';
 
 #email {
   min-height: 40vh;
@@ -206,7 +206,7 @@ textarea:-ms-input-placeholder {
 
 .errorMsg {
   padding: 0.6em;
-  font-family: "Oswald", Helvetica, Arial;
+  font-family: 'Oswald', Helvetica, Arial;
   font-size: 1.9rem;
   background-color: common.$warning;
 }

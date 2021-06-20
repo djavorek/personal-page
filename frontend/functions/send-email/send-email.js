@@ -5,20 +5,23 @@ const emailTemplate = require('./emailTemplate');
 
 const options = {
   endpoint: 'https://api.eu.sparkpost.com:443',
-}
+};
 
 const client = new SparkPost(process.env.SPARKPOST, options);
 
-function escapeOutput(toOutput){
-  return toOutput.replace(/\&/g, '&amp;')
-      .replace(/\</g, '&lt;')
-      .replace(/\>/g, '&gt;')
-      .replace(/\"/g, '&quot;')
-      .replace(/\'/g, '&#x27')
-      .replace(/\//g, '&#x2F');
+/* eslint-disable no-useless-escape */
+function escapeOutput(toOutput) {
+  return toOutput
+    .replace(/\&/g, '&amp;')
+    .replace(/\</g, '&lt;')
+    .replace(/\>/g, '&gt;')
+    .replace(/\"/g, '&quot;')
+    .replace(/\'/g, '&#x27')
+    .replace(/\//g, '&#x2F');
 }
+/* eslint-enable no-useless-escape */
 
-exports.handler = async function(event, context) {
+exports.handler = async function (event, context) {
   const parsed = queryString.parse(event.body);
 
   const msg = escapeOutput(parsed.message);
@@ -32,18 +35,17 @@ exports.handler = async function(event, context) {
         subject: `Közvetlen üzenet - ${from}`,
         html: emailTemplate.getEmailTemplate(from, contact, msg),
       },
-      recipients: [{ address: 'javorek.denes@gmail.com' }]
+      recipients: [{ address: 'javorek.denes@gmail.com' }],
     });
 
     return {
       statusCode: 200,
-      body: JSON.stringify({message: "Sent"})
-    }
+      body: JSON.stringify({ message: 'Sent' }),
+    };
   } catch (e) {
     return {
       statusCode: 500,
-      body: JSON.stringify({message: "Failed to send."})
-    }
+      body: JSON.stringify({ message: 'Failed to send.' }),
+    };
   }
-}
-
+};

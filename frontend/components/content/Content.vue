@@ -1,26 +1,18 @@
 <template>
   <div id="content">
     <div id="leftCont" class="no-bottom">
-      <Menu v-on:changed="selectMenu" />
+      <Menu @changed="selectMenu" />
     </div>
     <div id="rightCont" class="no-bottom">
-      <ArticleBox v-bind:menu="menu" />
+      <ArticleBox :menu="menu" />
       <!-- v-bind to pass as Number  -->
     </div>
   </div>
 </template>
 
 <script>
-import Menu from "./menu/Menu.vue";
-import ArticleBox from "./ArticleBox.vue";
-
 export default {
-  name: "Content",
-  components: {
-    Menu,
-    ArticleBox,
-  },
-  data: function () {
+  data() {
     return {
       menu: 0,
     };
