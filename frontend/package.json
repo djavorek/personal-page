@@ -30,7 +30,9 @@
     "@nuxt/babel-preset-app": "^2.15.6",
     "@nuxtjs/fontawesome": "^1.1.2",
     "core-js": "^3.14.0",
-    "nuxt": "^2.15.3"
+    "nuxt": "^2.15.3",
+    "query-string": "^7.0.0",
+    "sparkpost": "^2.1.4"
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.14.4",
