@@ -10,8 +10,8 @@
     "lint:js": "eslint --ext \".js,.vue\" --ignore-path .gitignore .",
     "lint": "npm run lint:js",
     "clean": "rm -rf /node_modules",
-    "clean:install": "npm run clean && pnpm i",
-    "clean:build": "npm run clean:install && rm -rf /dist ./nuxt && npm run generate" 
+    "clean:install": "npm run clean && npm i",
+    "clean:build": "npm run clean:install && rm -rf /dist ./nuxt && npm run generate"
   },
   "lint-staged": {
     "*.{js,vue}": "eslint"
@@ -26,6 +26,7 @@
     "@babel/runtime-corejs3": "^7.14.0",
     "@fortawesome/fontawesome-svg-core": "^1.2.35",
     "@fortawesome/free-solid-svg-icons": "^5.15.3",
+    "@fortawesome/vue-fontawesome": "^2.0.2",
     "@nuxt/babel-preset-app": "^2.15.6",
     "@nuxtjs/fontawesome": "^1.1.2",
     "core-js": "^3.14.0",
