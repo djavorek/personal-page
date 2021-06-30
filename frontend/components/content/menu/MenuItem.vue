@@ -3,7 +3,11 @@
     <nuxt-link
       class="menuItem notouchy"
       :class="{ selected: selected }"
-      :to="{ path: '/', hash: '#articleHolder' }"
+      :to="
+        item.link.length
+          ? { path: item.link }
+          : { path: '/', hash: '#articleHolder' }
+      "
     >
       <span @click="$emit('select', item.id)">
         {{ item.text }}

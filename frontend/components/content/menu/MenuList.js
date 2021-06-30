@@ -11,12 +11,12 @@ const menuList = [
     purpose: 'Contact',
     link: '',
   },
-  // {
-  // 	id: 2,
-  // 	text: "BŐVEBBEN",
-  // 	purpose: 'Blog',
-  // 	link: "",
-  // }
+  {
+    id: 2,
+    text: 'BŐVEBBEN',
+    purpose: 'Blog',
+    link: '/blog',
+  },
 ];
 
 export default menuList;

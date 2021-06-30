@@ -44,6 +44,7 @@ export default {
   components: {
     dirs: [
       '~/components',
+      '~/components/blog',
       '~/components/header',
       '~/components/content',
       '~/components/content/articles',
@@ -66,9 +67,5 @@ export default {
     icons: {
       solid: ['faAngleDoubleDown'],
     },
-  },
-
-  content: {
-    dir: 'posts',
   },
 };
