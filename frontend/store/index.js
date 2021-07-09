@@ -1,15 +1,50 @@
-export const state = () => ({
-  posts: [],
-});
-
-export const mutations = {
-  setPosts: (state, list) => (state.posts = list),
+export const state = () => {
+  return {
+    menuIsActive: false,
+    menuInitial: true,
+    info: {},
+    current: {},
+    categories: [],
+    pagination: false,
+    totalPages: null,
+    settings: {},
+  };
 };
 
 export const actions = {
-  async nuxtServerInit({ commit }, { $content }) {
-    const posts = await $content('/posts').fetch();
+  async fetchInfo({ commit }, $content) {
+    try {
+      const categories = await $content('category').fetch();
+      commit('SET_CATEGORIES', categories);
+    } catch (e) {
+      const error = 'Initial Setup Error: ' + e.message + e;
+      console.warning(error);
+      commit('SET_ERROR', error);
+    }
+  },
+};
 
-    await commit('setPosts', posts);
+export const mutations = {
+  SET_ERROR(state, error) {
+    state.info = error;
+  },
+  SET_CURRENT(state, data) {
+    state.current = data;
+  },
+  SET_CATEGORIES(state, data) {
+    state.categories = data;
+  },
+  SET_PAGINATION(state, data) {
+    state.pagination = data;
+  },
+  SET_TOTALPAGES(state, data) {
+    state.totalPages = data;
+  },
+
+  setMenuState(state, menuIsActive) {
+    state.menuIsActive = menuIsActive;
+  },
+  toggleMenuState(state) {
+    state.menuIsActive = !state.menuIsActive;
   },
 };

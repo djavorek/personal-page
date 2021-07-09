@@ -1,60 +1,25 @@
 <template>
   <div
     class="bael-slideout xs-border xs-text-6 md-text-5"
-    :class="{ isOpen: $store.state.menuIsActive  }"
+    :class="{ isOpen: $store.state.menuIsActive }"
   >
     <div class="bael-slideout-opener">
       <div
         @click="toggle"
         class="hamburger hamburger--spin js-hamburger"
-        :class="{'is-active': $store.state.menuIsActive }"
+        :class="{ 'is-active': $store.state.menuIsActive }"
       >
         <div class="hamburger-box">
           <div class="hamburger-inner"></div>
         </div>
       </div>
     </div>
-    <ul class="bael-slideout-menu list-unstyled">
-      <li class="bael-slideout-menu-item menu-logo">
-        <nuxt-link
-          v-if="info.siteicon  && info.showmenu"
-          style="color:#000"
-          class="text-black black-font site--name"
-          to="/"
-          exact
-        >
-          <img
-            style="width:64px;"
-            class="xs-block xs-fit xs-mb2"
-            :src="info.siteicon"
-            :alt="info.sitename"
-          />
-        </nuxt-link>
-      </li>
-      <li class="bael-slideout-menu-item--small">
-        <nuxt-link to="/" exact>Home</nuxt-link>
-      </li>
-      <li v-if="categories.length" class="bael-slideout-menu-item--small">
-        <nuxt-link to="/categories" exact>Categories</nuxt-link>
-      </li>
-      <li v-for="(p,i) in pages" :key="`pg-${i}`" class="bael-slideout-menu-item--small">
-        <nuxt-link :to="p.path">{{p.title}}</nuxt-link>
-      </li>
-      <li v-if="info.menu" class="xs-mt5 bael-slideout-menu-item heading-font">Links</li>
-      <li v-for="m in info.menu" :key="m.position" class="bael-slideout-menu-item--small">
-        <a :href="m.link">{{m.name}}</a>
-      </li>
-    </ul>
   </div>
 </template>
 
-  <script>
+<script>
 export default {
   fetchOnServer: true,
-  async fetch() {
-    const pages = await this.$content("page").fetch();
-    this.pages = pages;
-  },
   data() {
     return {
       isOpen: false,
@@ -62,6 +27,11 @@ export default {
       pages: null,
     };
   },
+  async fetch() {
+    const pages = await this.$content('page').fetch();
+    this.pages = pages;
+  },
+
   computed: {
     info() {
       return this.$store.state.info;
@@ -79,9 +49,7 @@ export default {
     },
     toggle() {
       // Look for .hamburger
-      this.$store.commit("toggleMenuState");
-
-      var hamburger = document.querySelector(".hamburger");
+      this.$store.commit('toggleMenuState');
       // On click
 
       // Toggle class "is-active"
@@ -95,7 +63,7 @@ export default {
   },
 };
 </script>
-  <style lang="scss">
+<style lang="scss">
 .heading-font {
   text-transform: uppercase;
   font-weight: 800;
@@ -149,7 +117,7 @@ export default {
 }
 .hamburger-inner::before,
 .hamburger-inner::after {
-  content: "";
+  content: '';
   display: block;
 }
 .hamburger-inner::before {

@@ -1,36 +1,51 @@
 <template>
-  <nav ref="navBar" :data-nav="`${pagetitle}`" id="navbar">
+  <nav id="navbar" ref="navBar" :data-nav="`${pagetitle}`">
     <div class="r xs-border-bottom">
       <div class="c-4 xs-text-left xs-p2 sm-border-right">
         <div class="item">
-          <nuxt-link class="sitename" to="/" exact>{{$store.state.info.sitename}}</nuxt-link>
+          <nuxt-link class="sitename" to="/" exact
+            >Javorek Dénes - Blog</nuxt-link
+          >
         </div>
       </div>
 
       <div
-        class="c-4 xs-border-top xs-border-bottom sm-border-bottom-none sm-border-top-none sm-border-left-none sm-border-right xs-p2"
+        class="
+          c-4
+          xs-border-top xs-border-bottom
+          sm-border-bottom-none
+          sm-border-top-none
+          sm-border-left-none
+          sm-border-right
+          xs-p2
+        "
       >
         <div class="item xs-flex">
           <lazy-bael-search />
         </div>
       </div>
-      <div v-if="pagetitle" style="z-index:55;" class="c-12 sm-border-top xs-p2 xs-text-6 titlebar">
+      <div
+        v-if="pagetitle"
+        style="z-index: 55"
+        class="c-12 sm-border-top xs-p2 xs-text-6 titlebar"
+      >
         <div class="item">
           <nuxt-link to="/" exact>Home</nuxt-link>
           <span v-if="path">
             &nbsp;
             <span class="text-gray-lightest">></span>
-            &nbsp; {{path}}
-          </span> &nbsp;
+            &nbsp; {{ path }}
+          </span>
+          &nbsp;
           <span class="text-gray-lightest">></span>
-          &nbsp; {{pagetitle}}
+          &nbsp; {{ pagetitle }}
         </div>
       </div>
     </div>
   </nav>
 </template>
 <script>
-import _capitalize from "lodash/capitalize";
+import _capitalize from 'lodash/capitalize';
 export default {
   data() {
     return {};
@@ -41,9 +56,9 @@ export default {
     },
 
     path() {
-      const split = _get(this.$store, "state.current.dir").split("/");
+      const split = _get(this.$store, 'state.current.dir').split('/');
 
-      return split.length && split[1] !== "page" ? _capitalize(split[1]) : null;
+      return split.length && split[1] !== 'page' ? _capitalize(split[1]) : null;
     },
   },
 };
@@ -73,7 +88,7 @@ nav {
 }
 .sitename {
   color: #000;
-  font-family: "Inter", sans-serif;
+  font-family: 'Inter', sans-serif;
   text-transform: uppercase;
   font-weight: 800;
   font-size: 18px;

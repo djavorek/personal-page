@@ -29,6 +29,22 @@ export default {
     link: [{ rel: 'icon', type: 'image/x-icon', href: './favicon.ico' }],
   },
 
+  workbox: {
+    runtimeCaching: [
+      {
+        urlPattern: '/uploads/images/.*',
+        handler: 'cacheFirst',
+        strategyOptions: {
+          cacheName: 'image-cache',
+          cacheExpiration: {
+            maxEntries: 100,
+            maxAgeSeconds: 86400,
+          },
+        },
+      },
+    ],
+  },
+
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
     '~/assets/style/common/_index.scss',
@@ -38,7 +54,20 @@ export default {
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [],
+  plugins: [
+    {
+      src: '~/plugins/browser',
+      mode: 'client',
+    },
+    {
+      src: '~/plugins/moment',
+      mode: 'client',
+    },
+    {
+      src: '~/plugins/lazyload',
+      mode: 'client',
+    },
+  ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: {
