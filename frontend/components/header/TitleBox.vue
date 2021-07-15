@@ -16,21 +16,21 @@ export default {};
   display: inline-block;
   padding: 2vh 3vw;
 
-  line-height: calc(7rem + 2vw);
+  line-height: 4rem;
   text-align: center;
   background: rgba(black, 0.8);
 
-  border: 1.5em solid #ffffff;
+  border: 10px solid #ffffff;
   z-index: 30;
 }
 
 #hello {
-  font-size: calc(6.9rem + 1.77vw);
+  font-size: 4.2rem;
   // font-size: 9.2rem;
 }
 
 #name {
-  font-size: calc(3.9rem + 1vw);
+  font-size: 2.5rem;
   // font-size: 5.2rem;
 }
 </style>

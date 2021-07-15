@@ -51,7 +51,7 @@ export default {
 
 #contact-texts {
   flex-basis: 40%;
-  font-size: calc(1rem + 0.25vw);
+  font-size: 1rem;
 }
 
 @media screen and (max-width: 1000px) {

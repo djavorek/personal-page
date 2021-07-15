@@ -24,28 +24,10 @@
           <lazy-bael-search />
         </div>
       </div>
-      <div
-        v-if="pagetitle"
-        style="z-index: 55"
-        class="c-12 sm-border-top xs-p2 xs-text-6 titlebar"
-      >
-        <div class="item">
-          <nuxt-link to="/" exact>Home</nuxt-link>
-          <span v-if="path">
-            &nbsp;
-            <span class="text-gray-lightest">></span>
-            &nbsp; {{ path }}
-          </span>
-          &nbsp;
-          <span class="text-gray-lightest">></span>
-          &nbsp; {{ pagetitle }}
-        </div>
-      </div>
     </div>
   </nav>
 </template>
 <script>
-import _capitalize from 'lodash/capitalize';
 export default {
   data() {
     return {};
@@ -53,12 +35,6 @@ export default {
   computed: {
     pagetitle() {
       return this.$store.state.current.title;
-    },
-
-    path() {
-      const split = _get(this.$store, 'state.current.dir').split('/');
-
-      return split.length && split[1] !== 'page' ? _capitalize(split[1]) : null;
     },
   },
 };

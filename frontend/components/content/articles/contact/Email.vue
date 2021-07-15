@@ -119,7 +119,7 @@ export default {
 }
 
 #email-title {
-  font-size: 3rem;
+  font-size: 1.5rem;
 }
 
 #form {
@@ -132,7 +132,7 @@ textarea,
 #submit {
   box-sizing: border-box;
 
-  font-size: 1.5rem;
+  font-size: 0.75rem;
   padding: 0px 2em 0px 2em;
   width: 100%;
 
@@ -207,7 +207,7 @@ textarea:-ms-input-placeholder {
 .errorMsg {
   padding: 0.6em;
   font-family: 'Oswald', Helvetica, Arial;
-  font-size: 1.9rem;
+  font-size: 1rem;
   background-color: common.$warning;
 }
 </style>

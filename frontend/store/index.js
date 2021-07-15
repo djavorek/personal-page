@@ -14,7 +14,7 @@ export const state = () => {
 export const actions = {
   async fetchInfo({ commit }, $content) {
     try {
-      const categories = await $content('category').fetch();
+      const categories = await $content('/category').fetch();
       commit('SET_CATEGORIES', categories);
     } catch (e) {
       const error = 'Initial Setup Error: ' + e.message + e;

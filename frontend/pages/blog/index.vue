@@ -5,10 +5,10 @@
 <script>
 import _chunk from 'lodash/chunk';
 import BaelGrid from '~/components/blog/BaelGrid';
-import FullGrid from '~/components/blog/FullGrid';
 export default {
   name: 'Index',
-  components: { BaelGrid, FullGrid },
+  layout: 'blog',
+  components: { BaelGrid },
   transition(to, from) {
     if (!from) return 'fade';
     return +to.query.page > +from.query.page ? 'slide-right' : 'slide-left';
@@ -47,7 +47,7 @@ export default {
 
   computed: {
     getLayout() {
-      return 'FullGrid'; // 'BaelGrid';
+      return 'BaelGrid'; // 'FullGrid';
     },
   },
 };

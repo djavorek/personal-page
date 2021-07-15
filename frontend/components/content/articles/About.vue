@@ -89,7 +89,7 @@ export default {
 @use '~/assets/style/common';
 
 #about-container {
-  font-size: calc(1.5rem + 0.25vw);
+  font-size: 1rem;
   font-family: 'Oswald', Helvetica, Arial;
 }
 

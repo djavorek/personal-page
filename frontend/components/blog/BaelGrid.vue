@@ -18,7 +18,7 @@
               xs-flex-justify-center
               xs-text-center
             "
-            :to="p.path"
+            :to="'/blog' + p.path"
             >{{ p.title }}</nuxt-link
           >
         </div>
@@ -32,7 +32,7 @@
           xs-flex xs-flex-align-center xs-flex-justify-center xs-text-center
         "
       >
-        <div v-if="posts.length < 1 && !busy">No Results.</div>
+        <div v-if="posts.length < 1 && !busy">Nincs tartalom.</div>
       </div>
     </div>
   </div>

@@ -40,13 +40,13 @@ export default {
 @use '~/assets/style/common';
 
 .menuHolder {
-  margin: 3em 1em 3em 0;
+  margin: 1.5em 0.5em 1.5em 0;
   display: flex;
   align-items: center;
 }
 
 .menuItem {
-  font-size: calc(1.5rem + 0.25vw);
+  font-size: 1rem;
   text-align: center;
   width: 100%;
   text-decoration: none;

@@ -68,9 +68,6 @@ export default {
 #app {
   background-repeat: no-repeat;
   background-size: cover;
-
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 html,
@@ -80,7 +77,15 @@ body {
 
   color: common.$text;
   font-family: 'Merriweather', Helvetica, Arial;
-  font-size: 62.5%; // Use REM for font-size everywhere, 1.0 rem = 10 px
+  font-size: calc(
+    1rem + 0.2vw
+  ); // Use REM for font-size everywhere, 1.0 rem = 10 px
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+
+  letter-spacing: -0.3px;
 
   scroll-behavior: smooth !important;
   -webkit-tap-highlight-color: transparent; /* for removing tap highlight */

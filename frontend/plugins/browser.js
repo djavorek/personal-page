@@ -8,7 +8,7 @@ import {
 import Intersect from '~/directives/intersect';
 
 // plugin
-export default ({ store, route }, inject) => {
+export default async ({ store, route }, inject) => {
   require('intersection-observer');
   require('string.prototype.includes');
 
@@ -27,7 +27,8 @@ export default ({ store, route }, inject) => {
   const mutObserver = new MutationObserver(mCallback);
 
   function mCallback(mutations) {
-    for (const mutation of mutations) {
+    // eslint-disable-next-line prefer-const
+    for (let mutation of mutations) {
       mutationHandler(store, mutation);
     }
   }

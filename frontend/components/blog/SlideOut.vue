@@ -5,9 +5,9 @@
   >
     <div class="bael-slideout-opener">
       <div
-        @click="toggle"
         class="hamburger hamburger--spin js-hamburger"
         :class="{ 'is-active': $store.state.menuIsActive }"
+        @click="toggle"
       >
         <div class="hamburger-box">
           <div class="hamburger-inner"></div>
@@ -26,10 +26,6 @@ export default {
       links: null,
       pages: null,
     };
-  },
-  async fetch() {
-    const pages = await this.$content('page').fetch();
-    this.pages = pages;
   },
 
   computed: {

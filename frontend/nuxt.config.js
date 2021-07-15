@@ -2,6 +2,13 @@ export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
 
+  vue: {
+    config: {
+      productionTip: false,
+      devtools: true,
+    },
+  },
+
   server: {
     port: 8080, // default: 3000
   },
@@ -45,12 +52,22 @@ export default {
     ],
   },
 
+  router: {
+    scrollBehavior(to, from, savedPosition) {
+      return { x: 0, y: 0 };
+    },
+    middleware: ['title'],
+  },
+
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
     '~/assets/style/common/_index.scss',
     '~/assets/style/common/_variables.scss',
     '~/assets/style/common/_behavior.scss',
     '~/assets/style/animation.scss',
+    '~/assets/style/grid.css',
+    '~/assets/style/content.scss',
+    'bf-solid/dist/solid.latest.css',
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
