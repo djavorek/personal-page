@@ -84,6 +84,9 @@ export default {
       src: '~/plugins/lazyload',
       mode: 'client',
     },
+    {
+      src: '~/plugins/toCurrency',
+    },
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -96,6 +99,7 @@ export default {
       '~/components/content/articles',
       '~/components/content/articles/contact',
       '~/components/content/menu',
+      '~/components/tools',
     ],
   },
 
@@ -103,11 +107,28 @@ export default {
   buildModules: [
     // https://go.nuxtjs.dev/eslint
     '@nuxtjs/eslint-module',
+    ['@nuxtjs/vuetify', { treeShake: true }],
     '@nuxtjs/fontawesome',
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: ['@nuxt/content'],
+  modules: [
+    '@nuxt/content',
+    [
+      'v-currency-field/nuxt-treeshaking',
+      {
+        locale: 'hu-HU',
+        suffix: 'Ft',
+        decimalLength: 0,
+        autoDecimalMode: false,
+        min: null,
+        max: null,
+        defaultValue: 0,
+        valueAsInteger: true,
+        allowNegative: false,
+      },
+    ],
+  ],
 
   fontawesome: {
     icons: {

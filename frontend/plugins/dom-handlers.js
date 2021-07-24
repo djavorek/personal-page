@@ -1,13 +1,5 @@
 // window resize handler
 export const resizeHandler = (store) => {
-  const navbar = document.getElementById('navbar');
-  const navHeight = navbar.clientHeight;
-  store.commit('browser/SET_NAVHEIGHT', navHeight);
-  document.documentElement.style.setProperty(
-    '--nav-height',
-    store.state.browser.navHeight + 'px'
-  );
-
   store.commit('browser/SET_WIN_WIDTH', window.innerWidth);
   store.commit('browser/SET_WIN_HEIGHT', window.innerHeight);
 
