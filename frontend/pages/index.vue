@@ -1,16 +1,20 @@
 /* eslint-disable object-shorthand */
 <template>
-  <div
-    id="app"
-    :style="{ backgroundImage: 'url(' + require('@/assets/bg_grey.png') + ')' }"
-  >
-    <div id="header" class="notouchy">
-      <Header />
+  <v-app>
+    <div
+      id="app"
+      :style="{
+        backgroundImage: 'url(' + require('@/assets/bg_grey.png') + ')',
+      }"
+    >
+      <div id="header" class="notouchy">
+        <Header />
+      </div>
+      <div>
+        <Content />
+      </div>
     </div>
-    <div>
-      <Content />
-    </div>
-  </div>
+  </v-app>
 </template>
 
 <script>

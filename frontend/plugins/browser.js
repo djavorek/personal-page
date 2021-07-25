@@ -1,18 +1,13 @@
-import Vue from 'vue';
 import _throttle from 'lodash/throttle';
 import {
   resizeHandler,
   mutationHandler,
   addObserverIfNavBarAvailable,
 } from '~/plugins/dom-handlers';
-import Intersect from '~/directives/intersect';
 
 // plugin
-export default async ({ store, route }, inject) => {
-  require('intersection-observer');
+export default ({ store, route }, inject) => {
   require('string.prototype.includes');
-
-  Vue.directive('intersect', Intersect);
 
   // setup dom listeners
   // ~16ms is 60fps

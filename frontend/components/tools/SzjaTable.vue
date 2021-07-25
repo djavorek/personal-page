@@ -1,13 +1,13 @@
 <template>
   <div id="szja-out-table">
-    <table>
+    <v-simple-table>
       <tr>
         <th v-for="(month, i) in months" :key="i">{{ month }}</th>
       </tr>
       <tr>
         <td v-for="(net, i) in data" :key="i">{{ net | toCurrency }}</td>
       </tr>
-    </table>
+    </v-simple-table>
   </div>
 </template>
 

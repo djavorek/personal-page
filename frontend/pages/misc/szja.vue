@@ -1,7 +1,9 @@
 /* eslint-disable object-shorthand */
 <template>
   <div id="szjawrapper">
-    <div><SzjaCalculator /></div>
+    <v-app>
+      <div><SzjaCalculator /></div>
+    </v-app>
   </div>
 </template>
 

@@ -1,6 +1,5 @@
 <template>
   <div class="comments-wrapper section">
-    <intersection-observer @view="displayed = true" />
     <vue-disqus shortname="blog-jd" :identifier="identifier" />
 
     <!-- Warning to Provide Disqus Site Short Name -->
