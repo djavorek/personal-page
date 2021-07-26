@@ -1,12 +1,9 @@
 export const state = () => {
   return {
-    menuIsActive: false,
-    menuInitial: true,
     info: {},
     current: {},
     categories: [],
-    pagination: false,
-    totalPages: null,
+    articles: [],
     settings: {},
   };
 };
@@ -18,9 +15,20 @@ export const actions = {
       commit('SET_CATEGORIES', categories);
     } catch (e) {
       const error = 'Initial Setup Error: ' + e.message + e;
-      console.warning(error);
       commit('SET_ERROR', error);
     }
+  },
+
+  async fetchArticles({ commit }, $content) {
+    const blogPosts = await $content('posts')
+      .sortBy('createdAt', 'desc')
+      .fetch()
+      .catch((e) => {
+        const error = 'Article fetching error: ' + e.message + e;
+        commit('SET_ERROR', error);
+      });
+
+    commit('SET_ARTICLES', blogPosts);
   },
 };
 
@@ -34,17 +42,7 @@ export const mutations = {
   SET_CATEGORIES(state, data) {
     state.categories = data;
   },
-  SET_PAGINATION(state, data) {
-    state.pagination = data;
-  },
-  SET_TOTALPAGES(state, data) {
-    state.totalPages = data;
-  },
-
-  setMenuState(state, menuIsActive) {
-    state.menuIsActive = menuIsActive;
-  },
-  toggleMenuState(state) {
-    state.menuIsActive = !state.menuIsActive;
+  SET_ARTICLES(state, data) {
+    state.articles = data;
   },
 };

@@ -52,13 +52,6 @@ export default {
     ],
   },
 
-  router: {
-    scrollBehavior(to, from, savedPosition) {
-      return { x: 0, y: 0 };
-    },
-    middleware: ['title'],
-  },
-
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
     '~/assets/style/common/_index.scss',
@@ -94,6 +87,8 @@ export default {
     dirs: [
       '~/components',
       '~/components/blog',
+      '~/components/blog/base',
+      '~/components/blog/core',
       '~/components/header',
       '~/components/content',
       '~/components/content/articles',
@@ -120,7 +115,7 @@ export default {
         locale: 'hu-HU',
         suffix: 'Ft',
         decimalLength: 0,
-        autoDecimalMode: false,
+        autoDecimalMode: true,
         min: null,
         max: null,
         defaultValue: 0,

@@ -1,9 +1,10 @@
 <template>
-  <section class="blog container xs-text-5 md-text-4">
-    <bael-header />
-    <nuxt />
-    <lazy-slide-out />
-  </section>
+  <v-app>
+    <section class="blog container">
+      <bael-header />
+      <nuxt />
+    </section>
+  </v-app>
 </template>
 <script>
 export default {};

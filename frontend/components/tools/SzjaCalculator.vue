@@ -2,8 +2,9 @@
   <div id="szja">
     <div id="szja-input">
       <v-alert text type="warning" border="left">
-        Az adatok kizárólag tájékoztató jellegűek. Helyeségükért felelőséget nem
-        vállalok.
+        Az adatok kizárólag tájékoztató jellegűek. Azokat további kedvezmények
+        is befolyásolhatják.<br />
+        <b>Helyességükért felelőséget nem vállalok.</b>
       </v-alert>
 
       <v-currency-field
@@ -11,7 +12,6 @@
         v-model="net"
         label="Jelenlegi nettó"
         suffix="Ft"
-        placeholder="Jelenlegi nettó"
         type="number"
         @change="calculate"
       />
@@ -21,14 +21,14 @@
         label="Jelenlegi bruttó"
         type="number"
         suffix="Ft"
-        placeholder="Jelenlegi bruttó"
         @change="calculate"
       />
 
       <v-checkbox
         id="turnagelimit"
         v-model="turnagelimit"
-        :label="targetYear + '-ben leszek 25 éves'"
+        :label="targetYear + '-ben leszek 25 éves.'"
+        @change="calculate"
       />
       <transition name="scroll-y-transition">
         <v-layout v-if="turnagelimit" class="ml-4">
@@ -62,23 +62,28 @@
       <v-checkbox
         id="taxdisocunt"
         v-model="otherTaxDiscounts.on"
-        label="Jelenleg családi adókedvezményt veszek igénybe"
+        label="Jelenleg családi adókedvezményt veszek igénybe."
         @change="calculate"
       />
       <transition name="scroll-y-transition">
-        <v-layout v-if="otherTaxDiscounts.on" class="ml-4">
-          <v-checkbox
-            id="taxdisocunt"
-            v-model="otherTaxDiscounts.firstMarriage.on"
-            :label="'Jelenleg első házasok kedvezményét veszek igénybe és ez' + ${targetYear} + '-ben lejár' "
-            @change="calculate"
-          />
-          <transition name="scroll-y-transition">
-            <v-layout v-if="otherTaxDiscounts.firstMarriage.on">
+        <v-container v-if="otherTaxDiscounts.on" class="ml-4">
+          <v-row>
+            <v-checkbox
+              id="taxdisocunt"
+              v-model="otherTaxDiscounts.firstMarriage.on"
+              :label="
+                'Jelenleg első házasok kedvezményét veszek igénybe és ez ' +
+                targetYear +
+                '-ben lejár, '
+              "
+              @change="calculate"
+            />
+            <transition name="scroll-y-transition">
               <v-select
+                v-if="otherTaxDiscounts.firstMarriage.on"
                 v-model="otherTaxDiscounts.firstMarriage.until"
                 class="ml-2"
-                label="eddig"
+                label="Válaszd ki melyik hónapban"
                 :items="otherTaxDiscounts.firstMarriage.options"
                 item-text="text"
                 item-value="value"
@@ -86,9 +91,19 @@
                 single-line
                 @change="calculate"
               ></v-select>
-            </v-layout>
-          </transition>
-        </v-layout>
+            </transition>
+          </v-row>
+          <v-row>
+            <v-currency-field
+              v-if="otherTaxDiscounts.firstMarriage.on"
+              id="marriageDiscount"
+              v-model="otherTaxDiscounts.firstMarriage.quantity"
+              label="Első házasok kedvezményének rám eső része (nettó)"
+              type="number"
+              suffix="Ft"
+              @change="calculate"
+          /></v-row>
+        </v-container>
       </transition>
     </div>
 
@@ -98,10 +113,10 @@
       <v-card>
         <v-card-title>Számított nettó ({{ targetYear }}-ben)</v-card-title>
         <v-card-text>
-          <SzjaTable v-if="turnagelimit" :data="output" />
-          <div v-else>
+          <div v-if="output.every((i) => i === output[0])">
             {{ output[0] | toCurrency }}
           </div>
+          <SzjaTable v-else :data="output" />
         </v-card-text>
       </v-card>
     </div>
@@ -124,18 +139,19 @@ export default {
         firstMarriage: {
           on: false,
           until: 0,
+          quantity: 5000,
           options: [
-            { text: 'januárban', value: 1 },
-            { text: 'februárban', value: 2 },
-            { text: 'márciusban', value: 3 },
-            { text: 'áprilisig', value: 4 },
-            { text: 'májusig', value: 5 },
-            { text: 'júniusig', value: 6 },
-            { text: 'júliusig', value: 7 },
-            { text: 'augusztusig', value: 8 },
-            { text: 'szeptemberig', value: 9 },
-            { text: 'októberig', value: 10 },
-            { text: 'novemberig', value: 11 },
+            { text: 'januárban.', value: 1 },
+            { text: 'februárban.', value: 2 },
+            { text: 'márciusban.', value: 3 },
+            { text: 'áprilisban.', value: 4 },
+            { text: 'májusban.', value: 5 },
+            { text: 'júniusban.', value: 6 },
+            { text: 'júliusban.', value: 7 },
+            { text: 'augusztusban.', value: 8 },
+            { text: 'szeptemberban.', value: 9 },
+            { text: 'októberban.', value: 10 },
+            { text: 'novemberban.', value: 11 },
           ],
         },
       },
@@ -157,45 +173,48 @@ export default {
       const limitDateForMonth = new Date('2022-01-05');
 
       for (let monthNum = 0; monthNum < 12; monthNum++) {
+        let calculatedNet = this.net;
         limitDateForMonth.setMonth(monthNum);
 
-        if (this.yearsPrior(limitDateForMonth, 25) < new Date(this.birth)) {
+        if (
+          !this.turnagelimit ||
+          this.yearsPrior(limitDateForMonth, 25) < new Date(this.birth)
+        ) {
           let taxDiscountBase =
             this.gross < this.grossUpperLimit
               ? this.gross
               : this.grossUpperLimit;
 
-          taxDiscountBase -= this.getFirstMarriageDiscount(
+          taxDiscountBase -= this.getExpiredMarriageDiscount(
             taxDiscountBase,
             monthNum
           );
 
           const taxDiscount = taxDiscountBase * 0.15;
 
-          this.$set(this.output, monthNum, parseInt(this.net) + taxDiscount);
-        } else {
-          this.$set(this.output, monthNum, this.net);
+          calculatedNet = parseInt(this.net) + taxDiscount;
         }
+
+        calculatedNet -= this.getExpiredMarriageDiscount(monthNum);
+
+        this.$set(this.output, monthNum, calculatedNet);
+
+        // console.table(this.output);
       }
     },
     /**
-     * @param taxDiscountBase Tax base before applying this discount
+     * @param net Calculated net salary before reapplying expired discount
      * @param whichMonth Zero-indexed month count
      */
-    getFirstMarriageDiscount(taxDiscountBase, whichMonth) {
-      const marriageBaseDiscount = 33335;
-      console.log('');
-
+    getExpiredMarriageDiscount(whichMonth) {
       if (
         !this.otherTaxDiscounts.on ||
         !this.otherTaxDiscounts.firstMarriage.on ||
-        this.otherTaxDiscounts.firstMarriage.until - 1 < whichMonth
+        this.otherTaxDiscounts.firstMarriage.until.value > whichMonth
       ) {
         return 0;
       }
-      if (taxDiscountBase > marriageBaseDiscount) return taxDiscountBase;
-
-      return marriageBaseDiscount;
+      return this.otherTaxDiscounts.firstMarriage.quantity;
     },
     yearsPrior(date, yearCount) {
       const yearsBeforeDate = new Date(date).setYear(
@@ -214,11 +233,6 @@ export default {
 
 .divider {
   margin: 1em 0;
-}
-
-#szja {
-  max-width: 50%;
-  margin: 5em;
 }
 
 #taxdisocunt {
