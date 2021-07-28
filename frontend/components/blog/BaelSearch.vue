@@ -1,18 +1,6 @@
 <template>
   <div class="searchwrapper xs-relative">
-    <input
-      v-model="query"
-      class="
-        search
-        xs-flex-grow-1
-        text-input
-        xs-border-none xs-fit xs-text-5
-        md-text-4
-        xs-m0 xs-p0
-      "
-      type="search"
-      autocomplete="off"
-    />
+    <input v-model="query" class="search" type="search" autocomplete="off" />
     <img
       class="xs-absolute searchicon xs-r0 sm-l0"
       src="~/assets/bx-search.svg"
@@ -31,6 +19,8 @@
 </template>
 
 <script>
+import { mapState } from 'vuex';
+
 export default {
   data() {
     return {
@@ -38,19 +28,19 @@ export default {
       articles: [],
     };
   },
+  computed: {
+    ...mapState(['articles']),
+  },
   watch: {
-    async query(query) {
+    query(query) {
       if (!query) {
         this.articles = [];
         return;
       }
 
-      this.articles = await this.$content('blog')
-        .only(['title', 'path'])
-        .sortBy('createdAt', 'desc')
-        .limit(12)
-        .search(query)
-        .fetch();
+      this.articles = this.articles.filter((article) =>
+        article.title.includes(query)
+      );
     },
   },
   methods: {

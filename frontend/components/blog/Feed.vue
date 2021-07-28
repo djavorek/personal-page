@@ -1,5 +1,5 @@
 <template>
-  <v-container>
+  <v-container class="my-6">
     <v-row>
       <v-col cols="12">
         <slot />
@@ -13,13 +13,13 @@
       />
     </v-row>
 
-    <v-row align="center">
+    <v-row align="center" class="bottom-fixed">
       <v-col cols="3">
         <base-btn
           v-if="page !== 1"
           class="ml-0"
           square
-          title="Previous page"
+          title="Előző oldal"
           @click="page--"
         >
           <v-icon>mdi-chevron-left</v-icon>
@@ -27,7 +27,7 @@
       </v-col>
 
       <v-col class="text-center subheading" cols="6">
-        PAGE {{ page }} OF {{ pages }}
+        Oldal: {{ page }} / {{ pages }}
       </v-col>
 
       <v-col class="text-right" cols="3">
@@ -35,7 +35,7 @@
           v-if="pages > 1 && page < pages"
           class="mr-0"
           square
-          title="Next page"
+          title="Következő oldal"
           @click="page++"
         >
           <v-icon>mdi-chevron-right</v-icon>
@@ -46,7 +46,6 @@
 </template>
 
 <script>
-// Utilities
 import { mapState } from 'vuex';
 
 export default {
@@ -77,3 +76,10 @@ export default {
   },
 };
 </script>
+<style scoped>
+.bottom-fixed {
+  position: fixed;
+  bottom: 2%;
+  width: 100%;
+}
+</style>

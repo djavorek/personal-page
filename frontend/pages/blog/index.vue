@@ -1,8 +1,6 @@
 <template>
   <div id="home">
-    <articles>
-      <banner />
-    </articles>
+    <articles />
   </div>
 </template>
 

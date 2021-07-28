@@ -6,11 +6,11 @@
     >
       <div class="xs-mt2 xs-p2 bcg-item">
         <div class="item xs-block xs-full-height">
-          <lazy-featured-image
-            v-if="post.thumbnail"
-            :title="post.title"
-            :thumbnail="post.thumbnail"
-          />
+          <v-img
+            :src="require(`@/static/uploads/images/${post.thumbnail}`)"
+            height="100%"
+          >
+          </v-img>
 
           <h1 class="xs-py3 main-title">{{ post.title }}</h1>
           <div class="xs-mt-5 bold">
@@ -25,14 +25,15 @@
                 </div>
               </li>
               <li class="xs-inline-block">
-                {{ post.date | moment('dddd, MMMM Do YYYY, h:mm:ss a') }}
+                {{ post.date | moment('dddd, MMMM Do YYYY') }}
               </li>
             </ul>
           </div>
           <div class="xs-py3 post-content text-gray-lighter">
             <nuxt-content :document="post" />
           </div>
-          <disqus-comments :identifier="$route.params.singlePost" />
+          <v-divider></v-divider>
+          <disqus-comments class :identifier="$route.params.singlePost" />
         </div>
       </div>
     </div>
@@ -62,23 +63,7 @@ export default {
   head() {
     return {
       title: this.post.title + ' | ' + this.$store.state.info.sitename,
-      meta: [
-        // { hid: 'description', name: 'description', content: this.article.description },
-        // Open Graph
-        { hid: 'og:title', property: 'og:title', content: this.post.title },
-        // { hid: 'og:description', property: 'og:description', content: this.article.description },
-        // Twitter Card
-        {
-          hid: 'twitter:title',
-          name: 'twitter:title',
-          content: this.post.title,
-        },
-        // { hid: 'twitter:description', name: 'twitter:description', content: this.page.description }
-      ],
     };
-  },
-  mounted() {
-    this.$store.commit('SET_CURRENT', this.post);
   },
 };
 </script>

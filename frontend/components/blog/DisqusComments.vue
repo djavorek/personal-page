@@ -1,16 +1,14 @@
 <template>
-  <div class="comments-wrapper section">
-    <vue-disqus shortname="blog-jd" :identifier="identifier" />
-
-    <!-- Warning to Provide Disqus Site Short Name -->
-  </div>
+  <section class="comments" aria-labelledby="comment">
+    <v-card class="pa-6">
+      <v-card-title>Kommentek</v-card-title>
+      <v-card-text><Disqus /></v-card-text>
+    </v-card>
+  </section>
 </template>
 <script>
 export default {
   name: 'DisqusComments',
-  props: {
-    identifier: { type: String, required: true },
-  },
   data() {
     return {
       displayed: true,

@@ -60,6 +60,7 @@ export default {
     '~/assets/style/animation.scss',
     '~/assets/style/grid.css',
     '~/assets/style/content.scss',
+    '~/assets/style/main.scss',
     'bf-solid/dist/solid.latest.css',
   ],
 
@@ -71,29 +72,26 @@ export default {
     },
     {
       src: '~/plugins/moment',
-      mode: 'client',
-    },
-    {
-      src: '~/plugins/lazyload',
-      mode: 'client',
     },
     {
       src: '~/plugins/toCurrency',
+    },
+    {
+      src: '~/plugins/disqus',
     },
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: {
     dirs: [
-      '~/components',
       '~/components/blog',
       '~/components/blog/base',
       '~/components/blog/core',
-      '~/components/header',
-      '~/components/content',
-      '~/components/content/articles',
-      '~/components/content/articles/contact',
-      '~/components/content/menu',
+      '~/components/portfolio/header',
+      '~/components/portfolio/content',
+      '~/components/portfolio/content/articles',
+      '~/components/portfolio/content/articles/contact',
+      '~/components/portfolio/content/menu',
       '~/components/tools',
     ],
   },

@@ -19,8 +19,8 @@ export const actions = {
     }
   },
 
-  async fetchArticles({ commit }, $content) {
-    const blogPosts = await $content('posts')
+  async nuxtServerInit({ commit }) {
+    const blogPosts = await this.$content('posts')
       .sortBy('createdAt', 'desc')
       .fetch()
       .catch((e) => {

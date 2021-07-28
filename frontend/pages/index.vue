@@ -2,7 +2,7 @@
 <template>
   <v-app>
     <div
-      id="app"
+      id="portfolio"
       :style="{
         backgroundImage: 'url(' + require('@/assets/bg_grey.png') + ')',
       }"
@@ -54,53 +54,5 @@ export default {
 </script>
 
 <style lang="scss">
-@use '~/assets/style/common';
-
-@font-face {
-  font-family: 'Merriweather';
-  src: local('Merriweather'),
-    url(~@/assets/fonts/Merriweather/Merriweather-Light.ttf) format('truetype');
-}
-
-@font-face {
-  font-family: 'Oswald';
-  font-weight: normal;
-  src: local('Oswald'),
-    url(~@/assets/fonts/Oswald/Oswald-Regular.ttf) format('truetype');
-}
-
-#app {
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-html,
-body {
-  margin: 0;
-  padding: 0;
-
-  color: common.$text;
-  font-family: 'Merriweather', Helvetica, Arial;
-  font-size: calc(
-    1rem + 0.2vw
-  ); // Use REM for font-size everywhere, 1.0 rem = 10 px
-
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-rendering: optimizeLegibility;
-
-  letter-spacing: -0.3px;
-
-  scroll-behavior: smooth !important;
-  -webkit-tap-highlight-color: transparent; /* for removing tap highlight */
-}
-
-a {
-  color: inherit;
-  text-decoration: inherit;
-}
-
-a:hover {
-  text-decoration: inherit;
-}
+@import '@/assets/style/main.scss';
 </style>
