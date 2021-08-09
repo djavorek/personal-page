@@ -3,9 +3,9 @@
     <div class="r xs-border-bottom">
       <div class="c-4 xs-text-left xs-p2 sm-border-right">
         <div class="item">
-          <nuxt-link class="sitename" to="/blog" exact
-            >Javorek Dénes - Blog</nuxt-link
-          >
+          <nuxt-link class="sitename" to="/" exact>Javorek Dénes</nuxt-link>
+          <span class="sitename"> - </span>
+          <nuxt-link class="sitename" to="/blog" exact>Blog</nuxt-link>
         </div>
       </div>
 

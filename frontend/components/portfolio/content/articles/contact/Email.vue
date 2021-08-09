@@ -132,7 +132,7 @@ textarea,
 #submit {
   box-sizing: border-box;
 
-  font-size: 0.75rem;
+  font-size: 0.5em;
   padding: 0px 2em 0px 2em;
   width: 100%;
 
@@ -170,7 +170,7 @@ textarea:-ms-input-placeholder {
 }
 
 #submit {
-  font-size: 2.875em;
+  font-size: 1em;
 
   color: common.$primary;
 

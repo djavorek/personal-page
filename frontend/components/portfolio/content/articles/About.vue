@@ -8,8 +8,8 @@
         <p>
           <span class="greenText">Szia.</span> Örülök, hogy megtaláltad a
           weboldalamat. Itt igyekszek összefoglalni mindent, amit amúgy is
-          megtalálnál rólam az interneten és néhány olyan részletet is aminek
-          máshol nem volt helye. Így egyszerűbb és biztosabb dolgod lesz.
+          megtalálnál rólam az interneten. Így egyszerűbb és biztosabb dolgod
+          lesz.
         </p>
       </div>
     </div>
@@ -20,11 +20,22 @@
           2020 decembere óta az
           <span class="greenText">EPAM Systems-nél építem a karrieremet,</span>
           <span class="greenText">mint Software Engineer.</span>
-          Előtte több helyen is dolgoztam, többször hasonló pozícióban, biteket
-          tologatva. Ezek közül a legjobban a Finastra Hungary-nél töltött
-          éveimet értékelem. Itt tanulhattam meg a szakma alapjait és
-          alakíthattam ki a saját utamat.
+          Előtte több helyen is dolgoztam hasonló pozíciókban. Ezek közül a
+          legjobban a Finastra Hungary-nél töltött éveimet értékelem. Itt
+          tanulhattam meg a szakma alapjait és alakíthattam ki a saját utamat.
         </p>
+        <v-chip
+          class="ma-2 pa-4 primary-skil"
+          color="#39c2d7"
+          text-color="white"
+          >EPAM Systems</v-chip
+        >
+        <v-chip
+          class="ma-2 pa-4 primary-skil"
+          color="#C137A2"
+          text-color="white"
+          >Finastra</v-chip
+        >
       </div>
       <div id="work" class="about-image">
         <img :src="workImg" />
@@ -45,6 +56,23 @@
           NodeJS és PHP kódon is. Ezen felül mindig szeretek új dolgokat
           megismerni, legyen az cloud, frontend vagy beágyazott rendszer.
         </p>
+        <v-chip class="ma-2 pa-4 primary-skil" color="green" text-color="white"
+          >Java</v-chip
+        >
+        <v-chip class="ma-2 pa-4 primary-skil" color="green" text-color="white"
+          >Spring</v-chip
+        >
+        <v-chip class="ma-2 pa-4 primary-skil" color="green" text-color="white"
+          >Docker</v-chip
+        >
+        <v-chip class="ma-2 pa-4 primary-skil" color="yellow" text-color="black"
+          >React</v-chip
+        >
+        <v-chip class="ma-2 pa-4 primary-skil" color="yellow" text-color="black"
+          >Vue</v-chip
+        >
+        <v-chip class="ma-2 pa-4 primary-skil">C</v-chip>
+        <v-chip class="ma-2 pa-4 primary-skil">PHP</v-chip>
       </div>
     </div>
 
@@ -59,10 +87,8 @@
           vagy ezek kombinációjára fordítanám a szabadidőmet. Szeretem érteni
           hogyan működik a világ, legyen szó technológiáról, gazdaságról vagy
           akár természetről. Az pedig mindig örömmel tölt el, amikor még néhány
-          órát rászánhatok valaminek befejezésére, amit mások már késznek
-          láttak. Általában nem lehet és nem is érdemes a tökéletességet
-          keresni, de az én szabadidőmben szeretem a minőséget a mennyiség és az
-          idő elé állítani.
+          órát rászánhatok valaminek befejezésére, amit valaki más már késznek
+          látott.
         </p>
       </div>
       <div id="personal" class="about-image">

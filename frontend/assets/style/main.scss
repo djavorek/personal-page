@@ -13,9 +13,16 @@
     url(~@/assets/fonts/Oswald/Oswald-Regular.ttf) format('truetype');
 }
 
-#portfolio {
-  background-repeat: no-repeat;
-  background-size: cover;
+html,
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+
+  letter-spacing: -0.3px;
+
+  scroll-behavior: smooth !important;
+  -webkit-tap-highlight-color: transparent; /* for removing tap highlight */
 }
 
 html,
@@ -29,14 +36,8 @@ body #portfolio {
     1rem + 0.2vw
   ); // Use REM for font-size everywhere, 1.0 rem = 10 px
 
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-rendering: optimizeLegibility;
-
-  letter-spacing: -0.3px;
-
-  scroll-behavior: smooth !important;
-  -webkit-tap-highlight-color: transparent; /* for removing tap highlight */
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 #portfolio a {

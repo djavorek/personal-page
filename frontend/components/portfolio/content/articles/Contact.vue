@@ -25,6 +25,8 @@ export default {
 </script>
 
 <style scoped lang="scss">
+@use '~/assets/style/common';
+
 #img-center {
   margin: 0 auto;
   width: 100%;
@@ -35,13 +37,12 @@ export default {
   height: 35vh;
   width: 100%;
   display: block;
-  padding-top: 2vw;
+  padding: 2vw;
 }
 
 #contact-container {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
   justify-content: space-evenly;
 }
 
