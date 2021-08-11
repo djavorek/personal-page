@@ -1,16 +1,20 @@
 /* eslint-disable object-shorthand */
 <template>
-  <div
-    id="app"
-    :style="{ backgroundImage: 'url(' + require('@/assets/bg_grey.png') + ')' }"
-  >
-    <div id="header" class="notouchy">
-      <Header />
+  <v-app>
+    <div
+      id="portfolio"
+      :style="{
+        backgroundImage: 'url(' + require('@/assets/bg_grey.png') + ')',
+      }"
+    >
+      <div class="notouchy">
+        <Header />
+      </div>
+      <div>
+        <Content />
+      </div>
     </div>
-    <div>
-      <Content />
-    </div>
-  </div>
+  </v-app>
 </template>
 
 <script>
@@ -50,48 +54,5 @@ export default {
 </script>
 
 <style lang="scss">
-@use '~/assets/style/common';
-
-@font-face {
-  font-family: 'Merriweather';
-  src: local('Merriweather'),
-    url(~@/assets/fonts/Merriweather/Merriweather-Light.ttf) format('truetype');
-}
-
-@font-face {
-  font-family: 'Oswald';
-  font-weight: normal;
-  src: local('Oswald'),
-    url(~@/assets/fonts/Oswald/Oswald-Regular.ttf) format('truetype');
-}
-
-#app {
-  background-repeat: no-repeat;
-  background-size: cover;
-
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-html,
-body {
-  margin: 0;
-  padding: 0;
-
-  color: common.$text;
-  font-family: 'Merriweather', Helvetica, Arial;
-  font-size: 62.5%; // Use REM for font-size everywhere, 1.0 rem = 10 px
-
-  scroll-behavior: smooth !important;
-  -webkit-tap-highlight-color: transparent; /* for removing tap highlight */
-}
-
-a {
-  color: inherit;
-  text-decoration: inherit;
-}
-
-a:hover {
-  text-decoration: inherit;
-}
+@import '@/assets/style/main.scss';
 </style>
