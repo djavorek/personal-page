@@ -2,6 +2,13 @@ export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
 
+  vue: {
+    config: {
+      productionTip: false,
+      devtools: true,
+    },
+  },
+
   server: {
     port: 8080, // default: 3000
   },
@@ -12,17 +19,36 @@ export default {
     htmlAttrs: {
       lang: 'en',
     },
+    script: [
+      { src: 'https://identity.netlify.com/v1/netlify-identity-widget.js' },
+      { src: './admin/redirect.js' },
+    ],
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       {
         hid: 'description',
         name: 'description',
-        content:
-          'Javorek Dénes oldala. Bemutatkozás, kapcsolat, és pár dolog, amit szeretek.',
+        content: 'Javorek Dénes oldala. Bemutatkozás, kapcsolat, blog.',
       },
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: './favicon.ico' }],
+  },
+
+  workbox: {
+    runtimeCaching: [
+      {
+        urlPattern: '/uploads/images/.*',
+        handler: 'cacheFirst',
+        strategyOptions: {
+          cacheName: 'image-cache',
+          cacheExpiration: {
+            maxEntries: 100,
+            maxAgeSeconds: 86400,
+          },
+        },
+      },
+    ],
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
@@ -31,20 +57,41 @@ export default {
     '~/assets/style/common/_variables.scss',
     '~/assets/style/common/_behavior.scss',
     '~/assets/style/animation.scss',
+    '~/assets/style/grid.css',
+    '~/assets/style/content.scss',
+    '~/assets/style/main.scss',
+    'bf-solid/dist/solid.latest.css',
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [],
+  plugins: [
+    {
+      src: '~/plugins/browser',
+      mode: 'client',
+    },
+    {
+      src: '~/plugins/moment',
+    },
+    {
+      src: '~/plugins/toCurrency',
+    },
+    {
+      src: '~/plugins/disqus',
+    },
+  ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: {
     dirs: [
-      '~/components',
-      '~/components/header',
-      '~/components/content',
-      '~/components/content/articles',
-      '~/components/content/articles/contact',
-      '~/components/content/menu',
+      '~/components/blog',
+      '~/components/blog/base',
+      '~/components/blog/core',
+      '~/components/portfolio/header',
+      '~/components/portfolio/content',
+      '~/components/portfolio/content/articles',
+      '~/components/portfolio/content/articles/contact',
+      '~/components/portfolio/content/menu',
+      '~/components/tools',
     ],
   },
 
@@ -52,11 +99,28 @@ export default {
   buildModules: [
     // https://go.nuxtjs.dev/eslint
     '@nuxtjs/eslint-module',
+    ['@nuxtjs/vuetify', { treeShake: true }],
     '@nuxtjs/fontawesome',
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: [],
+  modules: [
+    '@nuxt/content',
+    [
+      'v-currency-field/nuxt-treeshaking',
+      {
+        locale: 'hu-HU',
+        suffix: 'Ft',
+        decimalLength: 0,
+        autoDecimalMode: true,
+        min: null,
+        max: null,
+        defaultValue: 0,
+        valueAsInteger: true,
+        allowNegative: false,
+      },
+    ],
+  ],
 
   fontawesome: {
     icons: {
