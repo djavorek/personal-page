@@ -2,9 +2,11 @@
   <div id="szja">
     <div id="szja-input">
       <v-alert text type="warning" border="left">
-        Az adatok kizárólag tájékoztató jellegűek. Azokat további kedvezmények
-        is befolyásolhatják.<br />
-        <b>Helyességükért felelőséget nem vállalok.</b>
+        Az adatok kizárólag tájékoztató jellegűek.
+        <b
+          >A pontos felső határhoz szükséges KSH adat még nem áll
+          rendelkezésre.</b
+        >
       </v-alert>
 
       <v-currency-field
