@@ -7,7 +7,7 @@
         backgroundImage: 'url(' + require('@/assets/bg_grey.png') + ')',
       }"
     >
-      <div id="header" class="notouchy">
+      <div class="notouchy">
         <Header />
       </div>
       <div>

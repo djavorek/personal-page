@@ -1,7 +1,7 @@
 <template>
   <div>
     <div id="img-center">
-      <img id="contact-img" :src="contactImg" />
+      <img id="contact-img" :src="contactImg" alt="contact" />
     </div>
     <div id="contact-container">
       <div id="direct-email">

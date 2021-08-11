@@ -40,21 +40,6 @@ export default {
   flex-direction: column;
 }
 
-.parallax {
-  /* Create the parallax scrolling effect */
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 0;
-}
-
 #downButton {
   margin-top: 20vh;
   color: white;

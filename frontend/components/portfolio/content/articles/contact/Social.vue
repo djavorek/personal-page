@@ -2,13 +2,13 @@
   <div id="social">
     <h1>TOVÁBBI ELÉRHETŐSÉGEK</h1>
     <div class="contact">
-      <img :src="mailImg" /><span>javorek.denes@gmail.com</span>
+      <img :src="mailImg" alt="email" /><span>javorek.denes@gmail.com</span>
     </div>
     <div class="contact">
-      <img :src="inImg" /><span>/in/denes-javorek/</span>
+      <img :src="inImg" alt="linkedin" /><span>/in/denes-javorek/</span>
     </div>
     <div class="contact">
-      <img :src="fbImg" /><span>facebook.com/javidenes/</span>
+      <img :src="fbImg" alt="facebook" /><span>facebook.com/javidenes/</span>
     </div>
   </div>
 </template>

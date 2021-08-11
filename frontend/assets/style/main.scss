@@ -26,18 +26,19 @@ body {
 }
 
 html,
-body #portfolio {
+body,
+#portfolio {
   margin: 0;
   padding: 0;
+
+  background-repeat: no-repeat;
+  background-size: cover;
 
   color: common.$text;
   font-family: 'Merriweather', Helvetica, Arial;
   font-size: calc(
     1rem + 0.2vw
   ); // Use REM for font-size everywhere, 1.0 rem = 10 px
-
-  background-repeat: no-repeat;
-  background-size: cover;
 }
 
 #portfolio a {

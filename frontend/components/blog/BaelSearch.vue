@@ -4,6 +4,7 @@
     <img
       class="xs-absolute searchicon xs-r0 sm-l0"
       src="~/assets/bx-search.svg"
+      alt="search"
     />
     <smooth-reflow tag="ul" class="xs-absolute results">
       <li

@@ -2,7 +2,7 @@
   <div id="about-container">
     <div class="about-row">
       <div id="head" class="about-image">
-        <img :src="headImg" />
+        <img :src="headImg" alt="intro" />
       </div>
       <div id="head-text" class="about-text">
         <p>
@@ -38,13 +38,13 @@
         >
       </div>
       <div id="work" class="about-image">
-        <img :src="workImg" />
+        <img :src="workImg" alt="about" />
       </div>
     </div>
 
     <div class="about-row">
       <div id="exp" class="about-image">
-        <img :src="expImg" />
+        <img :src="expImg" alt="experience" />
       </div>
       <div id="exp-text" class="about-text">
         <p>
@@ -92,7 +92,7 @@
         </p>
       </div>
       <div id="personal" class="about-image">
-        <img :src="hobbyImg" />
+        <img :src="hobbyImg" alt="hobbies" />
       </div>
     </div>
   </div>
@@ -154,6 +154,7 @@ img {
 
 .about-text {
   flex-basis: 60%;
+  flex-grow: 1;
 }
 
 p > span {
