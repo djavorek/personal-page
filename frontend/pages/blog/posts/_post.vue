@@ -62,7 +62,14 @@ export default {
   },
   head() {
     return {
-      title: this.post.title + ' | ' + this.$store.state.info.sitename,
+      title: this.post.title + ' - Javorek Dénes',
+      meta: [
+        {
+          hid: this.post.title,
+          name: 'description',
+          content: this.post.brief,
+        },
+      ],
     };
   },
 };

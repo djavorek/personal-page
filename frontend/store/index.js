@@ -4,7 +4,6 @@ export const state = () => {
     current: {},
     categories: [],
     articles: [],
-    settings: {},
   };
 };
 

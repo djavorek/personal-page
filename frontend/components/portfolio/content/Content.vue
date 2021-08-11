@@ -1,8 +1,8 @@
 <template>
   <div id="content">
-    <nav id="leftCont" class="no-bottom">
+    <div id="leftCont" class="no-bottom">
       <Menu @changed="selectMenu" />
-    </nav>
+    </div>
     <main id="rightCont" class="no-bottom">
       <ArticleBox :menu="menu" />
       <!-- v-bind to pass as Number  -->

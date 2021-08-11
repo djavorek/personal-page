@@ -29,8 +29,7 @@ export default {
       {
         hid: 'description',
         name: 'description',
-        content:
-          'Javorek Dénes oldala. Bemutatkozás, kapcsolat, és pár dolog, amit szeretek.',
+        content: 'Javorek Dénes oldala. Bemutatkozás, kapcsolat, blog.',
       },
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: './favicon.ico' }],
