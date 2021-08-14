@@ -91,6 +91,7 @@ export default {
       '~/components/portfolio/content/articles/contact',
       '~/components/portfolio/content/menu',
       '~/components/tools',
+      '~/components/tools/viewcount',
     ],
   },
 
@@ -119,11 +120,16 @@ export default {
         allowNegative: false,
       },
     ],
+    '@nuxtjs/sitemap',
   ],
 
   fontawesome: {
     icons: {
       solid: ['faAngleDoubleDown'],
     },
+  },
+  sitemap: {
+    hostname: 'https://javorekdenes.hu',
+    routes: ['/blogp/osts/2021-08-15-szja25'],
   },
 };

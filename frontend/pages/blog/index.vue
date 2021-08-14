@@ -1,6 +1,7 @@
 <template>
   <div id="home">
     <articles />
+    <GoatCounter />
   </div>
 </template>
 

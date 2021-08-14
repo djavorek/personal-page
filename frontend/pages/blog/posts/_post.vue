@@ -36,6 +36,7 @@
           />
         </div>
       </div>
+      <GoatCounter />
     </div>
   </main>
 </template>
