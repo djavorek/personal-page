@@ -46,7 +46,7 @@ export default {
 }
 
 .menuItem {
-  font-size: 1rem;
+  font-size: 1.2rem;
   text-align: center;
   width: 100%;
   text-decoration: none;

@@ -15,7 +15,7 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'personal-page',
+    title: 'Javorek Dénes',
     htmlAttrs: {
       lang: 'en',
     },
@@ -29,10 +29,10 @@ export default {
       {
         hid: 'description',
         name: 'description',
-        content: 'Javorek Dénes oldala. Bemutatkozás, kapcsolat, blog.',
+        content: 'Javorek Dénes weboldala. Bemutatkozás, kapcsolat, blog.',
       },
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: './favicon.ico' }],
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
 
   workbox: {
@@ -60,7 +60,6 @@ export default {
     '~/assets/style/grid.css',
     '~/assets/style/content.scss',
     '~/assets/style/main.scss',
-    'bf-solid/dist/solid.latest.css',
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins

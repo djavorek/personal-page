@@ -15,7 +15,6 @@
             <v-col cols="12">
               <v-chip
                 label
-                class="mx-0 mb-2 text-uppercase"
                 color="grey darken-3"
                 text-color="white"
                 small
@@ -36,7 +35,8 @@
             <v-col align-self="end">
               <v-chip
                 class="text-uppercase ma-0"
-                color="primary"
+                color="white"
+                text-color="black"
                 label
                 small
                 @click.stop=""

@@ -54,7 +54,6 @@
               id="birth"
               v-model="birth"
               locale="hu-HU"
-              no-title
               @input="birthSelected"
             />
           </v-menu>
@@ -172,11 +171,11 @@ export default {
       this.calculate();
     },
     calculate() {
-      const limitDateForMonth = new Date('2022-01-05');
-
       for (let monthNum = 0; monthNum < 12; monthNum++) {
         let calculatedNet = this.net;
-        limitDateForMonth.setMonth(monthNum);
+
+        const limitDateForMonth = new Date(this.targetYear, monthNum, 1);
+        limitDateForMonth.setDate(limitDateForMonth.getDate() - 1);
 
         if (
           !this.turnagelimit ||

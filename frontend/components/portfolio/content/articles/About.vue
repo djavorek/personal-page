@@ -115,7 +115,7 @@ export default {
 @use '~/assets/style/common';
 
 #about-container {
-  font-size: 1rem;
+  font-size: 1.2rem;
   font-family: 'Oswald', Helvetica, Arial;
 }
 
@@ -124,7 +124,6 @@ export default {
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  padding: 2em;
 }
 
 .about-row.wrap-reverse {
