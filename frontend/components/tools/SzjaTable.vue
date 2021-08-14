@@ -1,12 +1,16 @@
 <template>
-  <div id="szja-out-table">
+  <div>
     <v-simple-table>
-      <tr>
-        <th v-for="(month, i) in months" :key="i">{{ month }}</th>
-      </tr>
-      <tr>
-        <td v-for="(net, i) in data" :key="i">{{ net | toCurrency }}</td>
-      </tr>
+      <thead>
+        <tr>
+          <th v-for="(month, i) in months" :key="i">{{ month }}</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td v-for="(net, i) in data" :key="i">{{ net | toCurrency }}</td>
+        </tr>
+      </tbody>
     </v-simple-table>
   </div>
 </template>
@@ -42,8 +46,3 @@ export default {
   },
 };
 </script>
-
-<style lang="scss" scoped>
-@use '~/assets/style/common';
-@use '~/assets/style/animation';
-</style>

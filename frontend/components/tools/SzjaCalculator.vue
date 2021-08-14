@@ -3,10 +3,12 @@
     <div id="szja-input">
       <v-alert text type="warning" border="left">
         Az adatok kizárólag tájékoztató jellegűek.
+        <br />
         <b
           >A pontos felső határhoz szükséges KSH adat még nem áll
           rendelkezésre.</b
         >
+        A jelengleg használt átlagkereset: {{ grossUpperLimit | toCurrency }}
       </v-alert>
 
       <v-currency-field
