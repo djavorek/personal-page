@@ -4,36 +4,36 @@
       class="full-height single"
       :style="`min-height:calc(85vh - var(--nav-height));margin-top:var(--nav-height)`"
     >
-      <div class="xs-mt2 xs-p2 bcg-item">
-        <div class="item xs-block xs-full-height">
+      <div>
+        <div class="item">
           <v-img
             :src="require(`@/static/uploads/images/${post.thumbnail}`)"
             height="100%"
           >
           </v-img>
 
-          <h1 class="xs-py3 main-title">{{ post.title }}</h1>
-          <div class="xs-mt-5 bold">
-            <ul class="list-unstyled xs-flex xs-flex-align-center">
-              <li v-if="post.category" class="xs-inline-block xs-mr1">
-                <div class="tag fill-gray-darker xs-border">
-                  <nuxt-link
-                    :to="`/blog/category/${post.category.toLowerCase()}`"
-                    class="tag__link text-white"
-                    >{{ post.category }}</nuxt-link
-                  >
-                </div>
-              </li>
-              <li class="xs-inline-block">
-                {{ post.date | moment('dddd, MMMM Do YYYY') }}
-              </li>
-            </ul>
+          <h1 class="main-title">{{ post.title }}</h1>
+          <div class="post-info">
+            <v-chip
+              v-if="post.category"
+              color="grey darken-3"
+              text-color="white"
+              label
+              :to="`/blog/category/${post.category.toLowerCase()}`"
+            >
+              {{ post.category }}
+            </v-chip>
+            <span>
+              {{ post.date | moment('dddd, MMMM Do YYYY') }}
+            </span>
           </div>
-          <div class="xs-py3 post-content text-gray-lighter">
+          <div class="post-content">
             <nuxt-content :document="post" />
           </div>
-          <v-divider></v-divider>
-          <disqus-comments class :identifier="$route.params.singlePost" />
+          <disqus-comments
+            class="comments"
+            :identifier="$route.params.singlePost"
+          />
         </div>
       </div>
     </div>
@@ -74,3 +74,12 @@ export default {
   },
 };
 </script>
+
+<style scoped lang="scss">
+@use '~/assets/style/common';
+
+.post-info,
+.comments {
+  padding: 2em 0;
+}
+</style>

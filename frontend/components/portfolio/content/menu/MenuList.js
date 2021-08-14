@@ -13,7 +13,7 @@ const menuList = [
   },
   {
     id: 2,
-    text: 'BŐVEBBEN',
+    text: 'BLOG',
     purpose: 'Blog',
     link: '/blog',
   },

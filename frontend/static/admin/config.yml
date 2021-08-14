@@ -3,7 +3,7 @@ backend:
   branch: master # Branch to update (optional; defaults to master)
 
 # This line should *not* be indented
-media_folder: 'static/uploads/images'
+media_folder: 'frontend/static/uploads/images'
 public_folder: '/uploads/images' # The src attribute for uploaded media will begin with /images/uploads
 
 collections:

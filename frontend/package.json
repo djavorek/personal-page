@@ -30,7 +30,6 @@
     "@nuxt/babel-preset-app": "^2.15.6",
     "@nuxt/content": "^1.14.0",
     "@nuxtjs/fontawesome": "^1.1.2",
-    "bf-solid": "^2.10.6",
     "core-js": "^3.14.0",
     "lodash": "^4.17.20",
     "markdown-it": "^12.0.6",
