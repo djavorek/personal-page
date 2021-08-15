@@ -1,3 +1,0 @@
-user-agent: *
-
-sitemap: https://javorekdenes.hu/sitemap.xml
