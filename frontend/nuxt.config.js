@@ -120,6 +120,7 @@ export default {
         allowNegative: false,
       },
     ],
+    '@nuxtjs/robots',
     '@nuxtjs/sitemap',
   ],
 
@@ -127,6 +128,10 @@ export default {
     icons: {
       solid: ['faAngleDoubleDown'],
     },
+  },
+  robots: {
+    UserAgent: '*',
+    Disallow: '/admin',
   },
   sitemap: {
     hostname: 'https://javorekdenes.hu',
