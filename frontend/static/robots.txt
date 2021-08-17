@@ -1,0 +1,4 @@
+UserAgent: *
+Disallow: /admin
+Disallow: /_nuxt/
+Sitemap: https://javorekdenes.hu/sitemap.xml

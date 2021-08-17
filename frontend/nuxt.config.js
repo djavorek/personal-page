@@ -120,7 +120,6 @@ export default {
         allowNegative: false,
       },
     ],
-    '@nuxtjs/robots',
     '@nuxtjs/sitemap',
   ],
 
@@ -129,12 +128,8 @@ export default {
       solid: ['faAngleDoubleDown'],
     },
   },
-  robots: {
-    UserAgent: '*',
-    Disallow: '/admin',
-  },
   sitemap: {
     hostname: 'https://javorekdenes.hu',
-    routes: ['/blogp/osts/2021-08-15-szja25'],
+    routes: ['/blog/posts/2021-08-15-szja25'],
   },
 };
