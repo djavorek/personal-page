@@ -36,7 +36,6 @@ export default {
   max-width: 98vw;
   padding: 2em;
   border-color: common.$primary;
-  box-shadow: -3vw 3vw 3vw -3vw lighten(common.$dark, 0.2);
 }
 
 .slide-leave-active {

@@ -79,10 +79,8 @@
     <div class="about-row wrap-reverse">
       <div id="personal-text" class="about-text">
         <p>
-          Legszívesebben mindig valamilyen számomra
-          <span class="greenText"
-            >aktuális téma kérdéseinek alapos megértésére</span
-          >,
+          Legszívesebben mindig valamilyen számomra aktuális
+          <span class="greenText">téma kérdéseinek alapos megértésére</span>,
           <span class="greenText">dolgok tökéletesítésére</span>
           vagy ezek kombinációjára fordítanám a szabadidőmet. Szeretem érteni
           hogyan működik a világ, legyen szó technológiáról, gazdaságról vagy
@@ -124,6 +122,7 @@ export default {
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
+  padding: 1em 0;
 }
 
 .about-row.wrap-reverse {

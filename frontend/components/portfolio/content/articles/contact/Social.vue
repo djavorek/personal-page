@@ -46,6 +46,6 @@ span {
   font-family: 'Oswald', Helvetica, Arial;
   letter-spacing: 0.2ch;
   margin-left: 1em;
-  font-size: 1.2em;
+  font-size: 1.3rem;
 }
 </style>

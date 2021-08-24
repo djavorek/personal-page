@@ -1,6 +1,6 @@
 $text: #dedede; // 87% opacity white
 $background: #121212;
-$primary: #9BFF5D;
+$primary: #9bff5d;
 $primary-light: findLightColor($primary);
 $primary-dark: findDarkColor($primary);
 $primary-invert: findColorInvert($primary);
@@ -11,4 +11,4 @@ $warning: rgb(250, 29, 29);
 $danger: #2dac2d;
 $dark: #1b1b1b;
 
-$anim-time: 0.6s;
+$anim-time: 0.35s;
