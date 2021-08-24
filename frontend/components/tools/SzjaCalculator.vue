@@ -5,10 +5,10 @@
         Az adatok kizárólag tájékoztató jellegűek.
         <br />
         <b
-          >A pontos felső határhoz szükséges KSH adat még nem áll
-          rendelkezésre.</b
+          >A pontos felső határhoz szükséges KSH adat (előző év júliiusi
+          átlagkereset) még nem áll rendelkezésre.</b
         >
-        A jelengleg használt átlagkereset: {{ grossUpperLimit | toCurrency }}
+        A jelenleg használt átlagkereset: {{ grossUpperLimit | toCurrency }}
       </v-alert>
 
       <v-currency-field

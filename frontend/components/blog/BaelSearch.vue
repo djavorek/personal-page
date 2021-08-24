@@ -3,7 +3,7 @@
     <input v-model="query" class="search" type="search" autocomplete="off" />
     <img
       class="xs-absolute searchicon xs-r0 sm-l0"
-      src="~/assets/bx-search.svg"
+      src="~/assets/img/bx-search.svg"
       alt="search"
     />
     <smooth-reflow tag="ul" class="xs-absolute results">

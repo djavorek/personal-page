@@ -25,15 +25,24 @@ body {
   -webkit-tap-highlight-color: transparent; /* for removing tap highlight */
 }
 
-body #portfolio {
+#portfolio {
   margin: 0;
   padding: 0;
 
+  background-color: common.$background;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: 120%;
+
+  @media (max-width: 768px) {
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
 
   color: common.$text;
   font-family: 'Merriweather', Helvetica, Arial;
+  font-display: optional;
   font-size: calc(
     1rem + 0.2vw
   ); // Use REM for font-size everywhere, 1.0 rem = 10 px
