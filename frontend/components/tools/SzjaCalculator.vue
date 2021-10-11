@@ -2,13 +2,7 @@
   <div id="szja">
     <div id="szja-input">
       <v-alert text type="warning" border="left">
-        Az adatok kizárólag tájékoztató jellegűek.
-        <br />
-        <b
-          >A pontos felső határhoz szükséges KSH adat (előző év júliiusi
-          átlagkereset) még nem áll rendelkezésre.</b
-        >
-        A jelenleg használt átlagkereset: {{ grossUpperLimit | toCurrency }}
+        <b>Az adatok kizárólag tájékoztató jellegűek</b> és 2022-re vonatkoznak.
       </v-alert>
 
       <v-currency-field
@@ -133,7 +127,7 @@ export default {
   data() {
     return {
       targetYear: 2022, // Year of our calculations, only update after checked current tax calculations
-      grossUpperLimit: 414400, // Upper limit of the discount, update if needed
+      grossUpperLimit: 433700, // Upper limit of the discount, update if needed (to previous July data): https://www.ksh.hu/keresetek
       net: 266000, // Feasible net for 400k gross
       gross: 400000,
       turnagelimit: false,
