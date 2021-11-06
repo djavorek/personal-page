@@ -4,9 +4,7 @@
       class="menuItem notouchy"
       :class="{ selected: selected }"
       :to="
-        item.link.length
-          ? { path: item.link }
-          : { path: '/', hash: '#articleHolder' }
+        item.link.length ? { path: item.link } : { path: '/', hash: '#main' }
       "
     >
       <span @click="$emit('select', item.id)">

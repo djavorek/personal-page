@@ -1,8 +1,5 @@
 <template>
   <div>
-    <div id="img-center">
-      <img id="contact-img" :src="contactImg" alt="contact" />
-    </div>
     <div id="contact-container">
       <div id="direct-email">
         <Email />
@@ -13,16 +10,6 @@
     </div>
   </div>
 </template>
-
-<script>
-export default {
-  data() {
-    return {
-      contactImg: require('@/assets/img/contact_instant.svg'),
-    };
-  },
-};
-</script>
 
 <style scoped lang="scss">
 @use '~/assets/style/common';
@@ -41,9 +28,12 @@ export default {
 }
 
 #contact-container {
+  min-height: 100vh;
+  padding: 2vw;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
+  align-content: center;
 }
 
 #direct-email {
