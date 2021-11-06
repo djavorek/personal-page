@@ -11,16 +11,6 @@
   </div>
 </template>
 
-<script>
-export default {
-  data() {
-    return {
-      contactImg: require('@/assets/img/contact_instant.svg'),
-    };
-  },
-};
-</script>
-
 <style scoped lang="scss">
 @use '~/assets/style/common';
 
