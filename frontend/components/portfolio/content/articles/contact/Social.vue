@@ -1,8 +1,8 @@
 <template>
   <div id="social">
-    <h1>TOVÁBBI ELÉRHETŐSÉGEK</h1>
+    <h2>ELÉRHETŐSÉGEK</h2>
     <div class="contact">
-      <img :src="mailImg" alt="email" /><span>javorek.denes@gmail.com</span>
+      <img :src="mailImg" alt="email" /><span>mail@javorekdenes.hu</span>
     </div>
     <div class="contact">
       <img :src="inImg" alt="linkedin" /><span>/in/denes-javorek/</span>
@@ -46,6 +46,6 @@ span {
   font-family: 'Oswald', Helvetica, Arial;
   letter-spacing: 0.2ch;
   margin-left: 1em;
-  font-size: 1.3rem;
+  font-size: 1rem;
 }
 </style>

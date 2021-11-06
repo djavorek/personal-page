@@ -1,8 +1,5 @@
 <template>
   <div>
-    <div id="img-center">
-      <img id="contact-img" :src="contactImg" alt="contact" />
-    </div>
     <div id="contact-container">
       <div id="direct-email">
         <Email />
@@ -41,9 +38,12 @@ export default {
 }
 
 #contact-container {
+  min-height: 100vh;
+  padding: 2vw;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
+  align-content: center;
 }
 
 #direct-email {

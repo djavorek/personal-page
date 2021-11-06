@@ -1,5 +1,5 @@
 <template>
-  <div id="articleHolder" class="glassmorphism">
+  <div id="main" class="glassmorphism">
     <transition name="slide" mode="out-in">
       <About v-if="isSelected('About')" />
       <Contact v-if="isSelected('Contact')" />
@@ -29,7 +29,7 @@ export default {
 <style scoped lang="scss">
 @use '~/assets/style/common';
 
-#articleHolder {
+#main {
   box-sizing: border-box;
   overflow: hidden;
   min-height: 98vh;
@@ -52,7 +52,7 @@ export default {
 }
 
 @media screen and (min-width: 768px) {
-  #articleHolder {
+  #main {
     border-radius: 0;
     border-left: 0;
   }

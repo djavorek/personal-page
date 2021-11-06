@@ -22,7 +22,8 @@
           <span class="greenText">mint Software Engineer.</span>
           Előtte több helyen is dolgoztam hasonló pozíciókban. Ezek közül a
           legjobban a Finastra Hungary-nél töltött éveimet értékelem. Itt
-          tanulhattam meg a szakma alapjait és alakíthattam ki a saját utamat.
+          tanulhattam meg a szakma alapjait és találhattam meg merre akarok
+          tovább haladni.
         </p>
         <v-chip
           class="ma-2 pa-4 primary-skil"
@@ -84,9 +85,8 @@
           <span class="greenText">dolgok tökéletesítésére</span>
           vagy ezek kombinációjára fordítanám a szabadidőmet. Szeretem érteni
           hogyan működik a világ, legyen szó technológiáról, gazdaságról vagy
-          akár természetről. Az pedig mindig örömmel tölt el, amikor még néhány
-          órát rászánhatok valaminek befejezésére, amit valaki más már késznek
-          látott.
+          akár természetről. Az pedig mindig örömmel tölt el, ha még néhány órát
+          rászánhatok valaminek a tökéletesítésére, amit más már késznek hívna.
         </p>
       </div>
       <div id="personal" class="about-image">

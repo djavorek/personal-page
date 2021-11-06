@@ -1,6 +1,6 @@
 <template>
   <div id="email">
-    <h1 id="email-title">ITT AZONNAL ÍRHATSZ</h1>
+    <h2 id="email-title">ITT AZONNAL ÍRHATSZ</h2>
     <div v-if="!sent">
       <form
         id="instant-contact"
@@ -148,6 +148,7 @@ textarea,
 input,
 textarea {
   color: common.$text;
+  padding: 2vw;
 }
 
 textarea {
