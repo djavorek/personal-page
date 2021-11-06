@@ -2,13 +2,6 @@ export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
 
-  vue: {
-    config: {
-      productionTip: false,
-      devtools: true,
-    },
-  },
-
   server: {
     port: 8080, // default: 3000
   },
@@ -17,12 +10,8 @@ export default {
   head: {
     title: 'Javorek Dénes',
     htmlAttrs: {
-      lang: 'en',
+      lang: 'hu',
     },
-    script: [
-      { src: 'https://identity.netlify.com/v1/netlify-identity-widget.js' },
-      { src: './admin/redirect.js' },
-    ],
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
