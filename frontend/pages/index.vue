@@ -24,6 +24,15 @@ export default {
     bgImg: 'url(' + require('@/assets/img/bg.webp') + ')',
     bgImgFallBack: 'url(' + require('@/assets/img/bg.jpg') + ')',
   }),
+  mounted() {
+    // For admin page authentication
+    this.addScriptToHead(
+      'https://identity.netlify.com/v1/netlify-identity-widget.js'
+    );
+
+    // Redirecting back to admin page after successful Netlify auth
+    this.addScriptToHead('./admin/redirect.js');
+  },
   methods: {
     isWebpFormatSupported() {
       const elem = document.createElement('canvas');
@@ -34,6 +43,11 @@ export default {
         // very old browser like IE 8, canvas not supported
         return false;
       }
+    },
+    addScriptToHead(scriptPath) {
+      const externalScript = document.createElement('script');
+      externalScript.setAttribute('src', scriptPath);
+      document.head.appendChild(externalScript);
     },
   },
 };
