@@ -8,9 +8,18 @@
         <p>
           <span class="greenText">Szia.</span> Örülök, hogy megtaláltad a
           weboldalamat. Itt igyekszek összefoglalni mindent, amit amúgy is
-          megtalálnál rólam az interneten. Így egyszerűbb és biztosabb dolgod
-          lesz.
+          megtalálnál rólam kólönböző oldalakon. Így egyszerűbb és biztosabb
+          dolgod lesz.
         </p>
+        <v-chip class="ma-2 pa-4 primary-skil" color="green" text-color="white"
+          >Miskolci Egyetem</v-chip
+        >
+        <v-chip class="ma-2 pa-4 primary-skil" color="green" text-color="white"
+          >Mérnökinformatikus</v-chip
+        >
+        <v-chip class="ma-2 pa-4 primary-skil" color="yellow" text-color="black"
+          >Szeged</v-chip
+        >
       </div>
     </div>
 
@@ -18,10 +27,10 @@
       <div id="work-text" class="about-text">
         <p>
           2020 decembere óta az
-          <span class="greenText">EPAM Systems-nél építem a karrieremet,</span>
+          <span class="greenText">EPAM Systems-nél dolgozom,</span>
           <span class="greenText">mint Software Engineer.</span>
-          Előtte több helyen is dolgoztam hasonló pozíciókban. Ezek közül a
-          legjobban a Finastra Hungary-nél töltött éveimet értékelem. Itt
+          Előtte több helyen is kipróbáltam magam hasonló pozíciókban.Ezek közül
+          a legjobban a Finastra Hungary-nél töltött éveimet értékelem. Itt
           tanulhattam meg a szakma alapjait és találhattam meg merre akarok
           tovább haladni.
         </p>
@@ -86,7 +95,7 @@
           vagy ezek kombinációjára fordítanám a szabadidőmet. Szeretem érteni
           hogyan működik a világ, legyen szó technológiáról, gazdaságról vagy
           akár természetről. Az pedig mindig örömmel tölt el, ha még néhány órát
-          rászánhatok valaminek a tökéletesítésére, amit más már késznek hívna.
+          rászánhatok valaminek a befejezésére, amit más már késznek hívna.
         </p>
       </div>
       <div id="personal" class="about-image">
