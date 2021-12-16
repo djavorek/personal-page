@@ -20,7 +20,7 @@ export default {};
   text-align: center;
   background: rgba(black, 0.8);
 
-  border: 0.5vw solid #ffffff;
+  border: calc(0.25vw + 0.4vh) solid #ffffff;
   z-index: 30;
 }
 

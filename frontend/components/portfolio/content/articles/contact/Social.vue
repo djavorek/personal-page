@@ -5,10 +5,22 @@
       <img :src="mailImg" alt="email" /><span>mail@javorekdenes.hu</span>
     </div>
     <div class="contact">
-      <img :src="inImg" alt="linkedin" /><span>/in/denes-javorek/</span>
+      <a
+        href="https://www.linkedin.com/in/denes-javorek/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <img :src="inImg" alt="linkedin" /><span>/in/denes-javorek/</span>
+      </a>
     </div>
     <div class="contact">
-      <img :src="fbImg" alt="facebook" /><span>facebook.com/javidenes/</span>
+      <a
+        href="https://www.facebook.com/javidenes"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <img :src="fbImg" alt="facebook" /><span>facebook.com/javidenes/</span>
+      </a>
     </div>
   </div>
 </template>

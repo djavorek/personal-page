@@ -9,7 +9,7 @@
     "generate": "nuxt generate --modern",
     "lint:js": "eslint --ext \".js,.vue\" --ignore-path .gitignore .",
     "lint": "npm run lint:js",
-    "clean": "rm -rf /node_modules",
+    "clean": "rm -rf ./node_modules",
     "clean:install": "npm run clean && npm i",
     "clean:build": "npm run clean:install && rm -rf /dist ./nuxt && npm run generate"
   },
@@ -53,7 +53,6 @@
     "eslint-plugin-nuxt": "^2.0.0",
     "eslint-plugin-prettier": "^3.3.1",
     "eslint-plugin-vue": "^7.7.0",
-    "fibers": "^5.0.0",
     "husky": "^4.3.8",
     "lint-staged": "^10.5.4",
     "prettier": "^2.2.1",
