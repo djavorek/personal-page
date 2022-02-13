@@ -7,8 +7,8 @@
       <div id="head-text" class="about-text">
         <p>
           <span class="greenText">Szia.</span> Örülök, hogy megtaláltad a
-          weboldalamat. Itt igyekszek összefoglalni mindent, amit amúgy is
-          megtalálnál rólam kólönböző oldalakon. Így egyszerűbb és biztosabb
+          weboldalamat. Itt igyekszem összefoglalni mindent, amit amúgy is
+          megtalálnál rólam különböző oldalakon. Így egyszerűbb és biztosabb
           dolgod lesz.
         </p>
         <v-chip class="ma-2 pa-4 primary-skil" color="green" text-color="white"
