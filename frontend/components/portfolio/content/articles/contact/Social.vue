@@ -2,7 +2,8 @@
   <div id="social">
     <h2>ELÉRHETŐSÉGEK</h2>
     <div class="contact">
-      <img :src="mailImg" alt="email" /><span>mail@javorekdenes.hu</span>
+      <v-icon x-large dark>mdi-email</v-icon>
+      <span>mail@javorekdenes.hu</span>
     </div>
     <div class="contact">
       <a
@@ -10,7 +11,8 @@
         target="_blank"
         rel="noopener noreferrer"
       >
-        <img :src="inImg" alt="linkedin" /><span>/in/denes-javorek/</span>
+        <v-icon x-large dark>mdi-linkedin</v-icon>
+        <span>/in/denes-javorek/</span>
       </a>
     </div>
     <div class="contact">
@@ -19,8 +21,13 @@
         target="_blank"
         rel="noopener noreferrer"
       >
-        <img :src="fbImg" alt="facebook" /><span>facebook.com/javidenes/</span>
+        <v-icon x-large dark>mdi-facebook</v-icon>
+        <span>facebook.com/javidenes/</span>
       </a>
+    </div>
+    <div class="contact">
+      <v-icon x-large dark>mdi-discord</v-icon>
+      <span>Dénes#2583</span>
     </div>
   </div>
 </template>

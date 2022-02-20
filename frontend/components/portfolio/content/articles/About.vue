@@ -8,8 +8,8 @@
         <p>
           <span class="greenText">Szia.</span> Örülök, hogy megtaláltad a
           weboldalamat. Itt igyekszek összefoglalni mindent, amit amúgy is
-          megtalálnál rólam kólönböző oldalakon. Így egyszerűbb és biztosabb
-          dolgod lesz.
+          megtalálnál rólam más oldalakon. Így egyszerűbb és biztosabb dolgod
+          lesz.
         </p>
         <v-chip class="ma-2 pa-4 primary-skil" color="green" text-color="white"
           >Miskolci Egyetem</v-chip
@@ -27,12 +27,10 @@
       <div id="work-text" class="about-text">
         <p>
           2020 decembere óta az
-          <span class="greenText">EPAM Systems-nél dolgozom,</span>
+          <span class="greenText">EPAM Systems-nél dolgozok,</span>
           <span class="greenText">mint Software Engineer.</span>
-          Előtte több helyen is kipróbáltam magam hasonló pozíciókban.Ezek közül
-          a legjobban a Finastra Hungary-nél töltött éveimet értékelem. Itt
-          tanulhattam meg a szakma alapjait és találhattam meg merre akarok
-          tovább haladni.
+          Korábban már több másik cégnél is kipróbálhattam magam hasonló
+          pozicíókban.
         </p>
         <v-chip
           class="ma-2 pa-4 primary-skil"
@@ -89,13 +87,13 @@
     <div class="about-row wrap-reverse">
       <div id="personal-text" class="about-text">
         <p>
-          Legszívesebben mindig valamilyen számomra aktuális
-          <span class="greenText">téma kérdéseinek alapos megértésére</span>,
-          <span class="greenText">dolgok tökéletesítésére</span>
-          vagy ezek kombinációjára fordítanám a szabadidőmet. Szeretem érteni
-          hogyan működik a világ, legyen szó technológiáról, gazdaságról vagy
-          akár természetről. Az pedig mindig örömmel tölt el, ha még néhány órát
-          rászánhatok valaminek a befejezésére, amit más már késznek hívna.
+          A szabadidőmet legszívesebben valamilyen aktuális
+          <span class="greenText">műszaki témában való elmerüléssel</span>,
+          <span class="greenText">dolgok tökéletesítésével</span>
+          vagy ezek kombinációjával töltöm. Szeretem érteni hogyan működik a
+          világ, legyen szó technológiáról, gazdaságról vagy akár természetről.
+          Az pedig mindig örömmel tölt el, ha még néhány órát rászánhatok
+          valaminek a befejezésére, amit más már egyszer késznek hívott.
         </p>
       </div>
       <div id="personal" class="about-image">

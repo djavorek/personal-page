@@ -13,6 +13,12 @@ const menuList = [
   },
   {
     id: 2,
+    text: 'IMPRESSZUM',
+    purpose: 'Impressum',
+    link: '',
+  },
+  {
+    id: 3,
     text: 'BLOG',
     purpose: 'Blog',
     link: '/blog',

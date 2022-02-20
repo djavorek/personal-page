@@ -3,7 +3,7 @@
   "version": "1.1.0",
   "private": true,
   "scripts": {
-    "dev": "nuxt --modern=client",
+    "dev": "nuxt",
     "build": "nuxt build --modern=client",
     "start": "nuxt start --modern=client",
     "generate": "nuxt generate --modern",
