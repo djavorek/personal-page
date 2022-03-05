@@ -40,7 +40,7 @@ export default {
       if (elem.getContext && elem.getContext('2d')) {
         return elem.toDataURL('image/webp').indexOf('data:image/webp') === 0;
       } else {
-        // very old browser like IE 8, canvas not supported
+        // dinosaur browser like IE 8, canvas not supported
         return false;
       }
     },

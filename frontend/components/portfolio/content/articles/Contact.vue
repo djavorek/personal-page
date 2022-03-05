@@ -41,13 +41,14 @@
 }
 
 #contact-texts {
-  flex-basis: 40%;
+  flex-basis: 30%;
   font-size: 1.2rem;
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1200px) {
   #direct-email {
     flex-basis: auto;
+    margin-bottom: 3vh;
   }
 
   #contact-texts {
