@@ -1,52 +1,59 @@
 <template>
   <div id="email">
-    <h2 id="email-title">ITT AZONNAL ÍRHATSZ</h2>
-    <div v-if="!sent">
-      <form
-        id="instant-contact"
-        name="instant-contact"
-        class="topBefore"
-        method="post "
-        data-netlify="true"
-        data-netlify-honeypot="bot-field"
-        :class="{ load: loading, error: hasError }"
-        @submit.prevent="handleFormSubmit"
-      >
-        <div hidden aria-hidden="true">
-          <label>
-            Don’t fill this out if you're human:
-            <input name="bot-field" />
-          </label>
-        </div>
-        <input type="hidden" name="form-name" value="instant-contact" />
-        <input id="name" v-model="form.name" type="text" placeholder="NEVED" />
-        <input
-          id="contact"
-          v-model="form.contact"
-          type="text"
-          placeholder="ELÉRHETŐSÉGED"
-        />
-        <textarea
-          id="message"
-          v-model="form.message"
-          type="text"
-          placeholder="ÜZENETED"
-        ></textarea>
-        <input
-          id="submit"
-          type="submit"
-          value="KÜLDÉS"
+    <v-card class="pa-4" elevation="10" dark>
+      <h2 id="email-title">ITT AZONNAL ÍRHATSZ</h2>
+      <div v-if="!sent">
+        <form
+          id="instant-contact"
+          name="instant-contact"
+          class="topBefore"
+          method="post "
+          data-netlify="true"
+          data-netlify-honeypot="bot-field"
+          :class="{ load: loading }"
           @submit.prevent="handleFormSubmit"
-        />
-      </form>
-      <div v-if="hasError" class="errorMsg">
-        <span
-          >Ez most nem sikerült. Ha nem vagy nagyon csalódott, akkor keress meg
-          e-mailben vagy nézz vissza később.</span
         >
+          <div hidden aria-hidden="true">
+            <label>
+              Don’t fill this out if you're human:
+              <input name="bot-field" />
+            </label>
+          </div>
+          <input type="hidden" name="form-name" value="instant-contact" />
+          <input
+            id="name"
+            v-model="form.name"
+            type="text"
+            placeholder="NEVED"
+          />
+          <input
+            id="contact"
+            v-model="form.contact"
+            type="text"
+            placeholder="ELÉRHETŐSÉGED"
+          />
+          <textarea
+            id="message"
+            v-model="form.message"
+            type="text"
+            placeholder="ÜZENETED"
+          ></textarea>
+          <input
+            id="submit"
+            type="submit"
+            value="KÜLDÉS"
+            @submit.prevent="handleFormSubmit"
+          />
+        </form>
+        <div v-if="hasError" class="errorMsg">
+          <span
+            >Ez most nem sikerült. Ha nem vagy nagyon csalódott, akkor keress
+            meg e-mailben vagy nézz vissza később.</span
+          >
+        </div>
       </div>
-    </div>
-    <div v-else><h1>Megkaptam az üzeneted.</h1></div>
+      <div v-else><h1>Megkaptam az üzeneted.</h1></div>
+    </v-card>
   </div>
 </template>
 
@@ -136,10 +143,7 @@ textarea,
   padding: 0px 2em 0px 2em;
   width: 100%;
 
-  min-height: 6em;
-
-  background: transparent;
-  outline: none;
+  min-height: 7em;
 
   border: 0px;
   border-bottom: solid 1px common.$text;
@@ -153,6 +157,8 @@ textarea {
 
 textarea {
   resize: none;
+  min-height: 10vw;
+  overflow: auto;
 }
 
 textarea::-webkit-input-placeholder {

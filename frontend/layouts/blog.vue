@@ -1,7 +1,7 @@
 <template>
   <v-app>
     <section class="blog container">
-      <bael-header />
+      <blog-header />
       <nuxt />
     </section>
   </v-app>

@@ -3,6 +3,7 @@
     <transition name="slide" mode="out-in">
       <About v-if="isSelected('About')" />
       <Contact v-if="isSelected('Contact')" />
+      <Impressum v-if="isSelected('Impressum')" />
       <Blog v-if="isSelected('Blog')" />
     </transition>
   </div>
