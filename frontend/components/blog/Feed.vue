@@ -26,7 +26,7 @@
         </base-btn>
       </v-col>
 
-      <v-col class="text-center subheading" cols="6">
+      <v-col v-if="pages > 1" align="center" class="subheading" cols="6">
         Oldal: {{ page }} / {{ pages }}
       </v-col>
 

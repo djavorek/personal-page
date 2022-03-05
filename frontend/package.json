@@ -21,7 +21,6 @@
       "pre-commit": "lint-staged"
     }
   },
-  "babel": {},
   "dependencies": {
     "@babel/runtime-corejs3": "^7.14.0",
     "@fortawesome/fontawesome-svg-core": "^1.2.35",
