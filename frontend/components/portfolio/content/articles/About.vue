@@ -8,8 +8,8 @@
         <p>
           <span class="greenText">Szia.</span> Örülök, hogy megtaláltad a
           weboldalamat. Itt igyekszek összefoglalni mindent, amit amúgy is
-          megtalálnál rólam más oldalakon. Így egyszerűbb és biztosabb dolgod
-          lesz.
+          megtalálnál rólam különböző oldalakon. Így egyszerűbb és biztosabb
+          dolgod lesz.
         </p>
         <v-chip class="ma-2 pa-4 primary-skil" color="green" text-color="white"
           >Miskolci Egyetem</v-chip
