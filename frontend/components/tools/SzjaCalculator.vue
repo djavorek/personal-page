@@ -25,7 +25,7 @@
       <v-checkbox
         id="turnagelimit"
         v-model="turnagelimit"
-        :label="targetYear + '-ben leszek 25 éves.'"
+        :label="targetYear + '-ban leszek 25 éves.'"
         @change="calculate"
       />
       <transition name="scroll-y-transition">
@@ -108,7 +108,7 @@
 
     <div id="szja-output">
       <v-card>
-        <v-card-title>Számított nettó ({{ targetYear }}-ben)</v-card-title>
+        <v-card-title>Számított nettó ({{ targetYear }}-ban)</v-card-title>
         <v-card-text>
           <div v-if="output.every((i) => i === output[0])">
             {{ output[0] | toCurrency }}
