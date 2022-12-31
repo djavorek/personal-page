@@ -126,8 +126,8 @@ export default {
   components: { SzjaTable },
   data() {
     return {
-      targetYear: 2022, // Year of our calculations, only update after checked current tax calculations
-      grossUpperLimit: 433700, // Upper limit of the discount, update if needed (to previous July data): https://www.ksh.hu/keresetek
+      targetYear: 2023, // Year of our calculations, only update after checked current tax calculations
+      grossUpperLimit: 500000, // Upper limit of the discount, update if needed (to previous July data): https://www.ksh.hu/keresetek
       net: 266000, // Feasible net for 400k gross
       gross: 400000,
       turnagelimit: false,
