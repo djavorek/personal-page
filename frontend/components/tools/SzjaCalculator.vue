@@ -2,7 +2,7 @@
   <div id="szja">
     <div id="szja-input">
       <v-alert text type="warning" border="left">
-        <b>Az adatok kizárólag tájékoztató jellegűek</b> és 2022-re vonatkoznak.
+        <b>Az adatok kizárólag tájékoztató jellegűek</b> és {{ targetYear }}-ra vonatkoznak.
       </v-alert>
 
       <v-currency-field
