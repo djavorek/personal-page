@@ -20,6 +20,7 @@ export const actions = {
 
   async nuxtServerInit({ commit }) {
     const blogPosts = await this.$content('posts')
+      .where({ draft: false })
       .sortBy('createdAt', 'desc')
       .fetch()
       .catch((e) => {
