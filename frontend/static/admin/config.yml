@@ -8,7 +8,7 @@ public_folder: '/uploads/images' # The src attribute for uploaded media will beg
 
 collections:
   - name: 'blog' # Used in routes, e.g., /admin/collections/blog
-    label: 'Blog' # Used in the UI
+    label: 'Post' # Used in the UI
     folder: 'frontend/content/posts' # The path to the folder where the documents are stored, see: @nuxt/content 'dir' prop, prefixed by baseDir
     format: 'frontmatter'
     create: true # Allow users to create new documents in this collection
@@ -17,6 +17,7 @@ collections:
     fields: # The fields for each document, usually in front matter
       - { label: 'Title', name: 'title', widget: 'string', required: true }
       - { label: 'Publish Date', name: 'date', widget: 'date', required: true }
+      - { label: "Draft", name: "draft", widget: "boolean", required: false, default: true}
       - {
           label: 'Featured Image',
           name: 'thumbnail',
