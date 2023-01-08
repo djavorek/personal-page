@@ -11,7 +11,6 @@
         @click="$vuetify.goTo('#menu', options)"
       />
     </div>
-    <!-- <div class="parallax" :style="{ backgroundImage: 'url(' + require('@/assets/fg.svg') + ')' }"></div> -->
   </div>
 </template>
 
@@ -41,8 +40,10 @@ export default {
 }
 
 #downButton {
-  margin-top: 20vh;
+  margin-top: 25vh;
   color: white;
+  height: 10vh;
+  width: 10vw;
   z-index: 30;
 
   -webkit-animation-duration: 1s;
