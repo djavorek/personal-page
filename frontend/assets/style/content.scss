@@ -155,4 +155,22 @@
     overflow-x: auto;
     padding: 1.125em;
   }
+
+  table {
+    width: 150%;
+    max-width: 95vw;
+    border-collapse: collapse;
+    color: #000000;
+  }
+  
+  table td, table th {
+    border-width: 2px;
+    border-color: #7EA8F8;
+    border-style: solid;
+    padding: 6px;
+  }
+  
+  table thead {
+    background-color: #7EA8F8;
+  }
 }
