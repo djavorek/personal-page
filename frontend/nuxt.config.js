@@ -119,6 +119,9 @@ export default {
   },
   sitemap: {
     hostname: 'https://javorekdenes.hu',
-    routes: ['/blog/posts/2021-08-15-szja25'],
+    routes: [
+      '/blog/posts/2021-08-15-szja25',
+      '/blog/posts/2023-01-05-synology-ds118',
+    ],
   },
 };
