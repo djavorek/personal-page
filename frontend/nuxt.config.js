@@ -1,4 +1,6 @@
-export default {
+import { defineNuxtConfig } from 'nuxt'
+
+export default defineNuxtConfig({
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
 
@@ -42,6 +44,8 @@ export default {
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
+    'vuetify/lib/styles/main.sass',
+    '@fortawesome/fontawesome-svg-core/styles.css',
     '~/assets/style/common/_index.scss',
     '~/assets/style/common/_variables.scss',
     '~/assets/style/common/_behavior.scss',
@@ -51,22 +55,15 @@ export default {
     '~/assets/style/main.scss',
   ],
 
-  // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [
-    {
-      src: '~/plugins/browser',
-      mode: 'client',
+  build: {
+    transpile: ['vuetify'],
+  },
+
+  vite: {
+    define: {
+      'process.env.DEBUG': false,
     },
-    {
-      src: '~/plugins/moment',
-    },
-    {
-      src: '~/plugins/toCurrency',
-    },
-    {
-      src: '~/plugins/disqus',
-    },
-  ],
+  },
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: {
@@ -83,14 +80,6 @@ export default {
       '~/components/tools/viewcount',
     ],
   },
-
-  // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
-  buildModules: [
-    // https://go.nuxtjs.dev/eslint
-    '@nuxtjs/eslint-module',
-    ['@nuxtjs/vuetify', { treeShake: true }],
-    '@nuxtjs/fontawesome',
-  ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
@@ -109,7 +98,7 @@ export default {
         allowNegative: false,
       },
     ],
-    '@nuxtjs/sitemap',
+    '@funken-studio/sitemap-nuxt-3', { generateOnBuild: true },
   ],
 
   fontawesome: {
@@ -124,4 +113,4 @@ export default {
       '/blog/posts/2023-01-05-synology-ds118',
     ],
   },
-};
+});

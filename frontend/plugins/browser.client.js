@@ -5,15 +5,15 @@ import {
   addObserverIfNavBarAvailable,
 } from '~/plugins/dom-handlers';
 
-// plugin
-export default ({ store, route }, inject) => {
+
+export default defineNuxtPlugin(nuxtApp => {
   require('string.prototype.includes');
 
   // setup dom listeners
   // ~16ms is 60fps
   window.addEventListener(
     'resize',
-    _throttle(() => resizeHandler(store), 16)
+    _throttle(() => resizeHandler(nuxtApp.vueApp.store), 16)
   );
 
   // setup navigation mutation observer
@@ -29,6 +29,6 @@ export default ({ store, route }, inject) => {
   }
 
   // start
-  resizeHandler(store);
+  resizeHandler(nuxtApp.vueApp.store);
   addObserverIfNavBarAvailable(mutObserver);
-};
+});W
