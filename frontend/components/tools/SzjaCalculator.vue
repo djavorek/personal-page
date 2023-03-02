@@ -2,24 +2,27 @@
   <div id="szja">
     <div id="szja-input">
       <v-alert text type="warning" border="left">
-        <b>Az adatok kizárólag tájékoztató jellegűek</b> és {{ targetYear }}-ra vonatkoznak.
+        <b>Az adatok kizárólag tájékoztató jellegűek</b> és {{ targetYear }}-ra
+        vonatkoznak.
       </v-alert>
 
-      <v-currency-field
+      <CurrencyInput
         id="net"
         v-model="net"
         label="Jelenlegi nettó"
         suffix="Ft"
         type="number"
         @change="calculate"
+        :options="currencyOptions"
       />
-      <v-currency-field
+      <CurrencyInput
         id="gross"
         v-model="gross"
         label="Jelenlegi bruttó"
         type="number"
         suffix="Ft"
         @change="calculate"
+        :options="currencyOptions"
       />
 
       <v-checkbox
@@ -91,7 +94,7 @@
             </transition>
           </v-row>
           <v-row>
-            <v-currency-field
+            <CurrencyInput
               v-if="otherTaxDiscounts.firstMarriage.on"
               id="marriageDiscount"
               v-model="otherTaxDiscounts.firstMarriage.quantity"
@@ -99,6 +102,7 @@
               type="number"
               suffix="Ft"
               @change="calculate"
+              :options="currencyOptions"
           /></v-row>
         </v-container>
       </transition>
@@ -155,6 +159,17 @@ export default {
       birthSelectorMenu: false,
       birth: '',
       output: new Array(12).fill(0),
+      currencyOptions: {
+        locale: 'hu-HU',
+        suffix: 'Ft',
+        decimalLength: 0,
+        autoDecimalMode: true,
+        min: null,
+        max: null,
+        defaultValue: 0,
+        valueAsInteger: true,
+        allowNegative: false,
+      },
     };
   },
   created() {

@@ -3,10 +3,6 @@
   "env": {
     "browser": true
   },
-  "parserOptions": {
-    "parser": "@babel/eslint-parser",
-    "sourceType": "module"
-  },
   "extends": [
     "@nuxtjs",
     "plugin:prettier/recommended",

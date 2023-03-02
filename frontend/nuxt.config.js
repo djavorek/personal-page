@@ -1,15 +1,13 @@
-import { defineNuxtConfig } from 'nuxt'
+import { defineNuxtConfig } from 'nuxt/config';
 
 export default defineNuxtConfig({
-  // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
 
   server: {
     port: 8080, // default: 3000
   },
 
-  // Global page headers: https://go.nuxtjs.dev/config-head
-  head: {
+  meta: {
     title: 'Javorek Dénes',
     htmlAttrs: {
       lang: 'hu',
@@ -42,7 +40,6 @@ export default defineNuxtConfig({
     ],
   },
 
-  // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
     'vuetify/lib/styles/main.sass',
     '@fortawesome/fontawesome-svg-core/styles.css',
@@ -65,7 +62,6 @@ export default defineNuxtConfig({
     },
   },
 
-  // Auto import components: https://go.nuxtjs.dev/config-components
   components: {
     dirs: [
       '~/components/blog',
@@ -81,33 +77,17 @@ export default defineNuxtConfig({
     ],
   },
 
-  // Modules: https://go.nuxtjs.dev/config-modules
-  modules: [
-    '@nuxt/content',
-    [
-      'v-currency-field/nuxt-treeshaking',
-      {
-        locale: 'hu-HU',
-        suffix: 'Ft',
-        decimalLength: 0,
-        autoDecimalMode: true,
-        min: null,
-        max: null,
-        defaultValue: 0,
-        valueAsInteger: true,
-        allowNegative: false,
-      },
-    ],
-    '@funken-studio/sitemap-nuxt-3', { generateOnBuild: true },
-  ],
+  modules: ['@nuxt/content', '@funken-studio/sitemap-nuxt-3'],
 
   fontawesome: {
     icons: {
       solid: ['faAngleDoubleDown'],
     },
   },
+
   sitemap: {
     hostname: 'https://javorekdenes.hu',
+    generateOnBuild: true,
     routes: [
       '/blog/posts/2021-08-15-szja25',
       '/blog/posts/2023-01-05-synology-ds118',
