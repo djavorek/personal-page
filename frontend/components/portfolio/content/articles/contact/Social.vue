@@ -11,7 +11,7 @@
         target="_blank"
         rel="noopener noreferrer"
       >
-        <font-awesome-icon icon="fa-brands fa-linkedin" fixed-width />
+        <font-awesome-icon icon="fa-brands fa-linkedin" size="xl" />
         <span>/in/denes-javorek/</span>
       </a>
     </div>
@@ -21,12 +21,12 @@
         target="_blank"
         rel="noopener noreferrer"
       >
-        <font-awesome-icon icon="fa-brands fa-facebook" fixed-width />
+        <font-awesome-icon icon="fa-brands fa-facebook" size="xl" />
         <span>facebook.com/javidenes/</span>
       </a>
     </div>
     <div class="contact">
-      <font-awesome-icon icon="fa-brands fa-discord" fixed-width />
+      <font-awesome-icon icon="fa-brands fa-discord" size="xl" />
       <span>Dénes#2583</span>
     </div>
   </div>
