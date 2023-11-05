@@ -11,7 +11,7 @@
         target="_blank"
         rel="noopener noreferrer"
       >
-        <v-icon x-large dark>mdi-linkedin</v-icon>
+        <font-awesome-icon icon="fa-brands fa-linkedin" size="xl" fixed-width />
         <span>/in/denes-javorek/</span>
       </a>
     </div>
@@ -21,12 +21,12 @@
         target="_blank"
         rel="noopener noreferrer"
       >
-        <v-icon x-large dark>mdi-facebook</v-icon>
+        <font-awesome-icon icon="fa-brands fa-facebook" size="xl" fixed-width />
         <span>facebook.com/javidenes/</span>
       </a>
     </div>
     <div class="contact">
-      <v-icon x-large dark>mdi-discord</v-icon>
+      <font-awesome-icon icon="fa-brands fa-discord" size="xl" fixed-width />
       <span>Dénes#2583</span>
     </div>
   </div>
