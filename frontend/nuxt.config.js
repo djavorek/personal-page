@@ -82,6 +82,7 @@ export default defineNuxtConfig({
   fontawesome: {
     icons: {
       solid: ['faAngleDoubleDown'],
+      brands: ['faDiscord', 'faFacebook', 'faLinkedin'],
     },
   },
 
