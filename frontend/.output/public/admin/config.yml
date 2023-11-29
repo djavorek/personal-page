@@ -1,0 +1,59 @@
+backend:
+  name: git-gateway
+  branch: master # Branch to update (optional; defaults to master)
+
+# This line should *not* be indented
+media_folder: 'frontend/static/uploads/images'
+public_folder: '/uploads/images' # The src attribute for uploaded media will begin with /images/uploads
+
+collections:
+  - name: 'blog' # Used in routes, e.g., /admin/collections/blog
+    label: 'Post' # Used in the UI
+    folder: 'frontend/content/posts' # The path to the folder where the documents are stored, see: @nuxt/content 'dir' prop, prefixed by baseDir
+    format: 'frontmatter'
+    create: true # Allow users to create new documents in this collection
+    slug: '{{year}}-{{month}}-{{day}}-{{slug}}' # Filename template, e.g., YYYY-MM-DD-title.md
+    sort: 'date:desc' # Default is title:asc
+    fields: # The fields for each document, usually in front matter
+      - { label: 'Title', name: 'title', widget: 'string', required: true }
+      - { label: 'Publish Date', name: 'date', widget: 'date', required: true }
+      - {
+          label: 'Draft',
+          name: 'draft',
+          widget: 'boolean',
+          required: true,
+          default: true,
+        }
+      - {
+          label: 'Featured Image',
+          name: 'thumbnail',
+          widget: 'image',
+          required: true,
+        }
+      - {
+          label: 'Category',
+          name: 'category',
+          widget: 'relation',
+          collection: 'blogcategories',
+          searchFields: ['title'],
+          valueField: 'title',
+          displayFields: ['title'],
+          required: true,
+        }
+      - { label: 'Brief', name: 'brief', widget: 'string', required: true }
+      - { label: 'Body', name: 'body', widget: 'markdown', required: true }
+  - label: 'Categories'
+    name: 'blogcategories'
+    folder: 'frontend/content/category' # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    slug: '{{slug}}' # Filename template, e.g., YYYY-MM-DD-title.md
+    format: 'json'
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: Position, name: position, widget: string }
+      - {
+          label: Description,
+          name: description,
+          widget: string,
+          required: false,
+        }

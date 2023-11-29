@@ -2,7 +2,7 @@
   <v-app>
     <section class="blog container">
       <blog-header />
-      <nuxt />
+      <slot />
     </section>
   </v-app>
 </template>

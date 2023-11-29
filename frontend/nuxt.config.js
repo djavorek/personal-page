@@ -77,7 +77,16 @@ export default defineNuxtConfig({
     ],
   },
 
-  modules: ['@nuxt/content', '@funken-studio/sitemap-nuxt-3'],
+  modules: [
+    '@nuxt/content',
+    '@pinia/nuxt',
+    '@funken-studio/sitemap-nuxt-3',
+    'nuxt-disqus',
+  ],
+
+  disqus: {
+    shortname: 'javorekdenes-hu',
+  },
 
   fontawesome: {
     icons: {

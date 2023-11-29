@@ -6,10 +6,10 @@
 </template>
 
 <script>
-export default {
+definePageMeta({
   name: 'Index',
   layout: 'blog',
-};
+});
 </script>
 
 <style></style>

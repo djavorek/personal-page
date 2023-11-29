@@ -3,8 +3,8 @@
 </template>
 
 <script>
-export default {
+definePageMeta({
   name: 'Impressum',
   layout: 'blog',
-};
+});
 </script>
