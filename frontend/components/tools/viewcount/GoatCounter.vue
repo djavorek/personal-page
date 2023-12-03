@@ -1,5 +1,5 @@
 <template>
-  <div></div>
+  <div />
 </template>
 <script>
 export default {
@@ -28,7 +28,7 @@ export default {
 
     document.head.appendChild(script);
   },
-  beforeDestroy() {
+  beforeUnmount() {
     const script = document.getElementById(this.goatCounter.id);
     if (script) {
       script.remove();

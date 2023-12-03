@@ -1,7 +1,11 @@
 <template>
   <div id="szja">
     <div id="szja-input">
-      <v-alert text type="warning" border="left">
+      <v-alert
+        text
+        type="warning"
+        border="left"
+      >
         <b>Az adatok kizárólag tájékoztató jellegűek</b> és {{ targetYear }}-ra
         vonatkoznak.
       </v-alert>
@@ -12,8 +16,8 @@
         label="Jelenlegi nettó"
         suffix="Ft"
         type="number"
-        @change="calculate"
         :options="currencyOptions"
+        @change="calculate"
       />
       <CurrencyInput
         id="gross"
@@ -21,8 +25,8 @@
         label="Jelenlegi bruttó"
         type="number"
         suffix="Ft"
-        @change="calculate"
         :options="currencyOptions"
+        @change="calculate"
       />
 
       <v-checkbox
@@ -32,7 +36,10 @@
         @change="calculate"
       />
       <transition name="scroll-y-transition">
-        <v-layout v-if="turnagelimit" class="ml-4">
+        <v-layout
+          v-if="turnagelimit"
+          class="ml-4"
+        >
           <v-menu
             v-model="birthSelectorMenu"
             :close-on-content-click="false"
@@ -66,15 +73,18 @@
         @change="calculate"
       />
       <transition name="scroll-y-transition">
-        <v-container v-if="otherTaxDiscounts.on" class="ml-4">
+        <v-container
+          v-if="otherTaxDiscounts.on"
+          class="ml-4"
+        >
           <v-row>
             <v-checkbox
               id="taxdisocunt"
               v-model="otherTaxDiscounts.firstMarriage.on"
               :label="
                 'Jelenleg első házasok kedvezményét veszek igénybe és ez ' +
-                targetYear +
-                '-ben lejár, '
+                  targetYear +
+                  '-ben lejár, '
               "
               @change="calculate"
             />
@@ -90,7 +100,7 @@
                 return-object
                 single-line
                 @change="calculate"
-              ></v-select>
+              />
             </transition>
           </v-row>
           <v-row>
@@ -101,14 +111,15 @@
               label="Első házasok kedvezményének rám eső része (nettó)"
               type="number"
               suffix="Ft"
-              @change="calculate"
               :options="currencyOptions"
-          /></v-row>
+              @change="calculate"
+            />
+          </v-row>
         </v-container>
       </transition>
     </div>
 
-    <v-divider class="divider"></v-divider>
+    <v-divider class="divider" />
 
     <div id="szja-output">
       <v-card>
@@ -117,7 +128,10 @@
           <div v-if="output.every((i) => i === output[0])">
             {{ output[0] | toCurrency }}
           </div>
-          <SzjaTable v-else :data="output" />
+          <SzjaTable
+            v-else
+            :data="output"
+          />
         </v-card-text>
       </v-card>
     </div>

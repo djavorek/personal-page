@@ -1,11 +1,32 @@
 <template>
-  <div id="main" class="glassmorphism">
-    <transition name="slide" mode="out-in">
+  <div
+    id="main"
+    class="glassmorphism"
+  >
+    <Transition
+      name="slide"
+      mode="out-in"
+    >
       <About v-if="isSelected('About')" />
+    </Transition>
+    <Transition
+      name="slide"
+      mode="out-in"
+    >
       <Contact v-if="isSelected('Contact')" />
+    </Transition>
+    <Transition
+      name="slide"
+      mode="out-in"
+    >
       <Impressum v-if="isSelected('Impressum')" />
+    </Transition>
+    <Transition
+      name="slide"
+      mode="out-in"
+    >
       <Blog v-if="isSelected('Blog')" />
-    </transition>
+    </Transition>
   </div>
 </template>
 

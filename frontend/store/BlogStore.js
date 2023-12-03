@@ -10,14 +10,16 @@ export const useBlogStore = defineStore('blogStore', {
 
   actions: {
     async init() {
-      const blogPosts = await this.$content('posts')
-        .where({ draft: false })
-        .sortBy('createdAt', 'desc')
-        .fetch()
-        .catch((e) => {
-          const error = 'Article fetching error: ' + e.message + e;
-          this.SET_ERROR(error);
-        });
+      const blogPosts = await useAsyncData('posts', () =>
+        queryContent('./')
+          .where({ draft: false })
+          .sortBy('createdAt', 'desc')
+          .fetch()
+          .catch((e) => {
+            const error = 'Article fetching error: ' + e.message + e;
+            this.SET_ERROR(error);
+          })
+      );
 
       this.SET_ARTICLES(blogPosts);
     },

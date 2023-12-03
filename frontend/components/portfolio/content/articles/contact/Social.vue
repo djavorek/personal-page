@@ -2,7 +2,12 @@
   <div id="social">
     <h2>ELÉRHETŐSÉGEK</h2>
     <div class="contact">
-      <v-icon x-large dark>mdi-email</v-icon>
+      <v-icon
+        x-large
+        dark
+      >
+        mdi-email
+      </v-icon>
       <span>mail@javorekdenes.hu</span>
     </div>
     <div class="contact">
@@ -11,7 +16,10 @@
         target="_blank"
         rel="noopener noreferrer"
       >
-        <font-awesome-icon class="socialicon" icon="fa-brands fa-linkedin" />
+        <font-awesome-icon
+          class="socialicon"
+          icon="fa-brands fa-linkedin"
+        />
         <span>/in/denes-javorek/</span>
       </a>
     </div>
@@ -21,12 +29,18 @@
         target="_blank"
         rel="noopener noreferrer"
       >
-        <font-awesome-icon class="socialicon" icon="fa-brands fa-facebook" />
+        <font-awesome-icon
+          class="socialicon"
+          icon="fa-brands fa-facebook"
+        />
         <span>facebook.com/javidenes/</span>
       </a>
     </div>
     <div class="contact">
-      <font-awesome-icon class="socialicon" icon="fa-brands fa-discord" />
+      <font-awesome-icon
+        class="socialicon"
+        icon="fa-brands fa-discord"
+      />
       <span>Dénes#2583</span>
     </div>
   </div>

@@ -75,7 +75,10 @@ export default defineNuxtConfig({
       '~/components/tools',
       '~/components/tools/viewcount',
     ],
+    pathPrefix: false,
   },
+
+  buildModules: ['@nuxtjs/eslint-module'],
 
   modules: [
     '@nuxt/content',
@@ -83,6 +86,13 @@ export default defineNuxtConfig({
     '@funken-studio/sitemap-nuxt-3',
     'nuxt-disqus',
   ],
+
+  eslint: {
+    // Enable recommended rules
+    extend(config) {
+      config.extends.push('eslint:recommended');
+    },
+  },
 
   disqus: {
     shortname: 'javorekdenes-hu',

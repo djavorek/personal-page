@@ -6,7 +6,7 @@
     <div>
       <font-awesome-icon
         id="downButton"
-        icon="angle-double-down"
+        icon="fa-solid fa-angle-double-down"
         size="4x"
         @click="$vuetify.goTo('#menu', options)"
       />

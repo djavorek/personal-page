@@ -1,30 +1,54 @@
 <template>
   <div id="about-container">
     <div class="about-row">
-      <div id="head" class="about-image">
-        <img :src="headImg" alt="intro" />
+      <div
+        id="head"
+        class="about-image"
+      >
+        <img
+          :src="headImg"
+          alt="intro"
+        >
       </div>
-      <div id="head-text" class="about-text">
+      <div
+        id="head-text"
+        class="about-text"
+      >
         <p>
           <span class="greenText">Szia.</span> Örülök, hogy megtaláltad a
           weboldalamat. Itt igyekszek összefoglalni mindent, amit amúgy is
           megtalálnál rólam különböző oldalakon. Így egyszerűbb és biztosabb
           dolgod lesz.
         </p>
-        <v-chip class="ma-2 pa-4 primary-skil" color="green" text-color="white"
-          >Miskolci Egyetem</v-chip
+        <v-chip
+          class="ma-2 pa-4 primary-skil"
+          color="green"
+          text-color="white"
         >
-        <v-chip class="ma-2 pa-4 primary-skil" color="green" text-color="white"
-          >Mérnökinformatikus</v-chip
+          Miskolci Egyetem
+        </v-chip>
+        <v-chip
+          class="ma-2 pa-4 primary-skil"
+          color="green"
+          text-color="white"
         >
-        <v-chip class="ma-2 pa-4 primary-skil" color="yellow" text-color="black"
-          >Szeged</v-chip
+          Mérnökinformatikus
+        </v-chip>
+        <v-chip
+          class="ma-2 pa-4 primary-skil"
+          color="yellow"
+          text-color="black"
         >
+          Szeged
+        </v-chip>
       </div>
     </div>
 
     <div class="about-row wrap-reverse">
-      <div id="work-text" class="about-text">
+      <div
+        id="work-text"
+        class="about-text"
+      >
         <p>
           2020 decembere óta az
           <span class="greenText">EPAM Systems-nél dolgozok,</span>
@@ -36,25 +60,42 @@
           class="ma-2 pa-4 primary-skil"
           color="#39c2d7"
           text-color="white"
-          >EPAM Systems</v-chip
         >
+          EPAM Systems
+        </v-chip>
         <v-chip
           class="ma-2 pa-4 primary-skil"
           color="#C137A2"
           text-color="white"
-          >Finastra</v-chip
         >
+          Finastra
+        </v-chip>
       </div>
-      <div id="work" class="about-image">
-        <img :src="workImg" alt="about" />
+      <div
+        id="work"
+        class="about-image"
+      >
+        <img
+          :src="workImg"
+          alt="about"
+        >
       </div>
     </div>
 
     <div class="about-row">
-      <div id="exp" class="about-image">
-        <img :src="expImg" alt="experience" />
+      <div
+        id="exp"
+        class="about-image"
+      >
+        <img
+          :src="expImg"
+          alt="experience"
+        >
       </div>
-      <div id="exp-text" class="about-text">
+      <div
+        id="exp-text"
+        class="about-text"
+      >
         <p>
           Eddigi tapasztalataim leginkább a alkalmazások szerveroldali -
           <span class="greenText">Backend - feladatainak megoldása</span> köré
@@ -64,28 +105,55 @@
           NodeJS és PHP kódon is. Ezen felül mindig szeretek új dolgokat
           megismerni, legyen az cloud, frontend vagy beágyazott rendszer.
         </p>
-        <v-chip class="ma-2 pa-4 primary-skil" color="green" text-color="white"
-          >Java</v-chip
+        <v-chip
+          class="ma-2 pa-4 primary-skil"
+          color="green"
+          text-color="white"
         >
-        <v-chip class="ma-2 pa-4 primary-skil" color="green" text-color="white"
-          >Spring</v-chip
+          Java
+        </v-chip>
+        <v-chip
+          class="ma-2 pa-4 primary-skil"
+          color="green"
+          text-color="white"
         >
-        <v-chip class="ma-2 pa-4 primary-skil" color="green" text-color="white"
-          >Docker</v-chip
+          Spring
+        </v-chip>
+        <v-chip
+          class="ma-2 pa-4 primary-skil"
+          color="green"
+          text-color="white"
         >
-        <v-chip class="ma-2 pa-4 primary-skil" color="yellow" text-color="black"
-          >React</v-chip
+          Docker
+        </v-chip>
+        <v-chip
+          class="ma-2 pa-4 primary-skil"
+          color="yellow"
+          text-color="black"
         >
-        <v-chip class="ma-2 pa-4 primary-skil" color="yellow" text-color="black"
-          >Vue</v-chip
+          React
+        </v-chip>
+        <v-chip
+          class="ma-2 pa-4 primary-skil"
+          color="yellow"
+          text-color="black"
         >
-        <v-chip class="ma-2 pa-4 primary-skil">C</v-chip>
-        <v-chip class="ma-2 pa-4 primary-skil">PHP</v-chip>
+          Vue
+        </v-chip>
+        <v-chip class="ma-2 pa-4 primary-skil">
+          C
+        </v-chip>
+        <v-chip class="ma-2 pa-4 primary-skil">
+          PHP
+        </v-chip>
       </div>
     </div>
 
     <div class="about-row wrap-reverse">
-      <div id="personal-text" class="about-text">
+      <div
+        id="personal-text"
+        class="about-text"
+      >
         <p>
           A szabadidőmet legszívesebben valamilyen aktuális
           <span class="greenText">műszaki témában való elmerüléssel</span>,
@@ -96,8 +164,14 @@
           valaminek a befejezésére, amit más már egyszer késznek hívott.
         </p>
       </div>
-      <div id="personal" class="about-image">
-        <img :src="hobbyImg" alt="hobbies" />
+      <div
+        id="personal"
+        class="about-image"
+      >
+        <img
+          :src="hobbyImg"
+          alt="hobbies"
+        >
       </div>
     </div>
   </div>
@@ -107,10 +181,10 @@
 export default {
   data() {
     return {
-      headImg: require('@/assets/img/about_head.svg'),
-      workImg: require('@/assets/img/about_work.svg'),
-      expImg: require('@/assets/img/about_exp.svg'),
-      hobbyImg: require('@/assets/img/about_hobby.svg'),
+      headImg: require('~/assets/img/about_head.svg'),
+      workImg: require('~/assets/img/about_work.svg'),
+      expImg: require('~/assets/img/about_exp.svg'),
+      hobbyImg: require('~/assets/img/about_hobby.svg'),
     };
   },
 };

@@ -8,10 +8,10 @@
     "start": "nuxt start --modern=client",
     "generate": "npx nuxi generate --modern",
     "lint:js": "eslint --ext \".js,.vue\" --ignore-path .gitignore .",
-    "lint": "npm run lint:js",
+    "lint": "yarn run lint:js",
     "clean": "rm -rf ./node_modules",
-    "clean:install": "npm run clean && npm i",
-    "clean:build": "npm run clean:install && rm -rf /dist ./nuxt && npm run generate",
+    "clean:install": "yarn run clean && yarn install",
+    "clean:build": "yarn run clean:install && rm -rf /dist ./nuxt && yarn run generate",
     "upgrade": "npx nuxi upgrade"
   },
   "lint-staged": {
@@ -23,7 +23,6 @@
     }
   },
   "dependencies": {
-    "@babel/runtime-corejs3": "^7.17.2",
     "@fortawesome/fontawesome-svg-core": "^6.2.1",
     "@fortawesome/free-brands-svg-icons": "^6.4.2",
     "@fortawesome/free-solid-svg-icons": "^5.15.4",
@@ -42,23 +41,19 @@
     "vue": "^3.3.9",
     "vue-currency-input": "^3.0.3",
     "vue-lazyload": "^1.3.4",
-    "vue-moment": "^4.1.0",
     "vue-smooth-reflow": "^0.1.12",
     "vuetify": "^3.1.6",
     "vuex": "^4.0.2"
   },
   "devDependencies": {
-    "@nuxtjs/eslint-config": "^6.0.1",
+    "@nuxt/devtools": "^1.0.4",
+    "@nuxt/eslint-config": "^0.2.0",
+    "@nuxtjs/eslint-module": "^4.1.0",
     "@nuxtjs/vuetify": "^1.12.3",
     "eslint": "^7.32.0",
-    "eslint-config-prettier": "^8.5.0",
-    "eslint-plugin-nuxt": "^2.0.0",
-    "eslint-plugin-prettier": "^3.4.1",
-    "eslint-plugin-vue": "^7.20.0",
     "husky": "^4.3.8",
     "lint-staged": "^10.5.4",
     "nuxt-disqus": "^1.0.1",
-    "prettier": "^2.5.1",
     "sass-loader": "^10.2.1",
     "string.prototype.includes": "^2.0.0"
   }
