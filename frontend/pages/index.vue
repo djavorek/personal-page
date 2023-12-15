@@ -1,4 +1,3 @@
-/* eslint-disable object-shorthand */
 <template>
   <v-app>
     <div

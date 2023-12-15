@@ -178,16 +178,19 @@
 </template>
 
 <script>
-export default {
-  data() {
-    return {
-      headImg: require('~/assets/img/about_head.svg'),
-      workImg: require('~/assets/img/about_work.svg'),
-      expImg: require('~/assets/img/about_exp.svg'),
-      hobbyImg: require('~/assets/img/about_hobby.svg'),
-    };
-  },
-};
+  import headImg from '~/assets/img/about_head.svg'
+  import workImg from '~/assets/img/about_work.svg'
+  import expImg from '~/assets/img/about_exp.svg'
+  import hobbyImg from '~/assets/img/about_hobby.svg'
+
+  export default {
+    data() {
+      return {
+        headImg, workImg, expImg, hobbyImg
+      }
+    },
+  }
+
 </script>
 
 <style scoped lang="scss">

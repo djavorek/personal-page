@@ -15,7 +15,6 @@
 </template>
 <script>
 export default {
-  name: 'Comments',
   data() {
     return {
       displayed: true,

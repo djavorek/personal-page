@@ -62,23 +62,15 @@ export default defineNuxtConfig({
     },
   },
 
-  components: {
-    dirs: [
-      '~/components/blog',
-      '~/components/blog/base',
-      '~/components/blog/core',
-      '~/components/portfolio/header',
-      '~/components/portfolio/content',
-      '~/components/portfolio/content/articles',
-      '~/components/portfolio/content/articles/contact',
-      '~/components/portfolio/content/menu',
-      '~/components/tools',
-      '~/components/tools/viewcount',
-    ],
-    pathPrefix: false,
-  },
+  components: [
+    {
+      path: '~/components',
+      pathPrefix: false,
+    },
+  ],
 
   buildModules: ['@nuxtjs/eslint-module'],
+  
 
   modules: [
     '@nuxt/content',

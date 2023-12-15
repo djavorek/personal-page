@@ -1,5 +1,8 @@
 <template>
-  <v-col cols="12" :md="size === 2 ? 6 : size === 3 ? 4 : undefined">
+  <v-col
+    cols="12"
+    :md="size === 2 ? 6 : size === 3 ? 4 : undefined"
+  >
     <base-card
       :height="value.prominent ? 450 : 350"
       color="grey lighten-1"
@@ -11,7 +14,10 @@
           height="100%"
           gradient="rgba(0, 0, 0, .42), rgba(0, 0, 0, .42)"
         >
-          <v-row v-if="!value.prominent" class="fill-height text-right ma-0">
+          <v-row
+            v-if="!value.prominent"
+            class="fill-height text-right ma-0"
+          >
             <v-col cols="12">
               <v-chip
                 label
@@ -28,7 +34,7 @@
               </h3>
 
               <div class="caption">
-                {{ value.date | moment('dddd, MMMM Do YYYY') }}
+                {{ value.date }}
               </div>
             </v-col>
 

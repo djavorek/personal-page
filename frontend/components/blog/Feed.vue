@@ -13,7 +13,10 @@
       />
     </v-row>
 
-    <v-row align="center" class="bottom-fixed">
+    <v-row
+      align="center"
+      class="bottom-fixed"
+    >
       <v-col cols="3">
         <base-btn
           v-if="page !== 1"
@@ -26,11 +29,19 @@
         </base-btn>
       </v-col>
 
-      <v-col v-if="pages > 1" align="center" class="subheading" cols="6">
+      <v-col
+        v-if="pages > 1"
+        align="center"
+        class="subheading"
+        cols="6"
+      >
         Oldal: {{ page }} / {{ pages }}
       </v-col>
 
-      <v-col class="text-right" cols="3">
+      <v-col
+        class="text-right"
+        cols="3"
+      >
         <base-btn
           v-if="pages > 1 && page < pages"
           class="mr-0"
@@ -46,10 +57,9 @@
 </template>
 
 <script>
-import { mapState } from 'pinia';
 
 export default {
-  name: 'Feed',
+  name: "Feed",
 
   data: () => ({
     layout: [2, 2, 1, 2, 2, 3, 3, 3, 3, 3, 3],
@@ -57,7 +67,6 @@ export default {
   }),
 
   computed: {
-    ...mapState(['articles']),
     pages() {
       return Math.ceil(this.articles.length / 11);
     },
@@ -72,8 +81,8 @@ export default {
   watch: {
     page() {
       window.scrollTo(0, 0);
-    },
-  },
+    }
+  }
 };
 </script>
 <style scoped>

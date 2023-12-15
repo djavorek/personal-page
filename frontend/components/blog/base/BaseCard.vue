@@ -1,11 +1,12 @@
 <template>
-  <v-card flat tile v-bind="$attrs" v-on="$listeners">
+  <v-card
+    flat
+    tile 
+    v-bind="$attrs" 
+  >
     <slot />
   </v-card>
 </template>
 
 <script>
-export default {
-  name: 'BaseCard',
-};
 </script>
