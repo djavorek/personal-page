@@ -1,5 +1,5 @@
 <template>
-  <impressum-content></impressum-content>
+  <impressum-content />
 </template>
 
 <script>

@@ -1,16 +1,27 @@
 <template>
   <div class="menuHolder">
-    <nuxt-link
+    <div
+      v-if="item.link.length"
       class="menuItem notouchy"
       :class="{ selected: selected }"
-      :to="
-        item.link.length ? { path: item.link } : { path: '/', hash: '#main' }
-      "
+    >
+      <nuxt-link
+        :to="item.link.length ? { path: item.link } : { path: '/', hash: '#main' }"
+      >
+        <span @click="$emit('select', item.id)">
+          {{ item.text }}
+        </span>
+      </nuxt-link>
+    </div>
+    <div
+      v-else
+      class="menuItem notouchy"
+      :class="{ selected: selected }"
     >
       <span @click="$emit('select', item.id)">
         {{ item.text }}
       </span>
-    </nuxt-link>
+    </div>
   </div>
 </template>
 
@@ -22,7 +33,7 @@ export default {
       default() {
         return {
           id: -1,
-          text: 'Menu is out of service',
+          text: "This menu is out of service",
         };
       },
     },
@@ -31,6 +42,7 @@ export default {
       default: false,
     },
   },
+  emits: ["select"],
 };
 </script>
 
@@ -48,8 +60,7 @@ export default {
   text-align: center;
   width: 100%;
   text-decoration: none;
-  background: linear-gradient(common.$primary, common.$info) bottom / 0 0.1em
-    no-repeat;
+  background: linear-gradient(common.$primary, common.$info) bottom / 0 0 no-repeat;
   background-position: right bottom;
   transition: 0.6s background-size;
 }
