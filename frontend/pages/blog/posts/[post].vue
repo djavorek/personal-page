@@ -25,7 +25,7 @@
               {{ post.category }}
             </v-chip>
             <span>
-              {{ post.date | moment('dddd, MMMM Do YYYY') }}
+              {{ post.date }}
             </span>
           </div>
           <div class="post-content">
@@ -48,7 +48,7 @@ definePageMeta({
 });
 
 export default {
-  transition(to, from) {
+  transition(_, from) {
     if (!from) {
       return 'slide-left';
     } else {

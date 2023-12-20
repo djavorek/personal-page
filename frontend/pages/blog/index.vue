@@ -6,8 +6,6 @@
 </template>
 
 <script>
-import { definePageMeta } from 'nuxt/';
-
 definePageMeta({
   name: 'Index',
   layout: 'blog',

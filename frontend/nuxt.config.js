@@ -66,7 +66,6 @@ export default defineNuxtConfig({
   ],
 
   buildModules: ['@nuxtjs/eslint-module'],
-  
 
   modules: [
     '@nuxt/content',
@@ -100,5 +99,9 @@ export default defineNuxtConfig({
       '/blog/posts/2021-08-15-szja25',
       '/blog/posts/2023-01-05-synology-ds118',
     ],
+  },
+
+  devtools: {
+    enabled: true,
   },
 });
