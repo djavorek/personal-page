@@ -9,10 +9,11 @@
           <v-img
             :src="require(`@/static/uploads/images/${post.thumbnail}`)"
             height="100%"
-          >
-          </v-img>
+          />
 
-          <h1 class="main-title">{{ post.title }}</h1>
+          <h1 class="main-title">
+            {{ post.title }}
+          </h1>
           <div class="post-info">
             <v-chip
               v-if="post.category"

@@ -1,6 +1,8 @@
 <template>
   <div id="titleBox">
-    <div id="hello"><span>HELLO</span><span class="greenText">.</span></div>
+    <div id="hello">
+      <span>HELLO</span><span class="greenText">.</span>
+    </div>
     <div id="name">
       <span class="greenText">Dénes</span><span> vagyok</span>
     </div>

@@ -1,7 +1,13 @@
 <template>
   <div id="email">
-    <v-card class="pa-4" elevation="10" dark>
-      <h2 id="email-title">ITT AZONNAL ÍRHATSZ</h2>
+    <v-card
+      class="pa-4"
+      elevation="10"
+      dark
+    >
+      <h2 id="email-title">
+        ITT AZONNAL ÍRHATSZ
+      </h2>
       <div v-if="!sent">
         <form
           id="instant-contact"
@@ -13,46 +19,56 @@
           :class="{ load: loading }"
           @submit.prevent="handleFormSubmit"
         >
-          <div hidden aria-hidden="true">
+          <div
+            hidden
+            aria-hidden="true"
+          >
             <label>
               Don’t fill this out if you're human:
-              <input name="bot-field" />
+              <input name="bot-field">
             </label>
           </div>
-          <input type="hidden" name="form-name" value="instant-contact" />
+          <input
+            type="hidden"
+            name="form-name"
+            value="instant-contact"
+          >
           <input
             id="name"
             v-model="form.name"
             type="text"
             placeholder="NEVED"
-          />
+          >
           <input
             id="contact"
             v-model="form.contact"
             type="text"
             placeholder="ELÉRHETŐSÉGED"
-          />
+          >
           <textarea
             id="message"
             v-model="form.message"
             type="text"
             placeholder="ÜZENETED"
-          ></textarea>
+          />
           <input
             id="submit"
             type="submit"
             value="KÜLDÉS"
             @submit.prevent="handleFormSubmit"
-          />
-        </form>
-        <div v-if="hasError" class="errorMsg">
-          <span
-            >Ez most nem sikerült. Ha nem vagy nagyon csalódott, akkor keress
-            meg e-mailben vagy nézz vissza később.</span
           >
+        </form>
+        <div
+          v-if="hasError"
+          class="errorMsg"
+        >
+          <span>Ez most nem sikerült. Ha nem vagy nagyon csalódott, akkor keress
+            meg e-mailben vagy nézz vissza később.</span>
         </div>
       </div>
-      <div v-else><h1>Megkaptam az üzeneted.</h1></div>
+      <div v-else>
+        <h1>Megkaptam az üzeneted.</h1>
+      </div>
     </v-card>
   </div>
 </template>

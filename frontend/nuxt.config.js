@@ -3,10 +3,6 @@ import { defineNuxtConfig } from 'nuxt/config';
 export default defineNuxtConfig({
   target: 'static',
 
-  server: {
-    port: 8080, // default: 3000
-  },
-
   meta: {
     title: 'Javorek Dénes',
     htmlAttrs: {

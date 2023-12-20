@@ -43,13 +43,14 @@
   </div>
 </template>
 <script>
+import { useMediaQuery } from '@vueuse/core'
 export default {
   computed: {
     pagetitle() {
       return this.$store.state.current.title;
     },
     isMobile() {
-      return this.$vuetify.breakpoint.xsOnly;
+      return useMediaQuery('(max-width: 600px)')
     },
     data: () => ({
       drawer: false,

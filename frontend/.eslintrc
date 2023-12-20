@@ -1,4 +1,3 @@
 {
-	"extends": ["@nuxt/eslint-config"],
-	"parserOptions": { "ecmaVersion": 6 }
+	"extends": ["@nuxt/eslint-config"]
 }

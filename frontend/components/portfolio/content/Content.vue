@@ -1,9 +1,15 @@
 <template>
   <div id="content">
-    <div id="leftCont" class="dynamic-spacing">
+    <div
+      id="leftCont"
+      class="dynamic-spacing"
+    >
       <Menu @changed="selectMenu" />
     </div>
-    <main id="rightCont" class="dynamic-spacing">
+    <main
+      id="rightCont"
+      class="dynamic-spacing"
+    >
       <ArticleBox :menu="menu" />
       <!-- v-bind to pass as Number  -->
     </main>
