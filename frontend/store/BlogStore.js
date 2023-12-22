@@ -1,3 +1,4 @@
+import { useAsyncData } from 'nuxt/app';
 import { defineStore } from 'pinia';
 
 export const useBlogStore = defineStore('blogStore', {
@@ -20,6 +21,8 @@ export const useBlogStore = defineStore('blogStore', {
             this.SET_ERROR(error);
           })
       );
+
+      console.log(blogPosts)
 
       this.SET_ARTICLES(blogPosts);
     },

@@ -57,6 +57,9 @@
 </template>
 
 <script>
+import { mapState } from 'pinia'
+import { useBlogStore } from '~/store/BlogStore';
+
 
 export default {
   name: "Feed",
@@ -67,6 +70,7 @@ export default {
   }),
 
   computed: {
+    ...mapState(useBlogStore, ['articles']),
     pages() {
       return Math.ceil(this.articles.length / 11);
     },
