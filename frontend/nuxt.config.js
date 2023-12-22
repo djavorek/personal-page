@@ -39,6 +39,7 @@ export default defineNuxtConfig({
   css: [
     'vuetify/lib/styles/main.sass',
     '@fortawesome/fontawesome-svg-core/styles.css',
+    '@mdi/font/css/materialdesignicons.min.css',
     '~/assets/style/common/_index.scss',
     '~/assets/style/common/_variables.scss',
     '~/assets/style/common/_behavior.scss',
@@ -49,7 +50,7 @@ export default defineNuxtConfig({
   ],
 
   build: {
-    transpile: ['vuetify'],
+    transpile: ['vuetify', '@fortawesome/vue-fontawesome'],
   },
 
   vite: {
@@ -83,13 +84,6 @@ export default defineNuxtConfig({
 
   disqus: {
     shortname: 'javorekdenes-hu',
-  },
-
-  fontawesome: {
-    icons: {
-      solid: ['faAngleDoubleDown'],
-      brands: ['faDiscord', 'faFacebook', 'faLinkedin'],
-    },
   },
 
   sitemap: {

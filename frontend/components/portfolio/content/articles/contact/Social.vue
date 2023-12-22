@@ -3,7 +3,6 @@
     <h2>ELÉRHETŐSÉGEK</h2>
     <div class="contact">
       <v-icon
-        x-large
         dark
       >
         mdi-email
