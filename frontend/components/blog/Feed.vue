@@ -18,7 +18,7 @@
       class="bottom-fixed"
     >
       <v-col cols="3">
-        <base-btn
+        <BaseButton
           v-if="page !== 1"
           class="ml-0"
           square
@@ -26,7 +26,7 @@
           @click="page--"
         >
           <v-icon>mdi-chevron-left</v-icon>
-        </base-btn>
+        </BaseButton>
       </v-col>
 
       <v-col
@@ -42,7 +42,7 @@
         class="text-right"
         cols="3"
       >
-        <base-btn
+        <BaseButton
           v-if="pages > 1 && page < pages"
           class="mr-0"
           square
@@ -50,14 +50,14 @@
           @click="page++"
         >
           <v-icon>mdi-chevron-right</v-icon>
-        </base-btn>
+        </BaseButton>
       </v-col>
     </v-row>
   </v-container>
 </template>
 
 <script>
-import { mapState } from 'pinia'
+import { mapStores } from 'pinia'
 import { useBlogStore } from '~/store/BlogStore';
 
 
@@ -70,15 +70,16 @@ export default {
   }),
 
   computed: {
-    ...mapState(useBlogStore, ['articles']),
+    ...mapStores(useBlogStore),
     pages() {
-      return Math.ceil(this.articles.length / 11);
+      return Math.ceil(this.blogStore.articles.length / 11);
     },
     paginatedArticles() {
-      const start = (this.page - 1) * 11;
-      const stop = this.page * 11;
+      const start = (this.blogStore.page - 1) * 11;
+      const stop = this.blogStore.page * 11;
+      console.log(this.blogStore.articles)
 
-      return this.articles.slice(start, stop);
+      return this.blogStore.articles.slice(start, stop);
     },
   },
 
