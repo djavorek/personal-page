@@ -1,5 +1,5 @@
 <template>
-  <impressum-content isDark></impressum-content>
+  <impressum-content />
 </template>
 
 <script>

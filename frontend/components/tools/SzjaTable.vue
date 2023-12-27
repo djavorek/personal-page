@@ -3,12 +3,22 @@
     <v-simple-table>
       <thead>
         <tr>
-          <th v-for="(month, i) in months" :key="i">{{ month }}</th>
+          <th
+            v-for="(month, i) in months"
+            :key="i"
+          >
+            {{ month }}
+          </th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td v-for="(net, i) in data" :key="i">{{ net | toCurrency }}</td>
+          <td
+            v-for="(net, i) in data"
+            :key="i"
+          >
+            {{ net | toCurrency }}
+          </td>
         </tr>
       </tbody>
     </v-simple-table>

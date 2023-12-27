@@ -1,5 +1,8 @@
 <template>
-  <div id="menu" class="glassmorphism">
+  <div
+    id="menu"
+    class="bordered"
+  >
     <MenuItem
       v-for="item in menuList"
       :key="item.id"
@@ -14,6 +17,7 @@
 import MenuList from './MenuList';
 
 export default {
+  emits: ['changed'],
   data() {
     return {
       menuList: MenuList,

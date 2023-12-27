@@ -9,10 +9,11 @@
           <v-img
             :src="require(`@/static/uploads/images/${post.thumbnail}`)"
             height="100%"
-          >
-          </v-img>
+          />
 
-          <h1 class="main-title">{{ post.title }}</h1>
+          <h1 class="main-title">
+            {{ post.title }}
+          </h1>
           <div class="post-info">
             <v-chip
               v-if="post.category"
@@ -24,13 +25,13 @@
               {{ post.category }}
             </v-chip>
             <span>
-              {{ post.date | moment('dddd, MMMM Do YYYY') }}
+              {{ post.date }}
             </span>
           </div>
           <div class="post-content">
             <nuxt-content :document="post" />
           </div>
-          <disqus-comments
+          <DisqusComments
             class="comments"
             :identifier="$route.params.singlePost"
           />
@@ -42,9 +43,12 @@
 </template>
 
 <script>
-export default {
+definePageMeta({
   layout: 'blog',
-  transition(to, from) {
+});
+
+export default {
+  transition(_, from) {
     if (!from) {
       return 'slide-left';
     } else {

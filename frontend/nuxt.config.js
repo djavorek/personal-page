@@ -1,13 +1,9 @@
-export default {
-  // Target: https://go.nuxtjs.dev/config-target
+import { defineNuxtConfig } from 'nuxt/config';
+
+export default defineNuxtConfig({
   target: 'static',
 
-  server: {
-    port: 8080, // default: 3000
-  },
-
-  // Global page headers: https://go.nuxtjs.dev/config-head
-  head: {
+  meta: {
     title: 'Javorek Dénes',
     htmlAttrs: {
       lang: 'hu',
@@ -40,8 +36,10 @@ export default {
     ],
   },
 
-  // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
+    'vuetify/lib/styles/main.sass',
+    '@fortawesome/fontawesome-svg-core/styles.css',
+    '@mdi/font/css/materialdesignicons.min.css',
     '~/assets/style/common/_index.scss',
     '~/assets/style/common/_variables.scss',
     '~/assets/style/common/_behavior.scss',
@@ -51,78 +49,53 @@ export default {
     '~/assets/style/main.scss',
   ],
 
-  // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [
-    {
-      src: '~/plugins/browser',
-      mode: 'client',
-    },
-    {
-      src: '~/plugins/moment',
-    },
-    {
-      src: '~/plugins/toCurrency',
-    },
-    {
-      src: '~/plugins/disqus',
-    },
-  ],
-
-  // Auto import components: https://go.nuxtjs.dev/config-components
-  components: {
-    dirs: [
-      '~/components/blog',
-      '~/components/blog/base',
-      '~/components/blog/core',
-      '~/components/portfolio/header',
-      '~/components/portfolio/content',
-      '~/components/portfolio/content/articles',
-      '~/components/portfolio/content/articles/contact',
-      '~/components/portfolio/content/menu',
-      '~/components/tools',
-      '~/components/tools/viewcount',
-    ],
+  build: {
+    transpile: ['vuetify', '@fortawesome/vue-fontawesome'],
   },
 
-  // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
-  buildModules: [
-    // https://go.nuxtjs.dev/eslint
-    '@nuxtjs/eslint-module',
-    ['@nuxtjs/vuetify', { treeShake: true }],
-    '@nuxtjs/fontawesome',
+  vite: {
+    define: {
+      'process.env.DEBUG': false,
+    },
+  },
+
+  components: [
+    {
+      path: '~/components',
+      pathPrefix: false,
+    },
   ],
 
-  // Modules: https://go.nuxtjs.dev/config-modules
+  buildModules: ['@nuxtjs/eslint-module'],
+
   modules: [
     '@nuxt/content',
-    [
-      'v-currency-field/nuxt-treeshaking',
-      {
-        locale: 'hu-HU',
-        suffix: 'Ft',
-        decimalLength: 0,
-        autoDecimalMode: true,
-        min: null,
-        max: null,
-        defaultValue: 0,
-        valueAsInteger: true,
-        allowNegative: false,
-      },
-    ],
-    '@nuxtjs/sitemap',
+    '@pinia/nuxt',
+    '@funken-studio/sitemap-nuxt-3',
+    'nuxt-disqus',
   ],
 
-  fontawesome: {
-    icons: {
-      solid: ['faAngleDoubleDown'],
-      brands: ['faDiscord', 'faFacebook', 'faLinkedin'],
+  eslint: {
+    // Enable recommended rules
+    extend(config) {
+      config.extends.push('eslint:recommended');
     },
   },
+
+  disqus: {
+    shortname: 'javorekdenes-hu',
+  },
+
   sitemap: {
     hostname: 'https://javorekdenes.hu',
+    generateOnBuild: true,
     routes: [
       '/blog/posts/2021-08-15-szja25',
       '/blog/posts/2023-01-05-synology-ds118',
     ],
   },
-};
+
+  devtools: {
+    enabled: true,
+  },
+});

@@ -1,10 +1,10 @@
 <template>
-  <impressum-content></impressum-content>
+  <impressum-content />
 </template>
 
 <script>
-export default {
+definePageMeta({
   name: 'Impressum',
   layout: 'blog',
-};
+});
 </script>

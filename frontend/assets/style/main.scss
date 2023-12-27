@@ -3,14 +3,14 @@
 @font-face {
   font-family: 'Merriweather';
   src: local('Merriweather'),
-    url(~@/assets/fonts/Merriweather/Merriweather-Light.ttf) format('truetype');
+    url(~/assets/fonts/Merriweather/Merriweather-Light.ttf) format('truetype');
 }
 
 @font-face {
   font-family: 'Oswald';
   font-weight: normal;
   src: local('Oswald'),
-    url(~@/assets/fonts/Oswald/Oswald-Regular.ttf) format('truetype');
+    url(~/assets/fonts/Oswald/Oswald-Regular.ttf) format('truetype');
 }
 
 html,
@@ -22,7 +22,8 @@ body {
   letter-spacing: -0.3px;
 
   scroll-behavior: smooth !important;
-  -webkit-tap-highlight-color: transparent; /* for removing tap highlight */
+  -webkit-tap-highlight-color: transparent;
+  /* for removing tap highlight */
 }
 
 #portfolio {
@@ -41,11 +42,11 @@ body {
   }
 
   color: common.$text;
-  font-family: 'Merriweather', Helvetica, Arial;
+  font-family: 'Merriweather',
+  Helvetica,
+  Arial;
   font-display: optional;
-  font-size: calc(
-    1rem + 0.2vw
-  ); // Use REM for font-size everywhere, 1.0 rem = 10 px
+  font-size: calc(1rem + 0.2vw); // Use REM for font-size everywhere, 1.0 rem = 10 px
 }
 
 #portfolio a {

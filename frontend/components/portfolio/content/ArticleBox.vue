@@ -1,11 +1,26 @@
 <template>
-  <div id="main" class="glassmorphism">
-    <transition name="slide" mode="out-in">
+  <div
+    id="main"
+    class="bordered"
+  >
+    <Transition
+      name="slide"
+      mode="out-in"
+    >
       <About v-if="isSelected('About')" />
+    </Transition>
+    <Transition
+      name="slide"
+      mode="out-in"
+    >
       <Contact v-if="isSelected('Contact')" />
+    </Transition>
+    <Transition
+      name="slide"
+      mode="out-in"
+    >
       <Impressum v-if="isSelected('Impressum')" />
-      <Blog v-if="isSelected('Blog')" />
-    </transition>
+    </Transition>
   </div>
 </template>
 
@@ -28,34 +43,34 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@use '~/assets/style/common';
+        @use '~/assets/style/common';
 
-#main {
-  box-sizing: border-box;
-  overflow: hidden;
-  min-height: 98vh;
-  max-width: 98vw;
-  padding: 2em;
-  border-color: common.$primary;
-}
+        #main {
+        box-sizing: border-box;
+        overflow: hidden;
+        min-height: 98vh;
+        max-width: 98vw;
+        padding: 2em;
+        border-color: common.$primary;
+        }
 
-.slide-leave-active {
-  transition: 0.2s;
-}
-.slide-enter-active {
-  transition: 0.4s;
-}
-.slide-enter {
-  transform: translate(-100%, 0);
-}
-.slide-leave-to {
-  transform: translate(100%, 0);
-}
+        .slide-leave-active {
+        transition: 0.2s;
+        }
+        .slide-enter-active {
+        transition: 0.4s;
+        }
+        .slide-enter {
+        transform: translate(-100%, 0);
+        }
+        .slide-leave-to {
+        transform: translate(100%, 0);
+        }
 
-@media screen and (min-width: 768px) {
-  #main {
-    border-radius: 0;
-    border-left: 0;
-  }
-}
+        @media screen and (min-width: 768px) {
+        #main {
+        border-radius: 0;
+        border-left: 0;
+        }
+        }
 </style>

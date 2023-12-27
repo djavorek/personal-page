@@ -6,26 +6,26 @@
     <div>
       <font-awesome-icon
         id="downButton"
-        icon="angle-double-down"
+        icon="fa-angle-double-down"
         size="4x"
-        @click="$vuetify.goTo('#menu', options)"
+        @click="scrollPageTo"
       />
     </div>
   </div>
 </template>
 
 <script>
-export default {
-  data() {
-    return {
-      options: {
-        duration: 250,
-        offset: 0,
-        easing: 'easeOutCubic',
-      },
-    };
-  },
-};
+import { defineComponent } from "vue";
+
+export default defineComponent({
+  methods: {
+    scrollPageTo() {
+      const menu = document.querySelector(`#menu`);
+      menu.scrollIntoView({ behavior: "smooth" });
+    }
+  }
+    
+});
 </script>
 
 <style lang="scss" scoped>

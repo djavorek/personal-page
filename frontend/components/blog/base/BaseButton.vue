@@ -5,7 +5,6 @@
     fab
     small
     v-bind="$attrs"
-    v-on="$listeners"
   >
     <slot />
   </v-btn>
@@ -13,8 +12,6 @@
 
 <script>
 export default {
-  name: 'BaseBtn',
-
   props: {
     square: Boolean,
   },

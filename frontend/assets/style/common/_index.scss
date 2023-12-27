@@ -3,7 +3,7 @@
 @forward 'behavior';
 
 /* slightly transparent fallback */
-.glassmorphism {
+.bordered {
   background-color: rgba(variables.$dark, 0.9);
   border: 0.2px solid white;
   border-radius: 0.25rem;
@@ -13,7 +13,7 @@
 @supports (
   (-webkit-backdrop-filter: blur(2em)) or (backdrop-filter: blur(2em))
 ) {
-  .glassmorphism-blur {
+  .bordered-blur {
     background-color: variables.$dark;
     -webkit-backdrop-filter: blur(5em);
     backdrop-filter: blur(5em);

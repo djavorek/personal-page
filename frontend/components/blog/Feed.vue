@@ -13,9 +13,12 @@
       />
     </v-row>
 
-    <v-row align="center" class="bottom-fixed">
+    <v-row
+      align="center"
+      class="bottom-fixed"
+    >
       <v-col cols="3">
-        <base-btn
+        <BaseButton
           v-if="page !== 1"
           class="ml-0"
           square
@@ -23,15 +26,23 @@
           @click="page--"
         >
           <v-icon>mdi-chevron-left</v-icon>
-        </base-btn>
+        </BaseButton>
       </v-col>
 
-      <v-col v-if="pages > 1" align="center" class="subheading" cols="6">
+      <v-col
+        v-if="pages > 1"
+        align="center"
+        class="subheading"
+        cols="6"
+      >
         Oldal: {{ page }} / {{ pages }}
       </v-col>
 
-      <v-col class="text-right" cols="3">
-        <base-btn
+      <v-col
+        class="text-right"
+        cols="3"
+      >
+        <BaseButton
           v-if="pages > 1 && page < pages"
           class="mr-0"
           square
@@ -39,17 +50,19 @@
           @click="page++"
         >
           <v-icon>mdi-chevron-right</v-icon>
-        </base-btn>
+        </BaseButton>
       </v-col>
     </v-row>
   </v-container>
 </template>
 
 <script>
-import { mapState } from 'vuex';
+import { mapStores } from 'pinia'
+import { useBlogStore } from '~/store/BlogStore';
+
 
 export default {
-  name: 'Feed',
+  name: "Feed",
 
   data: () => ({
     layout: [2, 2, 1, 2, 2, 3, 3, 3, 3, 3, 3],
@@ -57,23 +70,24 @@ export default {
   }),
 
   computed: {
-    ...mapState(['articles']),
+    ...mapStores(useBlogStore),
     pages() {
-      return Math.ceil(this.articles.length / 11);
+      return Math.ceil(this.blogStore.articles.length / 11);
     },
     paginatedArticles() {
-      const start = (this.page - 1) * 11;
-      const stop = this.page * 11;
+      const start = (this.blogStore.page - 1) * 11;
+      const stop = this.blogStore.page * 11;
+      console.log(this.blogStore.articles)
 
-      return this.articles.slice(start, stop);
+      return this.blogStore.articles.slice(start, stop);
     },
   },
 
   watch: {
     page() {
       window.scrollTo(0, 0);
-    },
-  },
+    }
+  }
 };
 </script>
 <style scoped>
