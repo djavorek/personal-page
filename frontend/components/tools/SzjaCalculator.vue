@@ -2,13 +2,14 @@
   <div id="szja">
     <div id="szja-input">
       <v-alert text type="warning" border="left">
-        <b>Az adatok kizárólag tájékoztató jellegűek</b> és {{ targetYear }}-ra vonatkoznak.
+        <b>Az adatok kizárólag tájékoztató jellegűek</b> és {{ targetYear }}
+        -ra vonatkoznak.
       </v-alert>
 
       <v-currency-field
         id="net"
         v-model="net"
-        label="Jelenlegi nettó"
+        label="Jelenlegi (kedvezmény nélküli) nettó"
         suffix="Ft"
         type="number"
         @change="calculate"
@@ -25,7 +26,7 @@
       <v-checkbox
         id="turnagelimit"
         v-model="turnagelimit"
-        :label="targetYear + '-ban leszek 25 éves.'"
+        :label="targetYear + '-ben leszek 25 éves.'"
         @change="calculate"
       />
       <transition name="scroll-y-transition">
@@ -126,8 +127,8 @@ export default {
   components: { SzjaTable },
   data() {
     return {
-      targetYear: 2023, // Year of our calculations, only update after checked current tax calculations
-      grossUpperLimit: 500000, // Upper limit of the discount, update if needed (to previous July data): https://www.ksh.hu/keresetek
+      targetYear: 2024, // Year of our calculations, only update after checked current tax calculations
+      grossUpperLimit: 559100, // Upper limit of the discount, update if needed (to previous July data): https://www.ksh.hu/keresetek
       net: 266000, // Feasible net for 400k gross
       gross: 400000,
       turnagelimit: false,
@@ -195,8 +196,6 @@ export default {
         calculatedNet -= this.getExpiredMarriageDiscount(monthNum);
 
         this.$set(this.output, monthNum, calculatedNet);
-
-        // console.table(this.output);
       }
     },
     /**
