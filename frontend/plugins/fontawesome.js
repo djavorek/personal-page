@@ -1,6 +1,6 @@
 import { defineNuxtPlugin } from '#app'
 import { library, config } from '@fortawesome/fontawesome-svg-core'
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome' // eslint-disable-line import/named
 import { faAngleDoubleDown } from '@fortawesome/free-solid-svg-icons'
 import { faLinkedin, faFacebook, faDiscord } from '@fortawesome/free-brands-svg-icons'
 

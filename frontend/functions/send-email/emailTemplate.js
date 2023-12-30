@@ -22,7 +22,7 @@ const getEmailTemplate = (from, contact, msg) => {
       <style type="text/css">
         @media only screen and (max-width:480px) {
                   @-ms-viewport {width: 320px;}
-                  @viewport {	width: 320px; }
+                  @viewport {width: 320px;}
                 }
       </style>
       <!--<![endif]-->

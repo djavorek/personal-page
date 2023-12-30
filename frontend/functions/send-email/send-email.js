@@ -1,3 +1,4 @@
+/* eslint @typescript-eslint/no-var-requires: 0 */
 const SparkPost = require('sparkpost')
 const queryString = require('query-string')
 
@@ -21,7 +22,7 @@ function escapeOutput (toOutput) {
 }
 /* eslint-enable no-useless-escape */
 
-exports.handler = async function (event, context) {
+exports.handler = async function (event, _context) {
   const parsed = queryString.parse(event.body)
 
   const msg = escapeOutput(parsed.message)
