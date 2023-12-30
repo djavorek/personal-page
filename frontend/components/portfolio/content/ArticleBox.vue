@@ -25,21 +25,21 @@
 </template>
 
 <script>
-import MenuList from './menu/MenuList';
+import MenuList from './menu/MenuList'
 
 export default {
   props: {
     menu: {
       type: Number,
-      default: 0,
-    },
+      default: 0
+    }
   },
   methods: {
-    isSelected(purpose) {
-      return MenuList[this.menu].purpose === purpose;
-    },
-  },
-};
+    isSelected (purpose) {
+      return MenuList[this.menu].purpose === purpose
+    }
+  }
+}
 </script>
 
 <style scoped lang="scss">

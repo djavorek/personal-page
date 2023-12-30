@@ -6,18 +6,18 @@
 </template>
 
 <script>
-import { useCurrencyInput } from 'vue-currency-input';
+import { useCurrencyInput } from 'vue-currency-input'
 
 export default {
   name: 'CurrencyInput',
   props: {
-    modelValue: Number, // Vue 2: value
-    options: Object,
+    modelValue: Number = 0, // Vue 2: value
+    options: Object = {}
   },
-  setup(props) {
-    const { inputRef } = useCurrencyInput(props.options);
+  setup (props) {
+    const { inputRef } = useCurrencyInput(props.options)
 
-    return { inputRef };
-  },
-};
+    return { inputRef }
+  }
+}
 </script>

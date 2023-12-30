@@ -1,12 +1,12 @@
-import { defineNuxtPlugin } from "#app";
+import { defineNuxtPlugin } from '#app'
 
 // window resize handler
-export default defineNuxtPlugin((nuxtApp) => {
+export default defineNuxtPlugin((_) => {
   return {
     provide: {
       resizeHandler: (store) => {
-        store.commit("browser/SET_WIN_WIDTH", window.innerWidth);
-        store.commit("browser/SET_WIN_HEIGHT", window.innerHeight);
+        store.commit('browser/SET_WIN_WIDTH', window.innerWidth)
+        store.commit('browser/SET_WIN_HEIGHT', window.innerHeight)
 
         const docHeight = Math.max(
           document.body.scrollHeight,
@@ -14,35 +14,35 @@ export default defineNuxtPlugin((nuxtApp) => {
           document.documentElement.clientHeight,
           document.documentElement.scrollHeight,
           document.documentElement.offsetHeight
-        );
-        store.commit("browser/SET_DOC_HEIGHT", docHeight);
+        )
+        store.commit('browser/SET_DOC_HEIGHT', docHeight)
       },
 
       mutationHandler: (store, mutation) => {
-        const navHeight = mutation.target.clientHeight;
-        store.commit("browser/SET_NAVHEIGHT", navHeight);
+        const navHeight = mutation.target.clientHeight
+        store.commit('browser/SET_NAVHEIGHT', navHeight)
 
         document.documentElement.style.setProperty(
-          "--nav-height",
-          store.state.browser.navHeight + "px"
-        );
+          '--nav-height',
+          store.state.browser.navHeight + 'px'
+        )
       },
 
       addObserverIfNavBarAvailable: (mutObserver) => {
-        const node = document.getElementById("navbar");
+        const node = document.getElementById('navbar')
         if (!node) {
           // The node we need does not exist yet.
           // Wait 400ms and try again
-          window.setTimeout(this.addObserverIfNavBarAvailable, 400);
-          return;
+          window.setTimeout(this.addObserverIfNavBarAvailable, 400)
+          return
         }
 
         const mutOptions = {
           attributes: true,
-          childList: true,
-        };
-        mutObserver.observe(node, mutOptions);
-      },
-    },
-  };
-});
+          childList: true
+        }
+        mutObserver.observe(node, mutOptions)
+      }
+    }
+  }
+})

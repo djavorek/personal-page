@@ -1,4 +1,4 @@
-import { defineNuxtConfig } from 'nuxt/config';
+import { defineNuxtConfig } from 'nuxt/config'
 
 export default defineNuxtConfig({
   target: 'static',
@@ -6,7 +6,7 @@ export default defineNuxtConfig({
   meta: {
     title: 'Javorek Dénes',
     htmlAttrs: {
-      lang: 'hu',
+      lang: 'hu'
     },
     meta: [
       { charset: 'utf-8' },
@@ -14,10 +14,10 @@ export default defineNuxtConfig({
       {
         hid: 'description',
         name: 'description',
-        content: 'Javorek Dénes weboldala. Bemutatkozás, kapcsolat, blog.',
-      },
+        content: 'Javorek Dénes weboldala. Bemutatkozás, kapcsolat, blog.'
+      }
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
   },
 
   workbox: {
@@ -29,11 +29,11 @@ export default defineNuxtConfig({
           cacheName: 'image-cache',
           cacheExpiration: {
             maxEntries: 100,
-            maxAgeSeconds: 86400,
-          },
-        },
-      },
-    ],
+            maxAgeSeconds: 86400
+          }
+        }
+      }
+    ]
   },
 
   css: [
@@ -46,24 +46,24 @@ export default defineNuxtConfig({
     '~/assets/style/animation.scss',
     '~/assets/style/grid.css',
     '~/assets/style/content.scss',
-    '~/assets/style/main.scss',
+    '~/assets/style/main.scss'
   ],
 
   build: {
-    transpile: ['vuetify', '@fortawesome/vue-fontawesome'],
+    transpile: ['vuetify', '@fortawesome/vue-fontawesome']
   },
 
   vite: {
     define: {
-      'process.env.DEBUG': false,
-    },
+      'process.env.DEBUG': false
+    }
   },
 
   components: [
     {
       path: '~/components',
-      pathPrefix: false,
-    },
+      pathPrefix: false
+    }
   ],
 
   buildModules: ['@nuxtjs/eslint-module'],
@@ -72,18 +72,18 @@ export default defineNuxtConfig({
     '@nuxt/content',
     '@pinia/nuxt',
     '@funken-studio/sitemap-nuxt-3',
-    'nuxt-disqus',
+    'nuxt-disqus'
   ],
 
   eslint: {
     // Enable recommended rules
-    extend(config) {
-      config.extends.push('eslint:recommended');
-    },
+    extend (config) {
+      config.extends.push('eslint:recommended')
+    }
   },
 
   disqus: {
-    shortname: 'javorekdenes-hu',
+    shortname: 'javorekdenes-hu'
   },
 
   sitemap: {
@@ -91,11 +91,11 @@ export default defineNuxtConfig({
     generateOnBuild: true,
     routes: [
       '/blog/posts/2021-08-15-szja25',
-      '/blog/posts/2023-01-05-synology-ds118',
-    ],
+      '/blog/posts/2023-01-05-synology-ds118'
+    ]
   },
 
   devtools: {
-    enabled: true,
-  },
-});
+    enabled: true
+  }
+})

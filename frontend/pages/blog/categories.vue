@@ -4,34 +4,34 @@
 
 <script>
 export default {
-  transition(to, from) {
-    if (!from) return 'fade';
-    return +to.query.page > +from.query.page ? 'slide-right' : 'slide-left';
+  transition (to, from) {
+    if (!from) { return 'fade' }
+    return +to.query.page > +from.query.page ? 'slide-right' : 'slide-left'
   },
-  async asyncData({ params, app, payload, route, store }) {
-    await store.commit('SET_TITLE', 'Categories');
+  async asyncData ({ _params, _app, _payload, _route, store }) {
+    await store.commit('SET_TITLE', 'Categories')
   },
-  data() {
-    return {};
+  data () {
+    return {}
   },
-  head() {
+  head () {
     return {
-      title: 'Categories | ' + this.$store.state.info.sitename,
-    };
+      title: 'Categories | ' + this.$store.state.info.sitename
+    }
   },
   computed: {
-    categories() {
-      return this.$store.state.categories;
-    },
+    categories () {
+      return this.$store.state.categories
+    }
   },
   watchQuery: ['page'],
-  mounted() {
+  mounted () {
     this.$store.commit('SET_CURRENT', {
       title: 'Categories',
-      dir: '',
-    });
-  },
-};
+      dir: ''
+    })
+  }
+}
 </script>
 
 <style>

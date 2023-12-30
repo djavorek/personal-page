@@ -5,6 +5,6 @@
 <script>
 definePageMeta({
   name: 'Impressum',
-  layout: 'blog',
-});
+  layout: 'blog'
+})
 </script>

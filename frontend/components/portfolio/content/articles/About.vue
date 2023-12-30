@@ -178,18 +178,18 @@
 </template>
 
 <script>
-  import headImg from '~/assets/img/about_head.svg'
-  import workImg from '~/assets/img/about_work.svg'
-  import expImg from '~/assets/img/about_exp.svg'
-  import hobbyImg from '~/assets/img/about_hobby.svg'
+import headImg from '~/assets/img/about_head.svg'
+import workImg from '~/assets/img/about_work.svg'
+import expImg from '~/assets/img/about_exp.svg'
+import hobbyImg from '~/assets/img/about_hobby.svg'
 
-  export default {
-    data() {
-      return {
-        headImg, workImg, expImg, hobbyImg
-      }
-    },
+export default {
+  data () {
+    return {
+      headImg, workImg, expImg, hobbyImg
+    }
   }
+}
 
 </script>
 

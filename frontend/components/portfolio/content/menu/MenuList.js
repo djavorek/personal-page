@@ -3,26 +3,26 @@ const menuList = [
     id: 0,
     text: 'RÓLAM',
     purpose: 'About',
-    link: '',
+    link: ''
   },
   {
     id: 1,
     text: 'ELÉRHETŐSÉGEIM',
     purpose: 'Contact',
-    link: '',
+    link: ''
   },
   {
     id: 2,
     text: 'IMPRESSZUM',
     purpose: 'Impressum',
-    link: '',
+    link: ''
   },
   {
     id: 3,
     text: 'BLOG',
     purpose: 'Blog',
-    link: '/blog',
-  },
-];
+    link: '/blog'
+  }
+]
 
-export default menuList;
+export default menuList

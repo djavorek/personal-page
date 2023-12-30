@@ -1,8 +1,8 @@
 <template>
   <v-card
     flat
-    tile 
-    v-bind="$attrs" 
+    tile
+    v-bind="$attrs"
   >
     <slot />
   </v-card>

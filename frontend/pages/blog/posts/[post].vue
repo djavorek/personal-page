@@ -44,40 +44,40 @@
 
 <script>
 definePageMeta({
-  layout: 'blog',
-});
+  layout: 'blog'
+})
 
 export default {
-  transition(_, from) {
+  transition (_, from) {
     if (!from) {
-      return 'slide-left';
+      return 'slide-left'
     } else {
-      return 'slide-right';
+      return 'slide-right'
     }
   },
-  async asyncData({ $content, params, error }) {
+  async asyncData ({ $content, params, error }) {
     const post = await $content('/posts', params.post)
       .fetch()
       .catch(() => {
-        error({ statusCode: 404, message: 'Page not found' });
-      });
+        error({ statusCode: 404, message: 'Page not found' })
+      })
     return {
-      post,
-    };
+      post
+    }
   },
-  head() {
+  head () {
     return {
       title: this.post.title + ' - Javorek Dénes',
       meta: [
         {
           hid: this.post.title,
           name: 'description',
-          content: this.post.brief,
-        },
-      ],
-    };
-  },
-};
+          content: this.post.brief
+        }
+      ]
+    }
+  }
+}
 </script>
 
 <style scoped lang="scss">

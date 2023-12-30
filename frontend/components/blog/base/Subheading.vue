@@ -9,6 +9,6 @@
 
 <script>
 export default {
-  name: 'BaseSubheading',
-};
+  name: 'BaseSubheading'
+}
 </script>

@@ -18,17 +18,17 @@
 
 <script>
 export default {
-  data() {
+  data () {
     return {
-      menu: 0,
-    };
+      menu: 0
+    }
   },
   methods: {
-    selectMenu(selected) {
-      this.menu = selected;
-    },
-  },
-};
+    selectMenu (selected) {
+      this.menu = selected
+    }
+  }
+}
 </script>
 
 <style scoped lang="scss">

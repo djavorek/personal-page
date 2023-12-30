@@ -17,7 +17,7 @@
             v-for="(net, i) in data"
             :key="i"
           >
-            {{ net | toCurrency }}
+            {{ net }}
           </td>
         </tr>
       </tbody>
@@ -32,11 +32,11 @@ export default {
       type: Array,
       required: true,
       default: () => {
-        return new Array(12).fill(0);
-      },
-    },
+        return new Array(12).fill(0)
+      }
+    }
   },
-  data() {
+  data () {
     return {
       months: [
         'Január',
@@ -50,9 +50,9 @@ export default {
         'Szeptember',
         'Október',
         'November',
-        'December',
-      ],
-    };
-  },
-};
+        'December'
+      ]
+    }
+  }
+}
 </script>

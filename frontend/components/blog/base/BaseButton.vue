@@ -13,15 +13,15 @@
 <script>
 export default {
   props: {
-    square: Boolean,
+    square: Boolean
   },
 
   computed: {
-    styles() {
+    styles () {
       return {
-        borderRadius: this.square ? '2px' : undefined,
-      };
-    },
-  },
-};
+        borderRadius: this.square ? '2px' : undefined
+      }
+    }
+  }
+}
 </script>

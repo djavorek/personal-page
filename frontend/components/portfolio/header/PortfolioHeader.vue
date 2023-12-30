@@ -1,7 +1,7 @@
 <template>
   <div id="header">
     <div>
-      <TitleBox />
+      <PortfolioTitleBox />
     </div>
     <div>
       <font-awesome-icon
@@ -15,17 +15,17 @@
 </template>
 
 <script>
-import { defineComponent } from "vue";
+import { defineComponent } from 'vue'
 
 export default defineComponent({
   methods: {
-    scrollPageTo() {
-      const menu = document.querySelector(`#menu`);
-      menu.scrollIntoView({ behavior: "smooth" });
+    scrollPageTo () {
+      const menu = document.querySelector('#menu')
+      menu.scrollIntoView({ behavior: 'smooth' })
     }
   }
-    
-});
+
+})
 </script>
 
 <style lang="scss" scoped>

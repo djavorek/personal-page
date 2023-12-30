@@ -21,8 +21,8 @@ const getEmailTemplate = (from, contact, msg) => {
       <!--[if !mso]><!-->
       <style type="text/css">
         @media only screen and (max-width:480px) {
-                    @-ms-viewport {width: 320px;}
-                    @viewport {	width: 320px; }
+                  @-ms-viewport {width: 320px;}
+                  @viewport {	width: 320px; }
                 }
       </style>
       <!--<![endif]-->
@@ -317,7 +317,7 @@ const getEmailTemplate = (from, contact, msg) => {
       </div>
     </body>
   </html>
-  `;
-};
+  `
+}
 
-exports.getEmailTemplate = getEmailTemplate;
+exports.getEmailTemplate = getEmailTemplate

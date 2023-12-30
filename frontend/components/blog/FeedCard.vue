@@ -64,14 +64,14 @@ export default {
   props: {
     size: {
       type: Number,
-      required: true,
+      required: true
     },
     value: {
       type: Object,
-      default: () => ({}),
-    },
-  },
-};
+      default: () => ({})
+    }
+  }
+}
 </script>
 
 <style>

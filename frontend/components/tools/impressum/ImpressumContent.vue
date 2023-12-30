@@ -108,9 +108,9 @@
 <script>
 export default {
   props: {
-    isDark: Boolean,
-  },
-};
+    isDark: Boolean
+  }
+}
 </script>
 
 <style lang="scss" scoped>

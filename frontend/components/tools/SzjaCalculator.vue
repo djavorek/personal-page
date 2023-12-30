@@ -126,7 +126,7 @@
         <v-card-title>Számított nettó ({{ targetYear }}-ban)</v-card-title>
         <v-card-text>
           <div v-if="output.every((i) => i === output[0])">
-            {{ output[0] | toCurrency }}
+            {{ output[0] }}
           </div>
           <SzjaTable
             v-else
@@ -139,10 +139,10 @@
 </template>
 
 <script>
-import SzjaTable from './SzjaTable.vue';
+import SzjaTable from './SzjaTable.vue'
 export default {
   components: { SzjaTable },
-  data() {
+  data () {
     return {
       targetYear: 2023, // Year of our calculations, only update after checked current tax calculations
       grossUpperLimit: 500000, // Upper limit of the discount, update if needed (to previous July data): https://www.ksh.hu/keresetek
@@ -166,9 +166,9 @@ export default {
             { text: 'augusztusban.', value: 8 },
             { text: 'szeptemberban.', value: 9 },
             { text: 'októberban.', value: 10 },
-            { text: 'novemberban.', value: 11 },
-          ],
-        },
+            { text: 'novemberban.', value: 11 }
+          ]
+        }
       },
       birthSelectorMenu: false,
       birth: '',
@@ -182,25 +182,25 @@ export default {
         max: null,
         defaultValue: 0,
         valueAsInteger: true,
-        allowNegative: false,
-      },
-    };
+        allowNegative: false
+      }
+    }
   },
-  created() {
-    this.birth = `${this.targetYear - 25}-01-01`;
-    this.calculate();
+  created () {
+    this.birth = `${this.targetYear - 25}-01-01`
+    this.calculate()
   },
   methods: {
-    birthSelected() {
-      this.birthSelectorMenu = false;
-      this.calculate();
+    birthSelected () {
+      this.birthSelectorMenu = false
+      this.calculate()
     },
-    calculate() {
+    calculate () {
       for (let monthNum = 0; monthNum < 12; monthNum++) {
-        let calculatedNet = this.net;
+        let calculatedNet = this.net
 
-        const limitDateForMonth = new Date(this.targetYear, monthNum, 1);
-        limitDateForMonth.setDate(limitDateForMonth.getDate() - 1);
+        const limitDateForMonth = new Date(this.targetYear, monthNum, 1)
+        limitDateForMonth.setDate(limitDateForMonth.getDate() - 1)
 
         if (
           !this.turnagelimit ||
@@ -209,21 +209,21 @@ export default {
           let taxDiscountBase =
             this.gross < this.grossUpperLimit
               ? this.gross
-              : this.grossUpperLimit;
+              : this.grossUpperLimit
 
           taxDiscountBase -= this.getExpiredMarriageDiscount(
             taxDiscountBase,
             monthNum
-          );
+          )
 
-          const taxDiscount = taxDiscountBase * 0.15;
+          const taxDiscount = taxDiscountBase * 0.15
 
-          calculatedNet = parseInt(this.net) + taxDiscount;
+          calculatedNet = parseInt(this.net) + taxDiscount
         }
 
-        calculatedNet -= this.getExpiredMarriageDiscount(monthNum);
+        calculatedNet -= this.getExpiredMarriageDiscount(monthNum)
 
-        this.$set(this.output, monthNum, calculatedNet);
+        this.$set(this.output, monthNum, calculatedNet)
 
         // console.table(this.output);
       }
@@ -232,25 +232,25 @@ export default {
      * @param net Calculated net salary before reapplying expired discount
      * @param whichMonth Zero-indexed month count
      */
-    getExpiredMarriageDiscount(whichMonth) {
+    getExpiredMarriageDiscount (whichMonth) {
       if (
         !this.otherTaxDiscounts.on ||
         !this.otherTaxDiscounts.firstMarriage.on ||
         this.otherTaxDiscounts.firstMarriage.until.value > whichMonth
       ) {
-        return 0;
+        return 0
       }
-      return this.otherTaxDiscounts.firstMarriage.quantity;
+      return this.otherTaxDiscounts.firstMarriage.quantity
     },
-    yearsPrior(date, yearCount) {
+    yearsPrior (date, yearCount) {
       const yearsBeforeDate = new Date(date).setYear(
         date.getYear() - yearCount
-      );
+      )
 
-      return yearsBeforeDate;
-    },
-  },
-};
+      return yearsBeforeDate
+    }
+  }
+}
 </script>
 
 <style lang="scss" scoped>

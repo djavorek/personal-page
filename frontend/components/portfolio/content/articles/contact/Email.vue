@@ -75,42 +75,42 @@
 
 <script>
 export default {
-  data() {
+  data () {
     return {
       form: {
         name: '',
         contact: '',
-        message: '',
+        message: ''
       },
       loading: false,
       sent: false,
-      hasError: false,
-    };
+      hasError: false
+    }
   },
   methods: {
-    encode(data) {
-      const formData = new FormData();
+    encode (data) {
+      const formData = new FormData()
 
       for (const key of Object.keys(data)) {
-        formData.append(key, data[key]);
+        formData.append(key, data[key])
       }
 
-      return formData;
+      return formData
     },
 
-    handleFormSubmit() {
+    handleFormSubmit () {
       const config = {
         method: 'POST',
         header: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: new URLSearchParams(
           this.encode({
-            ...this.form,
+            ...this.form
           })
-        ).toString(),
-      };
+        ).toString()
+      }
 
-      this.loading = true;
-      this.hasError = false;
+      this.loading = true
+      this.hasError = false
       fetch(
         location.protocol +
           '//' +
@@ -119,16 +119,16 @@ export default {
         config
       )
         .then(() => {
-          this.loading = false;
-          this.sent = true;
+          this.loading = false
+          this.sent = true
         })
         .catch(() => {
-          this.loading = false;
-          this.hasError = true;
-        });
-    },
-  },
-};
+          this.loading = false
+          this.hasError = true
+        })
+    }
+  }
+}
 </script>
 
 <style scoped lang="scss">

@@ -14,25 +14,25 @@
 </template>
 
 <script>
-import MenuList from './MenuList';
+import MenuList from './MenuList'
 
 export default {
   emits: ['changed'],
-  data() {
+  data () {
     return {
       menuList: MenuList,
-      selected: 0,
-    };
+      selected: 0
+    }
   },
 
   watch: {
-    selected(newValue, oldValue) {
+    selected (newValue, oldValue) {
       if (newValue !== oldValue) {
-        this.$emit('changed', newValue);
+        this.$emit('changed', newValue)
       }
-    },
-  },
-};
+    }
+  }
+}
 </script>
 
 <style scoped lang="scss">

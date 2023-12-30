@@ -58,37 +58,36 @@
 
 <script>
 import { mapStores } from 'pinia'
-import { useBlogStore } from '~/store/BlogStore';
-
+import { useBlogStore } from '~/store/BlogStore'
 
 export default {
-  name: "Feed",
+  name: 'Feed',
 
   data: () => ({
     layout: [2, 2, 1, 2, 2, 3, 3, 3, 3, 3, 3],
-    page: 1,
+    page: 1
   }),
 
   computed: {
     ...mapStores(useBlogStore),
-    pages() {
-      return Math.ceil(this.blogStore.articles.length / 11);
+    pages () {
+      return Math.ceil(this.blogStore.articles.length / 11)
     },
-    paginatedArticles() {
-      const start = (this.blogStore.page - 1) * 11;
-      const stop = this.blogStore.page * 11;
+    paginatedArticles () {
+      const start = (this.blogStore.page - 1) * 11
+      const stop = this.blogStore.page * 11
       console.log(this.blogStore.articles)
 
-      return this.blogStore.articles.slice(start, stop);
-    },
+      return this.blogStore.articles.slice(start, stop)
+    }
   },
 
   watch: {
-    page() {
-      window.scrollTo(0, 0);
+    page () {
+      window.scrollTo(0, 0)
     }
   }
-};
+}
 </script>
 <style scoped>
 .bottom-fixed {

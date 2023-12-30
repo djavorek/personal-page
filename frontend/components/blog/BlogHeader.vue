@@ -46,15 +46,15 @@
 import { useMediaQuery } from '@vueuse/core'
 export default {
   computed: {
-    pagetitle() {
-      return this.$store.state.current.title;
+    pagetitle () {
+      return this.$store.state.current.title
     },
-    isMobile() {
+    isMobile () {
       return useMediaQuery('(max-width: 600px)')
     },
     data: () => ({
-      drawer: false,
-    }),
-  },
-};
+      drawer: false
+    })
+  }
+}
 </script>

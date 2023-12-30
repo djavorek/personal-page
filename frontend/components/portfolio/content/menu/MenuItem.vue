@@ -30,20 +30,20 @@ export default {
   props: {
     item: {
       type: Object,
-      default() {
+      default () {
         return {
           id: -1,
-          text: "This menu is out of service",
-        };
-      },
+          text: 'This menu is out of service'
+        }
+      }
     },
     selected: {
       type: Boolean,
-      default: false,
-    },
+      default: false
+    }
   },
-  emits: ["select"],
-};
+  emits: ['select']
+}
 </script>
 
 <style lang="scss" scoped>

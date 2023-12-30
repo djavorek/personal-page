@@ -4,34 +4,34 @@
 
 <script>
 export default {
-  transition(to, from) {
-    if (!from) return 'slide-right';
-    return +to.query.page > +from.query.page ? 'slide-right' : 'slide-left';
+  transition (to, from) {
+    if (!from) { return 'slide-right' }
+    return +to.query.page > +from.query.page ? 'slide-right' : 'slide-left'
   },
-  async asyncData({ $content, params, store, error }) {
+  async asyncData ({ $content, params, _, error }) {
     const category = await $content('category', params.category)
       .fetch()
       .catch(() => {
-        error({ statusCode: 404, message: 'Page not found' });
-      });
+        error({ statusCode: 404, message: 'Page not found' })
+      })
     const posts = await $content('blog')
       .sortBy('createdAt', 'desc')
       .where({ category: category.title })
-      .fetch();
+      .fetch()
     return {
       category,
-      posts,
-    };
+      posts
+    }
   },
-  head() {
+  head () {
     return {
-      title: this.category.title + ' | ' + this.$store.state.info.sitename,
-    };
+      title: this.category.title + ' | ' + this.$store.state.info.sitename
+    }
   },
-  mounted() {
-    this.$store.commit('SET_CURRENT', this.category);
-  },
-};
+  mounted () {
+    this.$store.commit('SET_CURRENT', this.category)
+  }
+}
 </script>
 
 <style>
