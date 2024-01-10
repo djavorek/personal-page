@@ -1,15 +1,10 @@
 <template>
   <v-app>
-    <div
-      id="portfolio"
-      :style="{
-        backgroundImage: isWebpFormatSupported ? bgImg : bgImgFallBack,
-      }"
-    >
+    <div id="portfolio">
       <div class="notouchy">
         <PortfolioHeader />
       </div>
-      <div ref="asd">
+      <div>
         <Content />
       </div>
     </div>
@@ -19,19 +14,7 @@
 
 <script setup>
 import { onMounted } from 'vue'
-import bgImg from '~/assets/img/bg.webp?url'
-import bgImgFallBack from '~/assets/img/bg.jpg?url'
 
-function isWebpFormatSupported () {
-  const testCanvas = document.createElement('canvas')
-
-  if (testCanvas.getContext && testCanvas.getContext('2d')) {
-    return testCanvas.toDataURL('image/webp').indexOf('data:image/webp') === 0
-  } else {
-    // dinosaur browsers like IE 8, canvas not supported
-    return false
-  }
-}
 function addScriptToHead (scriptPath) {
   const externalScript = document.createElement('script')
   externalScript.setAttribute('src', scriptPath)
@@ -49,4 +32,11 @@ onMounted(() => {
 
 <style lang="scss">
 @import "~/assets/style/main.scss";
+
+  #portfolio {
+    background-image: image-set(
+      url("~/assets/img/bg.webp") type("image/webp"),
+      url("~/assets/img/bg.jpg") type("image/jpeg")
+    );
+  }
 </style>
